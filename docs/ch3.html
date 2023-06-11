@@ -1,0 +1,675 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3 - Standing waves &#8212; PHY1001 Waves and Oscillations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch3';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4 - Travelling Waves" href="ch4.html" />
+    <link rel="prev" title="2 - Simple Harmonic Motion and the Small Angle Approximation" href="ch2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    PHY1001 Waves and Oscillations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1.html">Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2.html">Chapter 2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4.html">Chapter 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5.html">Chapter 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6.html">Chapter 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">Chapter 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch8.html">Chapter 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch9.html">Chapter 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">Chapter 10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11.html">Chapter 11</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>3 - Standing waves</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-oscillators-to-waves">From Oscillators to Waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guitar-string-standing-wave">Guitar string standing wave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal-standing-waves">Multi-modal standing waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-and-closed-pipes">Open and closed pipes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-frequency-of-standing-waves">The frequency of standing waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="standing-waves">
+<h1>3 - Standing waves<a class="headerlink" href="#standing-waves" title="Permalink to this headline">#</a></h1>
+<div class="section" id="from-oscillators-to-waves">
+<h2>From Oscillators to Waves<a class="headerlink" href="#from-oscillators-to-waves" title="Permalink to this headline">#</a></h2>
+<p>In the previous two lectures we’ve been considering oscillating systems or, more specifically, those that undergo simply harmonic motion. We’ll revisit oscillators later in the course, but for this and the next few lectures we’re going to look at the somewhat related phenomenon of waves. In subsequent lectures, we’ll look at travelling waves – those waves that transport energy from one place to another, whether that’s water waves crossing an ocean, or electromagnetic waves crossing the Universe. To start with, however, we’re going to consider the other main type of wave – standing waves – which, as we’ll see in this lecture, are a sort of half-way-house between an oscillator and travelling wave. This feature makes an an ideal transition between the oscillator and wave sections of the course.</p>
+</div>
+<div class="section" id="guitar-string-standing-wave">
+<h2>Guitar string standing wave<a class="headerlink" href="#guitar-string-standing-wave" title="Permalink to this headline">#</a></h2>
+<p>The classic example of a standing wave is the guitar string. When one plucks an individual string on a guitar, one sees that the whole string oscillates. However, even if we assume that the guitar string is vibrating harmonically, it is clear that it can not be described mathematically in quite the same way as the harmonic oscillators of the last two lectures. This is because while each small section of the string oscillates harmonically, the <em>amplitude</em> of these mini-oscillators changes along the length of the string. In other words, the amplitude, <span class="math notranslate nohighlight">\(A\)</span>, of the oscillations is a function of position, <span class="math notranslate nohighlight">\(x\)</span>, meaning that the displacement, <span class="math notranslate nohighlight">\(\psi\)</span>, of a tiny section of string at location <span class="math notranslate nohighlight">\(x\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> is given by</p>
+<div class="math notranslate nohighlight" id="equation-partstring">
+<span class="eqno">(37)<a class="headerlink" href="#equation-partstring" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{eq:partstring}
+\psi(x,t) = A(x)\sin(\omega t + \phi_0),
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega\)</span> is the angular frequency of the oscillating string and <span class="math notranslate nohighlight">\(\phi_0\)</span> is a phase shift that I can use to account for the phase of the string at time <span class="math notranslate nohighlight">\(t=0\)</span>\ s. Notice that the displacement, <span class="math notranslate nohighlight">\(\psi(x,t)\)</span>, is now a function of both time <em>and</em> position, rather than just time as in the case the oscillators we looked at last week.</p>
+<div class="figure align-default" id="guitarstring1">
+<a class="reference internal image-reference" href="_images/guitarstring1.png"><img alt="Vibrating guitar string at maximum displacement" src="_images/guitarstring1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">A vibrating guitar string of length <span class="math notranslate nohighlight">\(L\)</span> captured at its maximum displacement</span><a class="headerlink" href="#guitarstring1" title="Permalink to this image">#</a></p>
+</div>
+<p>With the time-dependence of the string’s motion already defined (i.e., <span class="math notranslate nohighlight">\(\sin(\omega t + \phi_0)\)</span>) we now need to obtain a mathematical expression for <span class="math notranslate nohighlight">\(A(x)\)</span>, i.e., how the amplitude of the oscillations of each tiny section of string changes along the whole length of the string. To do this, we’ll consider what the string would look like if we managed to take a high-speed photograph of it while at its maximum vertical displacement, as shown in <a class="reference internal" href="#guitarstring1"><span class="std std-numref">Fig. 6</span></a>. Since it is captured at is maximum displacement, this image shows amplitude, <span class="math notranslate nohighlight">\(A(x)\)</span>, of the wire at all values of <span class="math notranslate nohighlight">\(x\)</span> from zero to <span class="math notranslate nohighlight">\(L\)</span>, where <span class="math notranslate nohighlight">\(L\)</span> is the length of the string. There are three important things to note here about <span class="math notranslate nohighlight">\(A(x)\)</span>:</p>
+<ul class="simple">
+<li><p>it varies smoothly along the length of the string;</p></li>
+<li><p>it is zero at position <span class="math notranslate nohighlight">\(x=0\)</span>; and</p></li>
+<li><p>it is zero at position <span class="math notranslate nohighlight">\(x=L\)</span>.</p></li>
+</ul>
+<p>The second and third criteria are examples of an extremely important concept in physics – they are what are known as <em>boundary conditions</em>. You will encounter boundary conditions throughout your degree and, as you’ll see, they are really useful for restricting the range of solutions to a problem.</p>
+<p>To describe <span class="math notranslate nohighlight">\(A(x)\)</span> in mathematical terms we require a function that satisfies all three of the criteria above. The first criterion is satisfied by any smoothly-varying function, of which there are an infinite number to choose from, so that doesn’t help us much! The second criteria is somewhat more helpful, as it implies that whatever function we choose can’t have an offset at <span class="math notranslate nohighlight">\(x=0\)</span>. The third criteria is particularly helpful, however, as it implies that the function <em>must</em> curve back downwards in order to return to zero at <span class="math notranslate nohighlight">\(x=L\)</span>. There are a few different functions that satisfy all three criteria<a class="footnote-reference brackets" href="#crit" id="id1">1</a>, but for reasons we’ll encounter later, we will use <span class="math notranslate nohighlight">\(\sin(\theta)\)</span>.<a class="footnote-reference brackets" href="#theta" id="id2">2</a> We do, however, need to be a bit careful about what we put inside the brackets to ensure that it is zero at both <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=L\)</span>. Since <span class="math notranslate nohighlight">\(\sin(0)=0\)</span>, then provided we don’t have a phase shift inside the brackets, the first boundary condition will be met.</p>
+<p>For the second boundary condition, we can turn to the fact that <span class="math notranslate nohighlight">\(\sin(\theta)\)</span> is a repeating function – it returns to zero at <span class="math notranslate nohighlight">\(\theta=\pi\)</span> radians. Therefore, by setting</p>
+<div class="math notranslate nohighlight" id="equation-ampx">
+<span class="eqno">(38)<a class="headerlink" href="#equation-ampx" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{eq:ampx}
+  A(x)=\psi_0\sin\left(\frac{\pi x}{L}\right)
+\end{equation}\]</div>
+<p>we ensure that all three criteria are met, since when <span class="math notranslate nohighlight">\(x=L\)</span> only <span class="math notranslate nohighlight">\(\pi\)</span> is left inside the brackets. In Eq. <a class="reference internal" href="#equation-ampx">(38)</a> I’ve used <span class="math notranslate nohighlight">\(\psi_0\)</span> to represent the maximum displacement across the entirety of the string, which happens at <span class="math notranslate nohighlight">\(x=L/2\)</span>; in other words, <span class="math notranslate nohighlight">\(\psi_0\)</span> is the amplitude of the standing wave.</p>
+<p>With <span class="math notranslate nohighlight">\(A(x)\)</span> now defined, we can substitute it into Eq. <a class="reference internal" href="#equation-partstring">(37)</a> to obtain the full mathematical expression for the guitar string standing wave shown in <a class="reference internal" href="#guitarstring1"><span class="std std-numref">Fig. 6</span></a>:</p>
+<div class="math notranslate nohighlight" id="equation-firstmode">
+<span class="eqno">(39)<a class="headerlink" href="#equation-firstmode" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{eq:firstmode}
+  \psi(x)=\psi_0\sin\left(\frac{\pi x}{L}\right)\sin(\omega t + \phi_0).
+\end{equation}\]</div>
+</div>
+<div class="section" id="multi-modal-standing-waves">
+<h2>Multi-modal standing waves<a class="headerlink" href="#multi-modal-standing-waves" title="Permalink to this headline">#</a></h2>
+<div class="figure align-default" id="guitarstring23">
+<a class="reference internal image-reference" href="_images/guitarstring23.png"><img alt="Second and third modes of a vibrating string" src="_images/guitarstring23.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The second (top) and third (bottom) modes of a vibrating string.</span><a class="headerlink" href="#guitarstring23" title="Permalink to this image">#</a></p>
+</div>
+<p>In the previous section we ensured that the third boundary condition was met by utilising the fact the <span class="math notranslate nohighlight">\(\sin\)</span> function returns to zero when <span class="math notranslate nohighlight">\(\theta=\pi\)</span> radian. However, you’ll be aware that that’s not the only value of <span class="math notranslate nohighlight">\(\theta\)</span> when <span class="math notranslate nohighlight">\(\sin(\theta)=0\)</span>. In fact, <span class="math notranslate nohighlight">\(\sin(\theta)=0\)</span> every time <span class="math notranslate nohighlight">\(\theta=n\pi\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is an integer. As such, the following expression for <span class="math notranslate nohighlight">\(A(x)\)</span> also satisfies all three boundary conditions:</p>
+<div class="math notranslate nohighlight" id="equation-allmode">
+<span class="eqno">(42)<a class="headerlink" href="#equation-allmode" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{eq:allmode}
+  A(x)=\psi_0\sin\left(\frac{n\pi x}{L}\right)
+\end{equation}\]</div>
+<p>where, again, <span class="math notranslate nohighlight">\(n\)</span> can be any integer value. When <span class="math notranslate nohighlight">\(n=1\)</span>, we get the first <em>mode</em> of oscillation of the guitar string (as shown in <a class="reference internal" href="#guitarstring1"><span class="std std-numref">Fig. 6</span></a>, whereas when <span class="math notranslate nohighlight">\(n=2\)</span> or <span class="math notranslate nohighlight">\(3\)</span> we get the second or third modes shown in <a class="reference internal" href="#guitarstring23"><span class="std std-numref">Fig. 7</span></a>, respectively. Looking more closely at the <span class="math notranslate nohighlight">\(n=2\)</span> case, it should be evident that this very much <em>looks</em> like a wave with a wavelength equal to <span class="math notranslate nohighlight">\(L\)</span>. From this, it’s easy to see why this phenomena is known as a standing <em>wave</em> – it has the form of a wave, but it doesn’t move any where as it is constrained to the string. In the case of the <span class="math notranslate nohighlight">\(n=3\)</span> example, the standing wave has a wavelength equal to two-thirds <span class="math notranslate nohighlight">\(L\)</span>, while the <span class="math notranslate nohighlight">\(n=4\)</span> case would have a wavelength equal to <span class="math notranslate nohighlight">\(L/2\)</span>, or <span class="math notranslate nohighlight">\(2L/4\)</span>. Continuing this pattern, we can see that the wavelength of each successive mode is given by:</p>
+<div class="math notranslate nohighlight" id="equation-lambdacc">
+<span class="eqno">(41)<a class="headerlink" href="#equation-lambdacc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{eq:lambdacc}
+  \lambda_n=\frac{2L}{n},
+\end{equation}\]</div>
+<p>meaning the wavelength is effectively <em>quantised</em> – it can only adopt very specific values dictated by the length, <span class="math notranslate nohighlight">\(L\)</span>, of the string. As you’ll see next semester, this forms the basis of all of quantum mechanics!</p>
+<div class="admonition-key-jargon admonition">
+<p class="admonition-title">Key Jargon</p>
+<p><strong>Node</strong>: The points on a standing wave where the displacement is <em>always}</em> zero. In the case of the guitar string, the first mode has two nodes, the second has three, the third has four, and so on.</p>
+<p><strong>Antinode</strong>: The points on a standing wave where the displacement is <em>always</em> maximum. In the case of the guitar string, the first mode has one antinode, the second has two, the third has three, and so on.</p>
+</div>
+<p>If we next rearrange Eq. <a class="reference internal" href="#equation-lambdacc">(41)</a> for <span class="math notranslate nohighlight">\(L\)</span>, we get <span class="math notranslate nohighlight">\(L=n\lambda_n/2\)</span>, which can substituted into Eq. <a class="reference internal" href="#equation-allmode">(42)</a> to obtain:</p>
+<div class="math notranslate nohighlight" id="equation-allmode">
+<span class="eqno">(42)<a class="headerlink" href="#equation-allmode" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+  \label{eq:allmode}
+  A(x)&amp;=\psi_0\sin\left(\frac{2\pi x}{\lambda_n}\right)\nonumber\\
+  &amp;=\psi_0\sin\left(k_n x\right)
+\end{align}\end{split}\]</div>
+<p>where I have defined <span class="math notranslate nohighlight">\(k_n = 2\pi/\lambda_n\)</span> which is called the <em>wavenumber</em> of the wave. Of course, this doesn’t alter the fact that the wavelength, <span class="math notranslate nohighlight">\(\lambda_n\)</span>, of the standing wave is constrained to certain set values defined by Eq. <a class="reference internal" href="#equation-lambdacc">(41)</a>.</p>
+</div>
+<div class="section" id="open-and-closed-pipes">
+<h2>Open and closed pipes<a class="headerlink" href="#open-and-closed-pipes" title="Permalink to this headline">#</a></h2>
+<p>Up to now we’ve only considered one type of standing wave – that which, like a guitar string, has boundary conditions which forces the amplitude of the wave to be zero at both <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=L\)</span>. There are, however, two other main types of linear standing waves, those in which the amplitude is:</p>
+<ul class="simple">
+<li><p>zero at <span class="math notranslate nohighlight">\(x=0\)</span> and maximum at <span class="math notranslate nohighlight">\(x=L\)</span>; and</p></li>
+<li><p>maximum at both <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=L\)</span>.</p></li>
+</ul>
+<p>A physical example of the first is an example of a pipe that is open at one end (at <span class="math notranslate nohighlight">\(x=L\)</span>) but closed at the other. Consider a sound wave being sent down the pipe from the open end toward the closed end. At the point the sound wave hits the closed end, the air molecules are butted-up against the closed end, so they can’t vibrate: their amplitude of vibration is zero. By contrast, an example of the second case is a pipe that is open at both ends.</p>
+<div class="figure align-default" id="pipes">
+<a class="reference internal image-reference" href="_images/pipes.png"><img alt="Standing wave modes in a closed and open ended pipe" src="_images/pipes.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text"><em>Left:</em> The first two standing wave modes in a closed-ended pipe. <em>Right:</em> The first two standing wave modes in a open-ended pipe.</span><a class="headerlink" href="#pipes" title="Permalink to this image">#</a></p>
+</div>
+<p>The diagrams on the left of <a class="reference internal" href="#pipes"><span class="std std-numref">Fig. 8</span></a> shows the first two standing wave modes of a pipe closed at one end. For ease of visualisation I have drawn the sound wave as a transverse wave, rather than a longitudinal wave, but the principle remains the same: there is a node at <span class="math notranslate nohighlight">\(x=0\)</span> and an antinode at <span class="math notranslate nohighlight">\(x=L\)</span>. Just as with the guitar string, to ensure that the boundary conditions are always met, the wavelength of the standing wave can only take specific values. In this case, those values are given by:</p>
+<div class="math notranslate nohighlight" id="equation-lambdaco">
+<span class="eqno">(43)<a class="headerlink" href="#equation-lambdaco" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{eq:lambdaco}
+  \lambda_n = \frac{4L}{2n-1}.
+\end{equation}\]</div>
+<p>Just as with the guitar string, since the amplitude of the closed pipe is zero at <span class="math notranslate nohighlight">\(x=0\)</span> then we can again use the <span class="math notranslate nohighlight">\(\sin\)</span> function to model <span class="math notranslate nohighlight">\(x\)</span>-dependent part of the standing wave</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d5692eb9-5d2a-4328-82ec-a04814ca2ef8">
+<span class="eqno">(44)<a class="headerlink" href="#equation-d5692eb9-5d2a-4328-82ec-a04814ca2ef8" title="Permalink to this equation">#</a></span>\[\begin{align}
+  A(x)&amp;=\psi_0\sin\left(\frac{2\pi x}{\lambda_n}\right)=\psi_0\sin\left(\frac{(2n-1)\pi x}{2L}\right).
+\end{align}\]</div>
+<p>By contrast, as right-hand diagrams in <a class="reference internal" href="#pipes"><span class="std std-numref">Fig. 8</span></a> show, we cannot use a <span class="math notranslate nohighlight">\(\sin\)</span> function for the pipe that’s open at both ends, since in this case the amplitude of the wave is a <em>maximum</em> at <span class="math notranslate nohighlight">\(x=0\)</span>. Instead, we use a <span class="math notranslate nohighlight">\(\cos\)</span> function which <em>does</em> satisfy this criterion. Again, we need to carefully choose what goes into the <span class="math notranslate nohighlight">\(\cos\)</span> function to make sure it meets the other boundary condition: that it is always at maximum at <span class="math notranslate nohighlight">\(x=L\)</span>. This is achieved when</p>
+<div class="math notranslate nohighlight" id="equation-lambdaoo">
+<span class="eqno">(45)<a class="headerlink" href="#equation-lambdaoo" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{eq:lambdaoo}
+  \lambda_n = \frac{2L}{n}.
+\end{equation}\]</div>
+<p>Making sure we use <span class="math notranslate nohighlight">\(\cos\)</span> for the spatially-varying component, this therefore gives the following equation for <span class="math notranslate nohighlight">\(x\)</span>-dependence part of the open-ended pipe standing wave:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b18dab86-5fab-4142-99d6-bd2fb20df6ea">
+<span class="eqno">(46)<a class="headerlink" href="#equation-b18dab86-5fab-4142-99d6-bd2fb20df6ea" title="Permalink to this equation">#</a></span>\[\begin{align}
+  A(x)&amp;=\psi_0\cos\left(\frac{2\pi x}{\lambda_n}\right)=\psi_0\cos\left(\frac{n \pi x}{L}\right).
+\end{align}\]</div>
+</div>
+<div class="section" id="the-frequency-of-standing-waves">
+<h2>The frequency of standing waves<a class="headerlink" href="#the-frequency-of-standing-waves" title="Permalink to this headline">#</a></h2>
+<p>Up to this point, we’ve largely considered only the <span class="math notranslate nohighlight">\(x\)</span>-dependent part of the standing waves we’ve encountered. However, as Eq. <a class="reference internal" href="#equation-firstmode">(39)</a> shows, there is also a time-dependent part. Indeed, it should be obvious to anyone who has seen a plucked guitar string that it oscillates in time. Since we started looking at the standing wave modes, I’ve intentionally left-out the time-dependence part of the equations. Now, however, we need to reintroduce the time-dependent parts in order to fully model the standing waves.</p>
+<p>As we saw in the last two lectures, we describe the time-dependent part of an oscillator using the frequency, <span class="math notranslate nohighlight">\(\nu\)</span> or angular frequency, <span class="math notranslate nohighlight">\(\omega\)</span>, where <span class="math notranslate nohighlight">\(\omega=2\pi\nu\)</span>. You should already be aware from A-Levels that the frequency, <span class="math notranslate nohighlight">\(\nu\)</span>, and wavelength, <span class="math notranslate nohighlight">\(\lambda\)</span>, of a wave are related to one another via the velocity, <span class="math notranslate nohighlight">\(v\)</span>, of the wave:</p>
+<div class="math notranslate nohighlight" id="equation-vfl">
+<span class="eqno">(47)<a class="headerlink" href="#equation-vfl" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{eq:vfl}
+  v = \nu\lambda = \omega/k,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the wavenumber of the wave.<a class="footnote-reference brackets" href="#wav" id="id3">3</a> Usually this is thought of in terms of travelling waves, since it’s clear that a travelling wave has a velocity (i.e., it <em>travels</em> within a spatial dimension). However, as we’ll see in Lecture 5, standing waves also have a velocity, and Eq. <a class="reference internal" href="#equation-vfl">(47)</a> also holds for standing waves. As such, we can use Eq. <a class="reference internal" href="#equation-vfl">(47)</a> to obtain the frequency of a standing wave given its wavelength and velocity.</p>
+<p>Since we’ve now obtained expressions for the wavelength of the various types of standing wave, the only part we’re still missing is the velocity. In the case of the sound waves travelling down the open and closed pipes, that velocity part is easy – it is simply the speed of sound in air, <span class="math notranslate nohighlight">\(v_s\)</span>, which is constant at a given temperature and pressure. Therefore, the angular frequency of the standing waves in the pipes is given as:</p>
+<div class="math notranslate nohighlight" id="equation-standingfreq">
+<span class="eqno">(48)<a class="headerlink" href="#equation-standingfreq" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{eq:standingfreq}
+  \omega_n = v_s k_n.
+\end{equation}\]</div>
+<p>It is important to note that, since <span class="math notranslate nohighlight">\(v_s\)</span> is a constant, Eq. <a class="reference internal" href="#equation-standingfreq">(48)</a> implies that the <em>frequency</em> of the oscillations of a standing wave is <em>also</em> quantised, as well as the wavelength. This feature also applies to the guitar string, since the velocity of a wave in s string or wire is defined by its tension and density. A guitar string of a given density under a given tension can only vibrate at a given set of frequencies, <span class="math notranslate nohighlight">\(\nu_n\)</span>. Conversely, this is why the different strings on a guitar produce different notes: even though their length (and therefore first mode wavelength) are all the same, their different densities and tensions cause them to have different sound velocities, meaning they vibrate at different frequencies.</p>
+<p>With the fixed set of frequencies now defined, we can finally write down the general equations for the three types of standing wave we have encountered in this lecture:</p>
+<ul>
+<li><p>Closed-closed (e.g., guitar string):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-faee5fb8-03b9-462d-aeb0-aa104821a2d0">
+<span class="eqno">(49)<a class="headerlink" href="#equation-faee5fb8-03b9-462d-aeb0-aa104821a2d0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \psi(x,t) = \psi_0\sin(k_nx)\sin(\omega_nt+\phi_0);
+  \end{equation}\]</div>
+</li>
+<li><p>Closed-open (e.g., pipe closed at <span class="math notranslate nohighlight">\(x=0\)</span>, but open at <span class="math notranslate nohighlight">\(x=L\)</span>):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-053fa15a-2478-4518-8db0-4f92b0f3bd7d">
+<span class="eqno">(50)<a class="headerlink" href="#equation-053fa15a-2478-4518-8db0-4f92b0f3bd7d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \psi(x,t) = \psi_0\sin(k_nx)\sin(\omega_nt+\phi_0); {\rm and}
+  \end{equation}\]</div>
+</li>
+<li><p>Open-open (e.g., pipe open at both ends):,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1e18058c-feca-4b7e-b653-16959c441522">
+<span class="eqno">(51)<a class="headerlink" href="#equation-1e18058c-feca-4b7e-b653-16959c441522" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \psi(x,t) = \psi_0\cos(k_nx)\sin(\omega_nt+\phi_0),
+  \end{equation}\]</div>
+</li>
+</ul>
+<p>where <span class="math notranslate nohighlight">\(k_n=2\pi/\lambda_n\)</span> with <span class="math notranslate nohighlight">\(\lambda_n\)</span> given by Eqs. <a class="reference internal" href="#equation-lambdacc">(41)</a>, <a class="reference internal" href="#equation-lambdaco">(43)</a> and <a class="reference internal" href="#equation-lambdaoo">(45)</a>, and <span class="math notranslate nohighlight">\(\omega_n=2\pi\nu_n\)</span> with <span class="math notranslate nohighlight">\(\nu_n=v/\lambda_n\)</span> (where <span class="math notranslate nohighlight">\(v={\rm velocity}\)</span>).</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In this lecture we’ve considered standing waves. These are somewhat of a half-way-house between oscillations and travelling waves, the latter we’ll encounter in the next lecture. We saw that standing waves are defined by boundary conditions which constrain their properties. In the case of the guitar string example, these boundary conditions were that the standing wave had to always have zero displacement at <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=L\)</span>. By contrast, the open and closed pipes had their own boundary conditions. We also saw how these boundary conditions forced the standing waves to take on a fixed set of wavelengths which, via <span class="math notranslate nohighlight">\(v=\nu\lambda\)</span> implies that they also oscillate at a fixed set of frequencies.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="crit"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>For example, <span class="math notranslate nohighlight">\(A(x)=-(x-\frac{L}{2})^2+\frac{L^2}{4}\)</span>.</p>
+</dd>
+<dt class="label" id="theta"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Here I’m just using <span class="math notranslate nohighlight">\(\theta\)</span> to represent any phase.</p>
+</dd>
+<dt class="label" id="wav"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>You should convince yourself that <span class="math notranslate nohighlight">\(v=\omega/k\)</span> given the equations relating <span class="math notranslate nohighlight">\(\omega\)</span> to <span class="math notranslate nohighlight">\(\nu\)</span> and <span class="math notranslate nohighlight">\(k\)</span> to <span class="math notranslate nohighlight">\(\lambda\)</span> given in this and previous lectures.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2 - Simple Harmonic Motion and the Small Angle Approximation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">4 - Travelling Waves</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-oscillators-to-waves">From Oscillators to Waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guitar-string-standing-wave">Guitar string standing wave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal-standing-waves">Multi-modal standing waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-and-closed-pipes">Open and closed pipes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-frequency-of-standing-waves">The frequency of standing waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By James Mullaney
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

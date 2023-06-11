@@ -1,0 +1,604 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 - Waves at a boundary &#8212; PHY1001 Waves and Oscillations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch5';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6 - Waves in multiple dimensions" href="ch6.html" />
+    <link rel="prev" title="4 - Travelling Waves" href="ch4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    PHY1001 Waves and Oscillations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1.html">Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2.html">Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3.html">Chapter 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4.html">Chapter 4</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6.html">Chapter 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">Chapter 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch8.html">Chapter 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch9.html">Chapter 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">Chapter 10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11.html">Chapter 11</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch5.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>5 - Waves at a boundary</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-propagating-waves-in-1-dimension">Review of propagating waves in 1 dimension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-travelling-waves-to-standing-waves">From travelling waves to standing waves</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="waves-at-a-boundary">
+<h1>5 - Waves at a boundary<a class="headerlink" href="#waves-at-a-boundary" title="Permalink to this headline">#</a></h1>
+<div class="section" id="review-of-propagating-waves-in-1-dimension">
+<h2>Review of propagating waves in 1 dimension<a class="headerlink" href="#review-of-propagating-waves-in-1-dimension" title="Permalink to this headline">#</a></h2>
+<p>Last time we developed expressions for travelling waves in a medium where the speed of propagation of the wave is <span class="math notranslate nohighlight">\(v\)</span>, where the angular frequency of an oscillating particle at any point along the wave is <span class="math notranslate nohighlight">\(\omega\)</span>, and the wavenumber, <span class="math notranslate nohighlight">\(k\)</span>, which is the effectively the number of wavelengths per meter expressed in terms of radians. The relationship between <span class="math notranslate nohighlight">\(\omega\)</span>, <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(k\)</span> is <span class="math notranslate nohighlight">\(\omega =vk\)</span>, from which using <span class="math notranslate nohighlight">\(k=2\pi/\lambda\)</span> and <span class="math notranslate nohighlight">\(\omega = 2\pi\nu\)</span>, we recover <span class="math notranslate nohighlight">\(v=\lambda \nu\)</span>, the relationship between velocity, wavelength and frequency that you know from your A level work. For a travelling wave propagating in the direction of increasing <span class="math notranslate nohighlight">\(x\)</span>, the wave disturbance can be represented by</p>
+<div class="math notranslate nohighlight" id="equation-waveright">
+<span class="eqno">(67)<a class="headerlink" href="#equation-waveright" title="Permalink to this equation">#</a></span>\[\begin{align}
+\psi_R(x,t)=\psi_{0R}\cos(kx-\omega t + \phi_0),
+\label{eq:waveright}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\psi_{0R}\)</span> is the peak amplitude of the wave and <span class="math notranslate nohighlight">\(\phi_0\)</span> is a phase offset, the phase of the wave at position <span class="math notranslate nohighlight">\(x=0\)</span> and time <span class="math notranslate nohighlight">\(t=0\)</span>. For a wave travelling to the left, we argued that the best representation is obtained by reversing the sign of <span class="math notranslate nohighlight">\(k\)</span>, so that a left propagating wave can be represented by</p>
+<div class="math notranslate nohighlight" id="equation-waveleft">
+<span class="eqno">(68)<a class="headerlink" href="#equation-waveleft" title="Permalink to this equation">#</a></span>\[\begin{align}
+\psi_L(x,t)=\psi_{0L}\cos(-kx-\omega t + \phi_1),
+\label{eq:waveleft}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\psi_{0L}\)</span> is the peak amplitude of the wave and <span class="math notranslate nohighlight">\(\phi_1\)</span> is a phase offset, the phase of the wave at position <span class="math notranslate nohighlight">\(x=0\)</span> and time <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+</div>
+<div class="section" id="from-travelling-waves-to-standing-waves">
+<h2>From travelling waves to standing waves<a class="headerlink" href="#from-travelling-waves-to-standing-waves" title="Permalink to this headline">#</a></h2>
+<p>In Lecture 3, we looked at standing waves – waves that don’t propagate, but yet still have a displacement that changes with both time <em>and</em> position. The key difference between a standing wave and a travelling wave is that the positional and temporal dependencies are <em>separable</em>, which ultimately means that all parts of the wave oscillate in-phase with each other.</p>
+<p>When considering standing waves we came across an important concept - the boundary condition. Boundaries arise when a mathematical or physical system is constrained in one or more ways. As we saw in Lecture 3, these constraints can help us to “solve” the maths for the system, in a way that is analogous to the way that simultaneous equations allow us to determine unknown parameters.</p>
+<p>In this lecture we’re going to see how, by again considering boundary conditions, we can generate a standing wave by combining two travelling waves travelling in opposite directions. As with Lecture 3, we’ll first consider waves travelling along a wire-under-tension of length <span class="math notranslate nohighlight">\(L\)</span> that is held in place at both ends: the familiar guitar string. We’ll define the leftmost boundary as being at position <span class="math notranslate nohighlight">\(x=0\)</span>, and the rightmost boundary as being at <span class="math notranslate nohighlight">\(x=L\)</span>.</p>
+<p>We will start with the very most general solution for this guitar-string system, then use the boundaries to constrain various free parameters. Since this is a linear system, then we only need to think of waves in one dimension (i.e., along the <span class="math notranslate nohighlight">\(x\)</span>-dimension). However, waves could travel along the wire in two directions at velocity <span class="math notranslate nohighlight">\(v\)</span>: from left-to-right and from right-to-left. We’ll call the left-to-right wave the <em>incident</em> wave, and the right-to-left wave the <em>reflected</em> wave. It is “reflected” at the boundary due to conservation of energy - there isn’t anywhere the left-to-right wave’s energy can go at the rightmost boundary, so it must be reflected.</p>
+<p>From the last lecture, the displacements of the incident and reflected waves are given, respectively, by the following formulae:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2d24e3e0-2a0d-4fae-91f5-cfa6fd799e02">
+<span class="eqno">(69)<a class="headerlink" href="#equation-2d24e3e0-2a0d-4fae-91f5-cfa6fd799e02" title="Permalink to this equation">#</a></span>\[\begin{align}
+\psi_{I}(x,t) &amp;= I\sin(kx - \omega t + \phi_I) \\
+\psi_{R}(x,t) &amp;= R\sin(-kx - \omega t + \phi_R),
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(R\)</span> are the amplitudes of the incident and reflected waves, <span class="math notranslate nohighlight">\(\phi_I\)</span> and <span class="math notranslate nohighlight">\(\phi_R\)</span> their phase shifts, and <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> are the wavenumber and angular frequencies of the waves, which are related via <span class="math notranslate nohighlight">\(\omega=vk\)</span>. Note that <span class="math notranslate nohighlight">\(v\)</span> is the same for both waves - it is a property of the system.</p>
+<p>Since the incident and reflected waves are travelling along the same wire, the total displacement of the wire at position <span class="math notranslate nohighlight">\(x\)</span> and time <span class="math notranslate nohighlight">\(t\)</span> is given by the superposition of the two waves:</p>
+<div class="math notranslate nohighlight" id="equation-start">
+<span class="eqno">(70)<a class="headerlink" href="#equation-start" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+    \psi_{T}(x,t) &amp;= \psi_{I}(x,t) + \psi_{R}(x,t)\nonumber \\
+    &amp;= I\sin(kx - \omega t + \phi_I) + R\sin(-kx - \omega t + \phi_R),
+    \label{start}
+\end{align}\end{split}\]</div>
+<p>So, now we have one equation and five unknown parameters: <span class="math notranslate nohighlight">\(I, k, \phi_I, R, \phi_R\)</span>. Note that I haven’t listed <span class="math notranslate nohighlight">\(\omega\)</span> as an unknown parameter since if we know <span class="math notranslate nohighlight">\(v\)</span> (which, again, is a property of the system) and <span class="math notranslate nohighlight">\(k\)</span>, then we can calculate <span class="math notranslate nohighlight">\(\omega\)</span>. Since I haven’t provided any numerical values, the problem boils down to being able to relate those different parameters to each other meaning that if we know <span class="math notranslate nohighlight">\(I\)</span>, for example, we can calculate <span class="math notranslate nohighlight">\(R\)</span> etc. This is where the boundary constraints come in.</p>
+<p>Since the wire is constrained to have zero amplitude at <span class="math notranslate nohighlight">\(x=0\)</span>, then we can say that:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dc3ce1d0-666a-4aa0-8bc2-5b32e4a4f7a3">
+<span class="eqno">(71)<a class="headerlink" href="#equation-dc3ce1d0-666a-4aa0-8bc2-5b32e4a4f7a3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\psi_T(x=0, t) = I\sin(-\omega t + \phi_I) + R\sin(-\omega t + \phi_R) = 0
+\end{equation}\]</div>
+<p>Using the double angle formula <span class="math notranslate nohighlight">\(\sin(a+b)=\sin(a)\cos(b)+\cos(a)\sin(b)\)</span>, and the fact that <span class="math notranslate nohighlight">\(\sin(-x)=-\sin(x)\)</span> and <span class="math notranslate nohighlight">\(\cos(-x)=\cos(x)\)</span>, we can re-write the above as:</p>
+<div class="math notranslate nohighlight" id="equation-psitx0">
+<span class="eqno">(72)<a class="headerlink" href="#equation-psitx0" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+    0 = &amp;I(-\sin(\omega t)\cos(\phi_I) + \sin(\phi_I)\cos(\omega t) + \nonumber \\
+    &amp;R(-\sin(\omega t)\cos(\phi_R) + \sin(\phi_R)\cos(\omega t))
+    \label{psitx0}
+\end{align}\end{split}\]</div>
+<p>Now, I’m going to introduce another feature of <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> functions – that they are <em>orthonormal</em>. What this means is that there is no way that you can combine a bunch of <span class="math notranslate nohighlight">\(\sin(x)\)</span> functions to make <span class="math notranslate nohighlight">\(\cos(x)\)</span> (provided <span class="math notranslate nohighlight">\(x\)</span> is the same in each case). This means that if <span class="math notranslate nohighlight">\(A\cos(x) + B\sin(x) = C\cos(x) + D\sin(x)\)</span>, then this implies <span class="math notranslate nohighlight">\(A=C\)</span> and <span class="math notranslate nohighlight">\(B=D\)</span>. In general, if we have an equation all of whose terms are proportional to either <span class="math notranslate nohighlight">\(\sin(\omega t)\)</span> or <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span>, we may extract the terms that multiply each appearance of <span class="math notranslate nohighlight">\(\sin(\omega t)\)</span> and make an equation out of those terms. Similarly, we may do the same thing for the terms that multiply appearances of <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span>. This is called <em>equating the coefficients</em> of <span class="math notranslate nohighlight">\(\sin(\omega t)\)</span> and <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span>.</p>
+<p>With orthonormality in mind, let’s group together the terms that multiply the <span class="math notranslate nohighlight">\(\sin(\omega t)\)</span>’s in Eqn. <a class="reference internal" href="#equation-psitx0">(72)</a>, then do the same for the terms that multiply the <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span>’s. This gives:</p>
+<div class="math notranslate nohighlight" id="equation-orth1">
+<span class="eqno">(73)<a class="headerlink" href="#equation-orth1" title="Permalink to this equation">#</a></span>\[0 = -I\cos{\phi_I} - R\cos{\phi_R}\]</div>
+<div class="math notranslate nohighlight" id="equation-orth2">
+<span class="eqno">(74)<a class="headerlink" href="#equation-orth2" title="Permalink to this equation">#</a></span>\[0 = I\sin{\phi_I} + R\sin{\phi_R}.\]</div>
+<p>Rearranging Eqns. <a class="reference internal" href="#equation-orth1">(73)</a> and <a class="reference internal" href="#equation-orth2">(74)</a> so that <span class="math notranslate nohighlight">\(I/R\)</span> is the subject in each case gives:</p>
+<div class="math notranslate nohighlight" id="equation-ir">
+<span class="eqno">(75)<a class="headerlink" href="#equation-ir" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{I}{R} = -\frac{\cos(\phi_R)}{\cos(\phi_I)}=-\frac{\sin(\phi_R)}{\sin(\phi_I)}.
+\label{IR}
+\end{align}\]</div>
+<p>Then using the fact that <span class="math notranslate nohighlight">\(\tan{\theta}=\sin{\theta} / \cos{\theta}\)</span>, we get:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1417b0a7-e472-4945-978d-d2f45b9b4fc3">
+<span class="eqno">(76)<a class="headerlink" href="#equation-1417b0a7-e472-4945-978d-d2f45b9b4fc3" title="Permalink to this equation">#</a></span>\[\begin{align}
+\tan{\phi_I} = \tan{\phi_R}
+\end{align}\]</div>
+<p>or, <span class="math notranslate nohighlight">\(\phi_I = \phi_R + n\pi\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is any integer, including 0. Further, since we haven’t specified what the phase of the standing wave is at <span class="math notranslate nohighlight">\(t=0\)</span>, we can take the easy approach and assume that <span class="math notranslate nohighlight">\(\phi_I=0\)</span>. This therefore implies that <span class="math notranslate nohighlight">\(\phi_R = n\pi\)</span>, including <span class="math notranslate nohighlight">\(\phi_R =0\)</span>, too.</p>
+<p>So, we’re getting there… we’ve now related the phase shifts of the incident and reflected waves meaning we have reduced the number of unknown parameters by one: if we know <span class="math notranslate nohighlight">\(\phi_I\)</span>, then we also know <span class="math notranslate nohighlight">\(\phi_R\)</span>. To relate the other parameters, we’ll now move on to consider the other boundary condition: that <span class="math notranslate nohighlight">\(\psi_T(x=L, t) = 0\)</span> (i.e., that the displacement is fixed at zero at <span class="math notranslate nohighlight">\(x=L\)</span>):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-73af4f40-5c5e-4175-bf2f-b662adaec1c4">
+<span class="eqno">(77)<a class="headerlink" href="#equation-73af4f40-5c5e-4175-bf2f-b662adaec1c4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\psi_T(x=L, t) = I\sin(kL-\omega t) + R\sin(-kL -\omega t) = 0,
+\end{equation}\]</div>
+<p>where I’ve used <span class="math notranslate nohighlight">\(\phi_I = \phi_R = 0\)</span>. Again, using the double angle formulae, we can say:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1afeef03-9774-425c-8873-a054e6e30279">
+<span class="eqno">(78)<a class="headerlink" href="#equation-1afeef03-9774-425c-8873-a054e6e30279" title="Permalink to this equation">#</a></span>\[\begin{align}
+    0 = &amp;I(\sin(kL)\cos(\omega t) - \sin(\omega t)\cos(kL)) + \nonumber\\
+        &amp;R(-\sin(kL)\cos(\omega t) - \sin(\omega t)\cos(kL))
+\end{align}\]</div>
+<p>Again, using orthonormality to group the terms in <span class="math notranslate nohighlight">\(\sin(\omega t)\)</span> and <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span>, we get:</p>
+<div class="math notranslate nohighlight" id="equation-ir1">
+<span class="eqno">(79)<a class="headerlink" href="#equation-ir1" title="Permalink to this equation">#</a></span>\[0 = (I-R)\sin(kL)\]</div>
+<div class="math notranslate nohighlight" id="equation-ir2">
+<span class="eqno">(80)<a class="headerlink" href="#equation-ir2" title="Permalink to this equation">#</a></span>\[0 = (R+I)\cos(kL).\]</div>
+<p>Equation <a class="reference internal" href="#equation-ir1">(79)</a> implies that <span class="math notranslate nohighlight">\(I-R=0\)</span> (i.e., <span class="math notranslate nohighlight">\(I=R\)</span>) and/or <span class="math notranslate nohighlight">\(\sin(kL)=0\)</span>. If the former, then at <span class="math notranslate nohighlight">\(x=0\)</span>, we have:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-67f0657c-3a5e-402c-a890-76aadba69d79">
+<span class="eqno">(81)<a class="headerlink" href="#equation-67f0657c-3a5e-402c-a890-76aadba69d79" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\psi_T(x=0, t) = I\sin(-\omega t) + I\sin(-\omega t) = 0,
+\end{equation}\]</div>
+<p>which means that <span class="math notranslate nohighlight">\(I=0\)</span>, and thus there is no displacement anywhere. This is known as the “trivial” solution, and is not considered of interest. In that case, the more interesting solution arises by considering that <span class="math notranslate nohighlight">\(R+I=0\)</span> in Eqn. <a class="reference internal" href="#equation-ir2">(80)</a>. Since that implies that <span class="math notranslate nohighlight">\(R=-I\)</span>, then <span class="math notranslate nohighlight">\(I-R=2I\)</span>, meaning <span class="math notranslate nohighlight">\(\sin(kL)\)</span> in Eqn. <a class="reference internal" href="#equation-ir1">(79)</a> must be equal to zero. I’ll leave it as a fairly straightforward exercise for you to work out what that implies for the allowed values of <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>So, now we have known values for the phase shift (i.e., <span class="math notranslate nohighlight">\(\phi_I=0\)</span>, <span class="math notranslate nohighlight">\(\phi_R=n\pi\)</span>), the wavenumber, <span class="math notranslate nohighlight">\(k\)</span> (and, hence, <span class="math notranslate nohighlight">\(\omega\)</span> via <span class="math notranslate nohighlight">\(\omega=vk\)</span>), and how the incident and reflected amplitudes relate to one another (i.e., <span class="math notranslate nohighlight">\(R=-I\)</span>). Plugging all this into Eqn. <a class="reference internal" href="#equation-start">(70)</a> gives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-eabc519d-34c6-4abc-b41e-be88af09c270">
+<span class="eqno">(82)<a class="headerlink" href="#equation-eabc519d-34c6-4abc-b41e-be88af09c270" title="Permalink to this equation">#</a></span>\[\begin{align}
+\psi_T = &amp; I\sin(kx-\omega t) - I\sin(-kx-\omega t) \nonumber\\
+       = &amp;I(\sin(kx)\cos(\omega t) - \sin(\omega t)\cos(kx)) - \nonumber\\
+         &amp;I(-\sin(kx)\cos(\omega t) - \sin(\omega t)\cos(kx) \nonumber\\
+       = &amp;2I\sin(kx)\cos(\omega t)\nonumber\\
+       = &amp;\psi_0\sin(kx)\cos(\omega t)
+\end{align}\]</div>
+<p>where I’ve substituted <span class="math notranslate nohighlight">\(\psi_0\)</span> for <span class="math notranslate nohighlight">\(2I\)</span> in the last line. You’ll notice that the expression for <span class="math notranslate nohighlight">\(\phi_T\)</span> above is <em>exactly</em> the same (bar a phase shift) as that of the guitar string standing wave that we saw in Lecture 3. Unfortunately we haven’t got time in the lecture to go through the same derivation for the open-open and open-closed pipes we saw in Lecture 3. However, let me assure you that one can indeed obtain those same equations with the superposition of two waves travelling in opposite directions and applying the appropriate boundary conditions.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">4 - Travelling Waves</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch6.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">6 - Waves in multiple dimensions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-propagating-waves-in-1-dimension">Review of propagating waves in 1 dimension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-travelling-waves-to-standing-waves">From travelling waves to standing waves</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By James Mullaney
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

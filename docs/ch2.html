@@ -1,0 +1,679 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2 - Simple Harmonic Motion and the Small Angle Approximation &#8212; PHY1001 Waves and Oscillations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3 - Standing waves" href="ch3.html" />
+    <link rel="prev" title="1 - Oscillations, sinusoids, and angles" href="ch1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    PHY1001 Waves and Oscillations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1.html">Chapter 1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3.html">Chapter 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4.html">Chapter 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5.html">Chapter 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6.html">Chapter 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">Chapter 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch8.html">Chapter 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch9.html">Chapter 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">Chapter 10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11.html">Chapter 11</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2 - Simple Harmonic Motion and the Small Angle Approximation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-causes-simple-harmonic-motion">What causes Simple Harmonic Motion?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pendulum">The Pendulum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-secret-about-your-degree">A secret about your degree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maclauren-and-taylor-series">Maclauren and Taylor series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-pendulum">Back to the pendulum</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="simple-harmonic-motion-and-the-small-angle-approximation">
+<h1>2 - Simple Harmonic Motion and the Small Angle Approximation<a class="headerlink" href="#simple-harmonic-motion-and-the-small-angle-approximation" title="Permalink to this headline">#</a></h1>
+<div class="section" id="what-causes-simple-harmonic-motion">
+<h2>What causes Simple Harmonic Motion?<a class="headerlink" href="#what-causes-simple-harmonic-motion" title="Permalink to this headline">#</a></h2>
+<p>In the previous lecture, we looked at our first examples of oscillators and focussed on the specific case of a harmonic oscillator. These are oscillators whose displacement is described as sinusoidal. While we considered a few examples of hormonic oscillators  such as masses on springs and pendula – we didn’t look at <em>why</em> these and other systems are harmonic oscillators. Clearly, not all systems undergo oscillatory motion when ‘nudged’; a ball, when thrown, does not reach a maximum distance then return to the thrower. So what conditions are needed for a system to undergo harmonic oscillations?</p>
+<p>It turns out that a system undergoes harmonic motion if there exists a force pulling it back toward an equilibrium position, and that the magnitude of that force is proportional to the extent by which the system is displaced from its equilibrium position. I’ve intentionally tried to make that last statement as general as I can, but sometimes being general isn’t very helpful when you’re trying to teach a concept. So, let’s be more specific and think of our go-to oscillator – that which consists of a mass tied to a spring.</p>
+<p>Before I start the mass-on-spring oscillating, it rests – unmoving – at its equilibrium position. At this position, the force due to gravity is balanced by the tension in the spring which, via Hooke’s Law, is proportional to the extension of the spring. If I pull the mass downwards, I can feel the force from the spring <em>increasing</em> in strength as I pull it <em>farther away</em> from its equilibrium position. And crucially, this force is in the opposite direction – upwards – to the direction I am pulling the mass <em>and</em> is – because of Hooke’s Law – proportional to its distance from equilibrium. The same happens if I push the mass upwards – again, the force from the spring is in the opposite direction – now downwards – to the direction I am pushing the mass. It is this ‘proportional-but-opposite direction’ force – also known as a restoring force – that causes the mass-on-spring system to oscillate harmonically. But of course, this is not just restricted to masses on springs – all harmonic oscillators have, if you look deeply enough, a proportional restorative force at their hearts.</p>
+<p>Because we’re physicists we can use maths to describe the ‘proportional-but-opposite direction’ forces that cause a system to oscillate harmonically. In the case of a mass on a spring, the restoring force is <span class="math notranslate nohighlight">\(F_k=-kx\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the spring constant and <span class="math notranslate nohighlight">\(x\)</span> is the displacement from equilibrium. The minus sign is in there because the force, <span class="math notranslate nohighlight">\(F_k\)</span>, is in the opposite direction to the displacement, <span class="math notranslate nohighlight">\(x\)</span>. If we next add Newton’s Second Law of Motion – the <span class="math notranslate nohighlight">\(F=ma\)</span> one – to the mix, we get:</p>
+<div class="math notranslate nohighlight" id="equation-ma">
+<span class="eqno">(15)<a class="headerlink" href="#equation-ma" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \label{ma}
+    ma = -kx
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is the acceleration of the mass, <span class="math notranslate nohighlight">\(m\)</span>. Remembering that acceleration is the time derivative of velocity, <span class="math notranslate nohighlight">\(v\)</span>, and that velocity is the time derivative of distance (or, more specifically, displacement), Eq. <a class="reference internal" href="#equation-ma">(15)</a> becomes:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    ma = m\frac{dv}{dt}=m\frac{d^2x}{dt^2} = -kx
+\end{equation}\]</div>
+<p>or, equivalently:</p>
+<div class="math notranslate nohighlight" id="equation-fracd2">
+<span class="eqno">(16)<a class="headerlink" href="#equation-fracd2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \label{fracd2}
+    \frac{d^2x}{dt^2} + \frac{k}{m}x = 0.
+\end{equation}\]</div>
+<p>What I like about the above Eq. <a class="reference internal" href="#equation-fracd2">(16)</a> is that, while we derived it using the mass-on-spring system, its constituent terms – <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(x\)</span> – look very generic, so it’s easy to see how this same equation can be applied to any system that has a ‘proportional-but-opposite direction’ force.</p>
+<p>Equation <a class="reference internal" href="#equation-fracd2">(16)</a> is known as a second-order ordinary differential equation. Later, you’ll learn how to solve differential equations to show that <span class="math notranslate nohighlight">\(x=A\,{\rm sin}(\omega t)\)</span> is a general solution to Eq. <a class="reference internal" href="#equation-fracd2">(16)</a>. In doing so, you’ll demonstrate that a system that obeys Eq. <a class="reference internal" href="#equation-fracd2">(16)</a> undergoes sinusoidal – or, harmonic – oscillations. For now, however, we’ll take the easy route and show it by substituting <span class="math notranslate nohighlight">\(x=A\,{\rm sin}(\omega t)\)</span> into Eq. <a class="reference internal" href="#equation-fracd2">(16)</a>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cb090ab6-22a4-48e7-9e28-2d9b67c574be">
+<span class="eqno">(17)<a class="headerlink" href="#equation-cb090ab6-22a4-48e7-9e28-2d9b67c574be" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    -A\omega^2\,{\rm sin}(\omega t) + \frac{k}{m} A\,{\rm sin}(\omega t)= 0.
+\end{equation}\]</div>
+<p>Cancelling the <span class="math notranslate nohighlight">\(A\,{\rm sin}(\omega t)\)</span>’s, and adding <span class="math notranslate nohighlight">\(\omega^2\)</span> to both sides gives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d7d9fcaa-36e0-4a75-8552-0ac40e51450b">
+<span class="eqno">(18)<a class="headerlink" href="#equation-d7d9fcaa-36e0-4a75-8552-0ac40e51450b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \frac{k}{m} = \omega^2
+\end{equation}\]</div>
+<p>or</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d4469f4f-0aba-4fd5-9dd4-ddb354ea2104">
+<span class="eqno">(19)<a class="headerlink" href="#equation-d4469f4f-0aba-4fd5-9dd4-ddb354ea2104" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \omega = \sqrt{\frac{k}{m}},
+\end{equation}\]</div>
+<p>meaning that <span class="math notranslate nohighlight">\(x=A{\rm sin}(\omega t)\)</span> is a solution to Eq. <a class="reference internal" href="#equation-fracd2">(16)</a> when <span class="math notranslate nohighlight">\(\omega=\sqrt{k/m}\)</span>.</p>
+</div>
+<div class="section" id="the-pendulum">
+<h2>The Pendulum<a class="headerlink" href="#the-pendulum" title="Permalink to this headline">#</a></h2>
+<p>Perhaps the most famous of all harmonic oscillators is the pendulum - a mass, <span class="math notranslate nohighlight">\(m\)</span>, at the end of a piece of string or rod that moves to and fro. Presumably this most prototypical harmonic oscillator <em>must</em> be dictated by a ‘proportional-but-opposite direction’ force? Well, yes – and no. To see why it’s not a straightforward ‘yes’, we need to look closely at the forces acting on a pendulum (see <a class="reference internal" href="#pendulum"><span class="std std-numref">Fig. 5</span></a>).</p>
+<div class="figure align-default" id="pendulum">
+<a class="reference internal image-reference" href="_images/pendulum.png"><img alt="Pendulum at an angle theta with horizontal and vertical components broken down into trigonometric parts of the angle theta" src="_images/pendulum.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A pendulum consisting of a mass, <span class="math notranslate nohighlight">\(m\)</span>, at the end of a light (i.e., massless) piece of string or rod of length <span class="math notranslate nohighlight">\(l\)</span>. In this figure, the pendulum is shown displaced from its equilibrium position by an angle, <span class="math notranslate nohighlight">\(\theta\)</span>, corresponding to an arc of length <span class="math notranslate nohighlight">\(s\)</span>.</span><a class="headerlink" href="#pendulum" title="Permalink to this image">#</a></p>
+</div>
+<p>It’s clear that as the pendulum moves away from its equilibrium position, the force of gravity, <span class="math notranslate nohighlight">\(F_{g}=mg\)</span>, tries to pull the pendulum back to its equilibrium position. With the pendulum now at an angle from its equilibrium position, this force can be decomposed into two components, a component pointing in the direction parallel to the rod, <span class="math notranslate nohighlight">\(mg\,\rm{cos(\theta)}\)</span>, and another pointing in the direction perpendicular to the rod toward the equilibrium position, <span class="math notranslate nohighlight">\(-mg\,\rm{sin(\theta)}\)</span>. The negative sign in there is because the horizontal force is in the opposite direction to the displacement from equilibrium.</p>
+<p>So, <span class="math notranslate nohighlight">\(-mg\,\rm{sin(\theta)}\)</span>, is the restorative force, but what about the <span class="math notranslate nohighlight">\(F=ma\)</span> part or, more specifically, the acceleration? As it moves, the pendulum traces-out a section of a circle. As we saw in the last lecture, this section of circle is given by <span class="math notranslate nohighlight">\(s=\theta l\)</span>, where <span class="math notranslate nohighlight">\(l\)</span> is the length of the pendulum, and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle – measured in radians – that the pendulum subtends from the vertical. This means that the acceleration is given by:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9d095328-7f31-4134-96f7-6801c3292ba8">
+<span class="eqno">(20)<a class="headerlink" href="#equation-9d095328-7f31-4134-96f7-6801c3292ba8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+a = \frac{d^2 s}{dt^2} = l\frac{d^2\theta}{dt^2}.
+\end{equation}\]</div>
+<p>Equating the restorative force due to gravity with <span class="math notranslate nohighlight">\(F=ma\)</span> gives, therefore,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7d5b1d9b-7672-47a2-b3cc-9f1ff8a9f069">
+<span class="eqno">(21)<a class="headerlink" href="#equation-7d5b1d9b-7672-47a2-b3cc-9f1ff8a9f069" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    ml\frac{d^2\theta}{dt^2} = -mg\,{\rm sin}(\theta).
+\end{equation}\]</div>
+<p>Cancelling the <span class="math notranslate nohighlight">\(m\)</span>’s and adding <span class="math notranslate nohighlight">\(g\,{\rm sin}(\theta)\)</span> to both sides, and dividing by <span class="math notranslate nohighlight">\(l\)</span> gives:</p>
+<div class="math notranslate nohighlight" id="equation-pendulumexact">
+<span class="eqno">(22)<a class="headerlink" href="#equation-pendulumexact" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \label{pendulumexact}
+    \frac{d^2\theta}{dt^2} + \frac{g}{l}\,{\rm sin}(\theta) = 0
+\end{equation}\]</div>
+<p>which looks almost, {\it but not quite}, like Eq. <a class="reference internal" href="#equation-fracd2">(16)</a>. The problem is the <span class="math notranslate nohighlight">\({\rm sin}(\theta)\)</span> which means that the restorative force <strong>is not</strong> proportional to the distance from equilibrium. What’s going on? If it doesn’t obey the ‘proportional-but-opposite direction’ rule, then why is a pendulum used throughout physics (and clockmaking) as an example of a harmonic oscillator? For that, we need to consider some really small angles. First, however, an aside…</p>
+</div>
+<div class="section" id="a-secret-about-your-degree">
+<h2>A secret about your degree<a class="headerlink" href="#a-secret-about-your-degree" title="Permalink to this headline">#</a></h2>
+<p>I’m going to let you into a secret about your degree. The secret is that the most important thing we teach you in a Physics degree is not Physics. Instead, the most important thing you get from a Physics degree is a set of tools that you can use to ‘do’ Physics; the Physics ‘knowledge’ is a by-product that makes using the tools interesting. I’m not, of course, referring to a literal set of tools but a set of techniques that you’ll have at your disposal to solve problems. Throughout your degree, you’ll learn how to program computers to solve just about any problem you can think of, and how to use maths to not just model physical systems, but anything that can be broken down into simpler interactions such as financial markets or disease transmission.</p>
+<p>This ‘tool acquisition’ is particularly prominent during the first two years of your degree, and perhaps even more-so in the Waves and Oscillations part of PHY1001. You may think I introduced the pendulum in the previous section because it’s a classic example of a harmonic oscillator. In fact, I’m going to use it demonstrate the importance of a new tool I’m going to teach you in the next section. Hopefully, you’ll learn to use it proficiently (and eventually without even thinking) during your degree and, if you wish, for a long time afterwards. Indeed, I still use it almost daily in my research, but then, I’m an astronomer!</p>
+</div>
+<div class="section" id="maclauren-and-taylor-series">
+<h2>Maclauren and Taylor series<a class="headerlink" href="#maclauren-and-taylor-series" title="Permalink to this headline">#</a></h2>
+<p>Throughout your degree, you’ll encounter many physics problems which, in their exact forms, are extremely difficult or even impossible to solve. These are known as ‘intractable’ problems. The Universe is full of intractable problems – unfortunately, the Universe plays by its own rules and doesn’t give a jott about whether it is easy to solve! Equation <a class="reference internal" href="#equation-fracd2">(16)</a> is an example of an intractable problem – it is really hard to solve this differential equation analytically to get an exact answer; indeed, it might even be impossible (I’ve never tried).</p>
+<p>Rather than give up, however, physicists have figured out a number of ways of <em>approximating</em> intractable problems so that they are easy or, at least, possible to solve. Often this means that they concede that they can solve a problem provided that its parameters satisfy some reasonable criteria. As we’ll see, the pendulum is an example of one such system.</p>
+<p>To make Eq. <a class="reference internal" href="#equation-pendulumexact">(22)</a> solvable, we are going to use a Maclauren series to obtain an approximation of the <span class="math notranslate nohighlight">\(\sin(\theta)\)</span>, since that’s the part that makes the problem intractable. A Maclauren series is a specific case of a broader class known as Taylor series. The underlying premise of both Maclauren and Taylor series is that any well-behaved<a class="footnote-reference brackets" href="#well" id="id1">1</a> function can be re-written as a polynomial containing an infinite number of terms, i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-polynomial">
+<span class="eqno">(23)<a class="headerlink" href="#equation-polynomial" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{polynomial}
+f(x) = a_0 + a_1x + a_2x^2 + a_3x^3\dots a_nx^n.
+\end{equation}\]</div>
+<p>A rigorous proof of this premise is beyond the scope of this module, but hopefully you can already see why it at least makes some kind of sense. Imagine a well-behaved function that has an offset, some straightish bits, some curved bits, and some inversions (where the line changes direction). Well, provided the constants <span class="math notranslate nohighlight">\(a_n\)</span> are appropriate, the <span class="math notranslate nohighlight">\(a_0\)</span> part in Eq. <a class="reference internal" href="#equation-polynomial">(23)</a> will deal with the offset, the <span class="math notranslate nohighlight">\(a_1x\)</span> part will deal with the straight bits, while the <span class="math notranslate nohighlight">\(a_2x^2\)</span> and <span class="math notranslate nohighlight">\(a_3x^3\)</span> will take care of the curves and inversions. The more squiggly your function, the more important the later terms are, and you can keep adding terms until you get as good a representation as you like. For many functions you won’t get an <em>exact</em> representation of <span class="math notranslate nohighlight">\(f(x)\)</span> unless you have an infinite number of terms, but often in physics we don’t need an exact representation.</p>
+<p>With the Maclauren and Taylor series, the hard work is trying to work out what are appropriate values for the constants. In the case of <span class="math notranslate nohighlight">\(a_0\)</span> in Eq. <a class="reference internal" href="#equation-polynomial">(23)</a> this is fairly straightforward, you simply set <span class="math notranslate nohighlight">\(x=0\)</span> and all the higher order terms (i.e., <span class="math notranslate nohighlight">\(a_1x\)</span> onwards) disappear, meaning,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8168d5fb-90a8-4e57-9381-4e5dce71e4ba">
+<span class="eqno">(24)<a class="headerlink" href="#equation-8168d5fb-90a8-4e57-9381-4e5dce71e4ba" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(0) = a_0,
+\end{equation}\]</div>
+<p>with <span class="math notranslate nohighlight">\(f(0)\)</span> simply meaning the value of <span class="math notranslate nohighlight">\(f(x)\)</span> when <span class="math notranslate nohighlight">\(x=0\)</span> (we usually say ‘evaluated at zero’).  For the higher terms, we can use a nice feature of differentiation. If we differentiate both sides or Eq. <a class="reference internal" href="#equation-polynomial">(23)</a> with respect to <span class="math notranslate nohighlight">\(x\)</span>, we get:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c0281598-bd6d-4666-a4dd-aec9945a1e9c">
+<span class="eqno">(25)<a class="headerlink" href="#equation-c0281598-bd6d-4666-a4dd-aec9945a1e9c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{df(x)}{dx} = f^\prime(x) = a_1 + 2a_2x + 3a_3x^2 + \dots+ na_nx^{n-1},
+\end{equation}\]</div>
+<p>where I’ve used the <span class="math notranslate nohighlight">\(f^\prime(x)\)</span> notation to mean the first derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span>. Now if we set <span class="math notranslate nohighlight">\(x=0\)</span>, the higher order terms disappear and we get:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bc117958-d385-4010-93e5-e9139796ed2c">
+<span class="eqno">(26)<a class="headerlink" href="#equation-bc117958-d385-4010-93e5-e9139796ed2c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f^\prime(0) = a_1,
+\end{equation}\]</div>
+<p>meaning that the value for the constant <span class="math notranslate nohighlight">\(a_1\)</span> is obtained by differentiating <span class="math notranslate nohighlight">\(f(x)\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span>, then evaluating that derivative at <span class="math notranslate nohighlight">\(x=0\)</span>. For <span class="math notranslate nohighlight">\(a_2\)</span> we can do the same, remembering, however, about the constants introduced due to differentiation:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8d3dbff9-cab8-4452-acd7-7f10690b157e">
+<span class="eqno">(27)<a class="headerlink" href="#equation-8d3dbff9-cab8-4452-acd7-7f10690b157e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f''(x) = 2a_2 + 6a_3x + \dots+ n(n-1)a_nx^{n-2},
+\end{equation}\]</div>
+<p>meaning when we set <span class="math notranslate nohighlight">\(x=0\)</span>, then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e967cffc-a96b-482d-b504-aeb1aa951716">
+<span class="eqno">(28)<a class="headerlink" href="#equation-e967cffc-a96b-482d-b504-aeb1aa951716" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{f''(0)}{2} = a_2.
+\end{equation}\]</div>
+<p>We can keep differentiating-then-setting-zero ad-infinitum to get as many constants as we like:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-eae89be8-30be-4f08-8ccf-0c7a1b3eae03">
+<span class="eqno">(29)<a class="headerlink" href="#equation-eae89be8-30be-4f08-8ccf-0c7a1b3eae03" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x) = f(0) + f'(0)x + \frac{f''(0)}{2}x^2 + \frac{f'''(0)}{2\times3}x^3\dots .
+\end{equation}\]</div>
+<p>You should be able to see that the denominator for the fourth term will be <span class="math notranslate nohighlight">\(2\times3\times4\)</span> and subsequent ones will increase as factorials (i.e., as <span class="math notranslate nohighlight">\(n!\)</span>). We can therefore concisely write this series as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-33469658-13cd-4d23-b326-da0af290f412">
+<span class="eqno">(30)<a class="headerlink" href="#equation-33469658-13cd-4d23-b326-da0af290f412" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x) = \sum_{n=0}^{\infty} \frac{f^n(0)x^n}{n!} .
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(f^n(0)\)</span> means the nth-derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> evaluated at zero.</p>
+<p>Of course, you’re not going to want to differentiate <span class="math notranslate nohighlight">\(f(x)\)</span> an infinite number of times. If you’re happy to differentiate it <span class="math notranslate nohighlight">\(N\)</span> times instead, then what you get is an approximation of <span class="math notranslate nohighlight">\(f(x)\)</span>, i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-maclauren">
+<span class="eqno">(31)<a class="headerlink" href="#equation-maclauren" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{maclauren}
+f(x) \approx \sum_{n=0}^{N} \frac{f^n(0)x^n}{n!} .
+\end{equation}\]</div>
+<p>Typically, the more terms you have, the further away from zero you can take <span class="math notranslate nohighlight">\(x\)</span> without getting too far away from the true value of <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p>Equation <a class="reference internal" href="#equation-maclauren">(31)</a> is the Maclauren series – it deals with approximating a function close to zero. The Taylor series, by contrast, is more general: it deals with approximating a function close to <em>any</em> value. The Taylor series is given by:</p>
+<div class="math notranslate nohighlight" id="equation-taylor">
+<span class="eqno">(32)<a class="headerlink" href="#equation-taylor" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{taylor}
+f(x) \approx \sum_{n=0}^{N} \frac{f^n(b)(x-b)^n}{n!} .
+\end{equation}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(x\)</span> needs to be close to <span class="math notranslate nohighlight">\(b\)</span>, rather than 0, in order for the approximation to hold.</p>
+</div>
+<div class="section" id="back-to-the-pendulum">
+<h2>Back to the pendulum<a class="headerlink" href="#back-to-the-pendulum" title="Permalink to this headline">#</a></h2>
+<p>With the Taylor, and more specifically, Maclauren series in our tool-belt, we can now return to the problem of the simple pendulum. As long as we don’t displace the pendulum by too much – in other words, as long as <span class="math notranslate nohighlight">\(\theta\)</span> stays small and doesn’t depart too much from zero – then we can use a Maclauren series to approximate the <span class="math notranslate nohighlight">\(\sin(\theta)\)</span> in Eq. <a class="reference internal" href="#equation-pendulumexact">(22)</a>. Recalling that the first derivative of <span class="math notranslate nohighlight">\(\sin(\theta)\)</span> is <span class="math notranslate nohighlight">\(\cos(\theta)\)</span>, and the second derivate is <span class="math notranslate nohighlight">\(-\sin(\theta)\)</span>, the process in full looks like:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6043b933-327d-42b1-88d3-aea53d9b0819">
+<span class="eqno">(33)<a class="headerlink" href="#equation-6043b933-327d-42b1-88d3-aea53d9b0819" title="Permalink to this equation">#</a></span>\[\begin{align}
+\sin(\theta)&amp;=\sin(0) + \cos(0)\theta - \frac{\sin(0)}{2}\theta^2 - \frac{\cos(0)}{2\times3}\theta^3+\dots\nonumber\\
+&amp;=0 + \theta - 0 - \frac{\theta^3}{6}+\dots\nonumber\\
+&amp;=\theta - \frac{\theta^3}{6}+\dots .
+\end{align}\]</div>
+<p>If we then state that <span class="math notranslate nohighlight">\(\theta=0.17\)</span>~rad, or about 10 degrees, then this becomes</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5f8b12af-d5b3-48d1-a999-a7c9d319c57a">
+<span class="eqno">(34)<a class="headerlink" href="#equation-5f8b12af-d5b3-48d1-a999-a7c9d319c57a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+0.17 - 8.188333\times10^{-4} + \dots .
+\end{equation}\]</div>
+<p>There are two things to notice here, the first is that <span class="math notranslate nohighlight">\(0.17 - 8.188333\times10^{-4}=0.169181\)</span>, whereas <span class="math notranslate nohighlight">\(\sin(0.17)=0.169182\)</span>, meaning that with just two non-zero terms, we’re already within <span class="math notranslate nohighlight">\(0.0008\%\)</span> of the true value of <span class="math notranslate nohighlight">\(\sin(0.17)\)</span>!<a class="footnote-reference brackets" href="#large" id="id2">2</a> The second is that <span class="math notranslate nohighlight">\(8.2\times10^{-4}\)</span> is about two hundred times smaller than 0.17, so if we had only taken the <em>first</em> non-zero term, we’d still easily be within <span class="math notranslate nohighlight">\(1\%\)</span> of the true value of <span class="math notranslate nohighlight">\(\sin(0.17)\)</span>. As such, provided we keep <span class="math notranslate nohighlight">\(\theta\)</span> below about 10 degrees, we can adopt the approximation <span class="math notranslate nohighlight">\(\sin(\theta)\approx\theta\)</span>, and still be confident that our equations are valid to one part in <em>at least</em> 100.</p>
+<p>Using the <span class="math notranslate nohighlight">\(\sin(\theta)\approx\theta\)</span> approximation, Eq. <a class="reference internal" href="#equation-pendulumexact">(22)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-pendulumapprox">
+<span class="eqno">(35)<a class="headerlink" href="#equation-pendulumapprox" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \label{pendulumapprox}
+    \frac{d^2\theta}{dt^2} + \frac{g}{l}\theta = 0
+\end{equation}\]</div>
+<p>which <em>does</em> indeed look like Eq. <a class="reference internal" href="#equation-fracd2">(16)</a>. I’ll leave it to you to show – by substitution – that <span class="math notranslate nohighlight">\(\theta(t)=\theta_0\sin(\omega t)\)</span> is a solution to Eq. <a class="reference internal" href="#equation-pendulumapprox">(35)</a>, where <span class="math notranslate nohighlight">\(\theta_0\)</span> is the maximum angular displacement. However, by simply comparing it to Eq. <a class="reference internal" href="#equation-fracd2">(16)</a>, you should be able to see that <span class="math notranslate nohighlight">\(\theta(t)=\theta_0\sin(\omega t)\)</span> is a solution when</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1e3ebdb1-6e77-494b-bd5b-7db144e1a2c7">
+<span class="eqno">(36)<a class="headerlink" href="#equation-1e3ebdb1-6e77-494b-bd5b-7db144e1a2c7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\omega = \sqrt\frac{g}{l}.
+\end{equation}\]</div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="well"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>A well-behaved function is typically defined as one that is single-valued (i.e., there’s only one value of y for every value of x), continuous (i.e., doesn’t contain breaks), and varies smoothly (i.e., doesn’t contain ‘steps’)</p>
+</dd>
+<dt class="label" id="large"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>I’ve written <span class="math notranslate nohighlight">\(8.188333\times10^{-4}\)</span> to an inappropriately large number of significant figures to show how far I needed to go to get to the first different decimal place.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1 - Oscillations, sinusoids, and angles <a name="chapter1"></a></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3 - Standing waves</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-causes-simple-harmonic-motion">What causes Simple Harmonic Motion?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pendulum">The Pendulum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-secret-about-your-degree">A secret about your degree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maclauren-and-taylor-series">Maclauren and Taylor series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-pendulum">Back to the pendulum</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By James Mullaney
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

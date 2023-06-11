@@ -1,0 +1,608 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6 - Waves in multiple dimensions &#8212; PHY1001 Waves and Oscillations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch6';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7 - Power of a wave" href="ch7.html" />
+    <link rel="prev" title="5 - Waves at a boundary" href="ch5.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    PHY1001 Waves and Oscillations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1.html">Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2.html">Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3.html">Chapter 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4.html">Chapter 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5.html">Chapter 5</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">Chapter 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch8.html">Chapter 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch9.html">Chapter 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">Chapter 10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11.html">Chapter 11</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>6 - Waves in multiple dimensions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waves-in-two-dimensions">Waves in two dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-of-wave-vectors">Geometry of wave vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-a-wavevector">Constructing a wavevector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-arbitrary-waves">More arbitrary waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="waves-in-multiple-dimensions">
+<h1>6 - Waves in multiple dimensions<a class="headerlink" href="#waves-in-multiple-dimensions" title="Permalink to this headline">#</a></h1>
+<div class="section" id="waves-in-two-dimensions">
+<h2>Waves in two dimensions<a class="headerlink" href="#waves-in-two-dimensions" title="Permalink to this headline">#</a></h2>
+<p>We are now ready to think about waves propagating in more than one dimension. In fact this is more common in nature where we have all watched waves on water and shouted close to walls. It is clear that waves propagate in three dimensions, but the maths we have developed so far is not capable of describing them. <code class="xref std std-numref docutils literal notranslate"><span class="pre">gravity_waves</span></code> shows a picture of some waves travelling in towards a beach on a calm day. It is quite a beautiful picture, all those waves peaks and troughs gracefully lined up, all travelling in towards shore, and eventually breaking against the sand. Now, with such a calm day, the waves look almost mathematical, even though they are made of seawater, and probably contain fish, seaweed and crabs.</p>
+<p>If these are like mathematical waves, what kind of model could we use to describe them? For a start, it is pretty clear that all the points on each wave crest have something in common. Roughly speaking, the displacement of the water surface upwards at each neighbouring point on the wave crest is the same. This means that the phase at each point on the same wave crest is the same as the phase at every other point on the same wave crest. Next imagine that you are a bird flying above the wave crest. You turn, and fly forwards, catching up with the next wave crest towards the beach. Now, all the points on this crest have the same phase as each other as well. In fact, the phase must differ between two neighbouring wave crests by <span class="math notranslate nohighlight">\(2\pi\)</span>, just as it does between two crests of a one dimensional wave on a string. We could also measure the distance between two wave crests, at some moment in time and that would be the wavelength of the wave, <span class="math notranslate nohighlight">\(\lambda\)</span>, in which case the wave number would have magnitude
+<span class="math notranslate nohighlight">\(2\pi/\lambda\)</span>, just as it did for our one dimensional waves. This seems reasonably sensible, just treating the two dimensional waves in the same way as we treat one dimensional ones. The only extension necessary is to accept that a line of points, at right angles to the direction in which the wave is moving, has a common phase, since each point on that line has the same displacement due to the wave. This set of points is called a <em>wavefront</em>. In this picture, the wavefronts are straight, and the waves are moving in the same direction everywhere, which is at right angles to the wavefront. These are referred to as two dimensional plane waves. The word plane refers to the fact that the wavefronts are straight; for waves in three dimensions, plane waves have wavefronts that form flat planes; it’s just a generalisation of the two dimensional case we are discussing here.</p>
+<p>There are some problems with mathematically modelling such waves, suppose we view the waves from above. The wavefronts form stripes that are parallel to each other, and those stripes all move in a direction at right angles to the stripes. It is clear that if you freeze time, and move a distance <span class="math notranslate nohighlight">\(\lambda\)</span> in the direction of motion, you will displace yourself forward from one wave crest to the next. However, what happens if you move the same distance in a different direction? If you move a distance <span class="math notranslate nohighlight">\(\lambda\)</span> <em>along</em> the wave front, you will stay on the same wave crest the whole time. There will be no change in the phase of the wave, because all points on the same wave crest have the same phase. What about intermediate directions. Consider <code class="xref std std-numref docutils literal notranslate"><span class="pre">sineaxisfigure</span></code>.</p>
+<p>If you displace yourself a distance <span class="math notranslate nohighlight">\(d\)</span> in the <span class="math notranslate nohighlight">\(y\)</span> direction, the phase you move through is <span class="math notranslate nohighlight">\(kd\)</span> radians, where <span class="math notranslate nohighlight">\(k=2\pi/\lambda\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength and <span class="math notranslate nohighlight">\(k\)</span> is the wavenumber. It’s exactly the same as the one dimensional case. Now consider, what happens if you move a distance <span class="math notranslate nohighlight">\(d\)</span> in the <span class="math notranslate nohighlight">\(XY\)</span> plane, at an angle <span class="math notranslate nohighlight">\(\theta\)</span> to the <span class="math notranslate nohighlight">\(x\)</span> axis? The component of your displacement resolved parallel to the <span class="math notranslate nohighlight">\(x\)</span> axis is <span class="math notranslate nohighlight">\(d\cos\theta\)</span>, hence the phase you have moved through is <span class="math notranslate nohighlight">\(kd\cos\theta\)</span>.</p>
+<p>Now, we are going to have to model waves which are not parallel to the <span class="math notranslate nohighlight">\(x\)</span> axis, but in other directions. Notice that mathematically <span class="math notranslate nohighlight">\(kd\cos\theta\)</span> is the same thing as <span class="math notranslate nohighlight">\(\vec{k}\cdot\vec{d}\)</span>, where <span class="math notranslate nohighlight">\(\vec{k}\)</span> is a vector pointing in the direction of the wave, which is parallel to the <span class="math notranslate nohighlight">\(x\)</span> axis, having magnitude equal to the wavenumber of the wave, and <span class="math notranslate nohighlight">\(\vec{d}\)</span> is the displacement which you are making between the points where you compare the phase. Consider: if <span class="math notranslate nohighlight">\(\vec{d}\)</span> is parallel to the <span class="math notranslate nohighlight">\(y\)</span> axis, then <span class="math notranslate nohighlight">\(\vec{k}\cdot\vec{d}=0\)</span>, which is correct because there is no phase change parallel to the wavefront.</p>
+<p>The key thing here is the concept of a vector <span class="math notranslate nohighlight">\(\vec{k}\)</span> which is parallel to the direction in which the wave is travelling. Thinking about it, this makes perfect sense - in the case where the wave in one dimension was propagating to the left, we switched the sign of the wavenumber <span class="math notranslate nohighlight">\(k\)</span>, which now becomes reversing the direction of the <em>wavevector</em> <span class="math notranslate nohighlight">\(\vec{k}\)</span>. To test this, let us invent a different wave vector, say <span class="math notranslate nohighlight">\(k_x = 2\pi(1{\bf i} + 3{\bf j})\)</span>. The wavefronts should now be aligned closer to the <span class="math notranslate nohighlight">\(x\)</span> axis than the <span class="math notranslate nohighlight">\(y\)</span> axis, but not perfectly to either of them. This is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">anglewaves</span></code>.</p>
+<p>We therefore arrive at a general way of describing a plane wave moving in an arbitrary direction in the <span class="math notranslate nohighlight">\(XY\)</span> plane. This is</p>
+<div class="math notranslate nohighlight" id="equation-align">
+<span class="eqno">(83)<a class="headerlink" href="#equation-align" title="Permalink to this equation">#</a></span>\[\begin{align}
+\Psi(\vec{x},t)&amp;=\Psi_0\cos(\vec{k}\cdot\vec{r}-\omega t + \phi_0).
+\label{eq:genwave}
+\end{align}\]</div>
+<p>What are the symbols here? The wavevector <span class="math notranslate nohighlight">\(\vec{k}\)</span> is a vector whose magnitude is the wavenumber of the wave, the number of radians of phase gained per metre of displacement in the direction of the wave, and whose direction is the direction of motion of the wave, which is at right angles to the wave fronts. The vector displacement <span class="math notranslate nohighlight">\(\vec{r}\)</span> is the displacement from the chosen origin of coordinates to the place where the cosine function will calculate the phase of the wave. Note that this vector starts at the origin and goes to any point in space. The dot product ensures that for a plane wave <span class="math notranslate nohighlight">\(\vec{k}\cdot\vec{r}\)</span> will calculate the correct phase shift between the origin and the place in the wave train that <span class="math notranslate nohighlight">\(\vec{r}\)</span> takes you to. The phase offset <span class="math notranslate nohighlight">\(\phi_0\)</span> just allows for the phase of the wave at the origin being something other than zero at time <span class="math notranslate nohighlight">\(t=0\)</span> at the origin.</p>
+</div>
+<div class="section" id="geometry-of-wave-vectors">
+<h2>Geometry of wave vectors<a class="headerlink" href="#geometry-of-wave-vectors" title="Permalink to this headline">#</a></h2>
+<p>Wave vectors are a curious thing, because they don’t ‘look’ like other vectors that you have seen. Vectors you have met before are visualised directly as arrows in space, quantities with ‘magnitude and direction’ as is often repeated. Forces, for example, are easily represented as arrows, as are velocities, displacements, accelerations, and many of the types of quantities that vectors are used to describe. A wavevector has a somewhat different quality. It is basically a set of parallel lines, or planes in three dimensions, the wavefronts, stacked up one behind the other. The direction of the vector is a line at right angles to these wavefronts, and the magnitude of the vector is the number of these wavefronts per metre, multiplied by <span class="math notranslate nohighlight">\(2\pi\)</span> to convert to radians. Matt will start talking to you soon about potential energy and its relationship to forces. If you’ve ever looked at a topographical map of a mountainous area, you will have seen parallel contours. Each of these contours represents a line of points at a constant height above sea level. If you want to move up the hill as steeply as possible you need to move in a direction at right angles to the contours. The number of contours per unit length in the direction at right angles to the contours is the gradient, or slope, of the hill. So just as wavefronts represent lines of constant phase in a wave train, grid lines are lines of constant height on a map. The <em>gradient</em> of the hill is the rate of change of height with horizontal displacement in the direction of steepest ascent of the hill; the wavenumber of the wave is the rate of change of phase with respect to horizontal displacement in the direction of steepest ascent in the phase.</p>
+</div>
+<div class="section" id="constructing-a-wavevector">
+<h2>Constructing a wavevector<a class="headerlink" href="#constructing-a-wavevector" title="Permalink to this headline">#</a></h2>
+<p>There are two key things you need to remember when you construct a wavevector:</p>
+<ul class="simple">
+<li><p>Firstly, its direction is always parallel to the velocity of the wave which, in the case of waves in 2D or 3D, is always perpendicular to the wave front;</p></li>
+<li><p>Secondly, the magnitude of the wavevector must <em>always</em> be equal to the wavenumber of the wave.</p></li>
+</ul>
+<p>So, to take a specific example, let’s assume we have a wave of wavelength <span class="math notranslate nohighlight">\(\lambda=0.5~{\rm m}\)</span> travelling across a 2D surface  - such as a water wave - with velocity vector <span class="math notranslate nohighlight">\({\bf v}=3\hat{\bf i}+4\hat{\bf j}~{\rm m\, s^{-1}}\)</span>. The magnitude of the wave’s velocity. i.e., it’s speed, is <span class="math notranslate nohighlight">\(|{\bf v}|=\sqrt{3^2+4^2}=5~{\rm m\, s^{-1}}\)</span>. But what is the wavevector of this wave? As our first rule states, the <em>direction</em> of the wavevector is the same as the velocity vector. The slightly more tricky part is that second rule - we have to make sure that the magnitude of the wavevector is the same as the wavenumber of the wave, i.e., <span class="math notranslate nohighlight">\(|k|=2\pi/\lambda=4\pi~{\rm m^{-1}}\)</span>. How do we ensure that? The easiest way is to simply multiply the wavenumber by the <em>unit vector</em> that points in the same direction as the velocity. And since the unit vector is just the vector divided by its magnitude, we get:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6576ab1b-ae54-4951-b009-52cf1c1a199a">
+<span class="eqno">(84)<a class="headerlink" href="#equation-6576ab1b-ae54-4951-b009-52cf1c1a199a" title="Permalink to this equation">#</a></span>\[\begin{align}
+{\bf k} &amp;= |{\bf k}|\times\frac{1}{\sqrt{3^2+4^2}}(3\hat{\bf i}+4\hat{\bf j})~{\rm m^{-1}}\nonumber \\
+&amp;=\frac{2\pi}{\lambda}\frac15(3\hat{\bf i}+4\hat{\bf j})~{\rm m^{-1}}\nonumber \\
+&amp;=\frac{4\pi}{5}(3\hat{\bf i}+4\hat{\bf j})~{\rm m^{-1}}
+\end{align}\]</div>
+<p>Please make note of the units in the above equation. Even though we’ve referred to the velocity vector to construct the wavevector, all we’ve really done is taken the direction of the velocity vector (i.e., its unit vector). The dimension of a wavevector is <em>always</em> inverse length (e.g., <span class="math notranslate nohighlight">\({\rm m^{-1}, cm^{-1}}\)</span> etc.)</p>
+<p>The case of a wave travelling in three dimensions is the same - you simply multiply the wavenumber by the three-dimensional unit vector, i.e.,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5a74d87e-d255-4220-b476-7165e455360b">
+<span class="eqno">(85)<a class="headerlink" href="#equation-5a74d87e-d255-4220-b476-7165e455360b" title="Permalink to this equation">#</a></span>\[\begin{align}
+{\bf k} = \frac{2\pi}{\lambda}\frac{1}{\sqrt{x^2 + y^2 + z^2}}(x\hat{\bf i}+y\hat{\bf j}+z\hat{\bf k})
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x,y,z\)</span> describe the direction of the wavevector.</p>
+<p>Occasionally, you may need to construct a wavevector using angles instead of a unit vector. For example, a wave may be travelling in a direction that is at an angle <span class="math notranslate nohighlight">\(\theta\)</span> from the x-axis. In that case, you can simply use trigonometry to construct the unit vector, i.e.,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f694d94a-32f2-45cc-8c2d-285d591e17c6">
+<span class="eqno">(86)<a class="headerlink" href="#equation-f694d94a-32f2-45cc-8c2d-285d591e17c6" title="Permalink to this equation">#</a></span>\[\begin{align}
+{\bf k} &amp;= \frac{2\pi}{\lambda}(\cos(\theta)\hat{\bf i}+\sin(\theta)\hat{\bf j})\nonumber \\
+&amp;=\frac{2\pi}{\lambda}\begin{pmatrix}
+\cos(\theta)\\
+\sin(\theta)
+\end{pmatrix},
+\end{align}\]</div>
+<p>where I’ve used column vector notation in the second line above. The nice thing about using angles is that you don’t have to divide through by the magnitude to get the unit vector; <span class="math notranslate nohighlight">\((\cos(\theta)\hat{\bf i}+\sin(\theta)\hat{\bf j})\)</span> is <em>already</em> a unit vector.<a class="footnote-reference brackets" href="#show" id="id1">1</a></p>
+<div class="figure align-default" id="dvec">
+<a class="reference internal image-reference" href="_images/3dvec.png"><img alt="A vector directed along some line, decomposed into its spherical coordinates" src="_images/3dvec.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">A vector (in this case a wavevector) directed along a line angled <span class="math notranslate nohighlight">\(\theta\)</span> from the <span class="math notranslate nohighlight">\(x\)</span>-axis and <span class="math notranslate nohighlight">\(\phi\)</span> from the <span class="math notranslate nohighlight">\(x-y\)</span> plane.</span><a class="headerlink" href="#dvec" title="Permalink to this image">#</a></p>
+</div>
+<p>Things get slightly trickier if you need to work with angles in three dimensions. Say, for example, that you need to construct a wavevector that is travelling at an angle <span class="math notranslate nohighlight">\(\theta\)</span> from the <span class="math notranslate nohighlight">\(x\)</span> axis, but also <span class="math notranslate nohighlight">\(\phi\)</span> from the <span class="math notranslate nohighlight">\(x-y\)</span> plane. Such a vector is shown in <a class="reference internal" href="#dvec"><span class="std std-numref">Fig. 11</span></a>. By referring to that figure, we can see that the <span class="math notranslate nohighlight">\(z\)</span>-component of this vector is simply <span class="math notranslate nohighlight">\(|k|\sin(\phi)\)</span>.<a class="footnote-reference brackets" href="#help" id="id2">2</a> However, to work out the components in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, we need to first <em>project</em> the vector onto the <span class="math notranslate nohighlight">\(x-y\)</span> plane. Again, by referring to <a class="reference internal" href="#dvec"><span class="std std-numref">Fig. 11</span></a> we can see that the projection of <span class="math notranslate nohighlight">\({\bf k}\)</span> onto the <span class="math notranslate nohighlight">\(x-y\)</span> plane is <span class="math notranslate nohighlight">\(|k|\cos(\phi)\)</span>. To work out the <span class="math notranslate nohighlight">\(x\)</span> component, we need to take that projection and extract its <span class="math notranslate nohighlight">\(x\)</span> component: <span class="math notranslate nohighlight">\(|k|\cos(\phi)\cos(\theta)\)</span>. For the <span class="math notranslate nohighlight">\(y\)</span> component, it is <span class="math notranslate nohighlight">\(|k|\cos(\phi)\sin(\theta)\)</span>. Therefore, the wavevector of a wave of wavelength <span class="math notranslate nohighlight">\(\lambda\)</span> that is travelling at an angle <span class="math notranslate nohighlight">\(\theta\)</span> from the <span class="math notranslate nohighlight">\(x\)</span> axis, but also <span class="math notranslate nohighlight">\(\phi\)</span> from the <span class="math notranslate nohighlight">\(x-y\)</span> plane is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-aea3e034-490b-48c3-a117-3e0f0a1cd76e">
+<span class="eqno">(87)<a class="headerlink" href="#equation-aea3e034-490b-48c3-a117-3e0f0a1cd76e" title="Permalink to this equation">#</a></span>\[\begin{align}
+    {\bf k} &amp;= |k|\begin{pmatrix}
+        \cos(\phi)\cos(\theta)\\
+        \cos(\phi)\sin(\theta)\\
+        \sin(\phi)
+    \end{pmatrix} \nonumber\\
+    &amp;=\frac{2\pi}{\lambda}\begin{pmatrix}
+        \cos(\phi)\cos(\theta)\\
+        \cos(\phi)\sin(\theta)\\
+        \sin(\phi)
+    \end{pmatrix},
+\end{align}\]</div>
+<p>where I’ve used column vector notation for compactness.</p>
+</div>
+<div class="section" id="more-arbitrary-waves">
+<h2>More arbitrary waves<a class="headerlink" href="#more-arbitrary-waves" title="Permalink to this headline">#</a></h2>
+<p>Of course real waves are not often perfectly parallel straight wavefronts all exactly equally separated. <code class="xref std std-numref docutils literal notranslate"><span class="pre">boatfigure</span></code> shows wavefronts in the wake of a boat. I have superposed a sketch of a wavefront, and some wavevectors perpendicular to the wavefronts. Note that <span class="math notranslate nohighlight">\(\vec{k}\)</span> is not in the same direction, and indeed does not have exactly the same magnitude, everywhere on the wavefront. In fact <span class="math notranslate nohighlight">\(\vec{k}\)</span> is a function of position, <span class="math notranslate nohighlight">\(\vec{k}(\vec{r})\)</span>. Because <span class="math notranslate nohighlight">\(\vec{k}\)</span> is a function of position, in a complicated wave field like this you would have to do a line integral along a path to figure out the phase shift between two different points,</p>
+<div class="math notranslate nohighlight" id="equation-funnywavetrain">
+<span class="eqno">(88)<a class="headerlink" href="#equation-funnywavetrain" title="Permalink to this equation">#</a></span>\[\begin{align}
+\Delta\phi&amp;=\int \vec{k}\cdot d\vec{r}.
+\label{eq:funnywavetrain}
+\end{align}\]</div>
+<p>You may not have encountered a line integral before. You’ll certainly see them again during your degree, so I won’t go in too much detail here. All this means, however, is that the total difference in phase between one position and another separated by the displacement <span class="math notranslate nohighlight">\(\vec{R}\)</span> is the sum of all the tiny differences between <span class="math notranslate nohighlight">\(\vec{r}\)</span> and <span class="math notranslate nohighlight">\(\vec{r}+d\vec{r}\)</span> along the entire path.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In this lecture, we’ve moved from considering waves travelling in one dimension (e.g., a transverse wave along a string, or a sound wave travelling in a narrow pipe) to waves travelling in multiple dimensions. For ease of explanation – and figures – we have considered waves travelling on a plane (i.e., two dimensions), with the displacement in the third dimension. However, I’ve intentionally kept the maths rather general, so it should be easy to see how what we’ve covered can also be applied to waves travelling in three dimensions. An example would be a sound waves travelling from a speaker into a room – the wavefronts would form a spherical shell in three dimensions. For a good, if devastating, example of such a three-dimensional wave front, you could watch some of the videos of the explosion that took place at the Port of Beirut in 2020.<a class="footnote-reference brackets" href="#note" id="id3">3</a> An explosion is a form of pressure wave, and so similar to a sound wave.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="show"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>You should be able to show that <span class="math notranslate nohighlight">\((\cos(\theta)\hat{\bf i}+\sin(\theta)\hat{\bf j})\)</span> is a unit vector yourself.</p>
+</dd>
+<dt class="label" id="help"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>It may help if you write these components onto <a class="reference internal" href="#dvec"><span class="std std-numref">Fig. 11</span></a> yourself.</p>
+</dd>
+<dt class="label" id="note"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Please note: some people may find such footage distressing.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch5.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">5 - Waves at a boundary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch7.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">7 - Power of a wave</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waves-in-two-dimensions">Waves in two dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-of-wave-vectors">Geometry of wave vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-a-wavevector">Constructing a wavevector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-arbitrary-waves">More arbitrary waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By James Mullaney
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

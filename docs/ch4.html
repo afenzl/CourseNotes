@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4 - Travelling Waves &#8212; PHY1001 Waves and Oscillations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch4';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5 - Waves at a boundary" href="ch5.html" />
+    <link rel="prev" title="3 - Standing waves" href="ch3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    PHY1001 Waves and Oscillations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1.html">Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2.html">Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3.html">Chapter 3</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5.html">Chapter 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6.html">Chapter 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">Chapter 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch8.html">Chapter 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch9.html">Chapter 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">Chapter 10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11.html">Chapter 11</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4 - Travelling Waves</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-recap">A quick recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Travelling waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-wave-at-an-instant-in-time">A wave at an instant in time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-time-again">Starting time again</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waves-travelling-to-the-left">Waves travelling to the left</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="travelling-waves">
+<h1>4 - Travelling Waves<a class="headerlink" href="#travelling-waves" title="Permalink to this headline">#</a></h1>
+<div class="section" id="a-quick-recap">
+<h2>A quick recap<a class="headerlink" href="#a-quick-recap" title="Permalink to this headline">#</a></h2>
+<p>In previous lectures, we’ve looked at the mathematical modelling of oscillations in physics. We ended up with a general formula for an oscillation at frequency <span class="math notranslate nohighlight">\(\nu\)</span> Hz (cycles per second), or angular frequency <span class="math notranslate nohighlight">\(\omega=2\pi\nu\)</span> radians per second, describing how something that is oscillating behaves as a function of time. That general formula can be written in different ways:</p>
+<div class="math notranslate nohighlight" id="equation-oscillators">
+<span class="eqno">(52)<a class="headerlink" href="#equation-oscillators" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+\psi(t)&amp;=\psi_0\cos(\omega t + \phi_0) \nonumber \\
+\psi(t)&amp;=\psi_0\sin(\omega t + \phi_1) \nonumber \\
+\label{eq:oscillators}
+\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi_0\)</span> and <span class="math notranslate nohighlight">\(\phi_1\)</span> are constant phase shifts.</p>
+<p>We also learned in Lecture 1 that when the angle <span class="math notranslate nohighlight">\(\theta\)</span> is in radians, <span class="math notranslate nohighlight">\(\sin\theta = \cos(\theta-\pi/2)\)</span>, so that we can relate <span class="math notranslate nohighlight">\(\phi_0\)</span> to <span class="math notranslate nohighlight">\(\phi_1\)</span>. Remember that we have moved away from writing <span class="math notranslate nohighlight">\(y(t)\)</span> for the wave amplitude. This is because there are many physical quantities that oscillate. Most of them are not displacements in space, and even those that are can be in any direction, not just up, and in any case, <span class="math notranslate nohighlight">\(y\)</span> doesn’t have to point ‘upwards’. So, we need to get away from the preconception that oscillations can only occur as displacements of objects in space, hence the rather arbitrary symbol <span class="math notranslate nohighlight">\(\psi(t)\)</span> for the oscillating quantity, whatever it is.</p>
+<p>Finally, in the previous lecture, we added an extra dimension (literally!) to our considerations by looking at standing waves: oscillators whose displacement depends on both time and position:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-01839115-e829-40d8-85a1-75348fb9f9c4">
+<span class="eqno">(53)<a class="headerlink" href="#equation-01839115-e829-40d8-85a1-75348fb9f9c4" title="Permalink to this equation">#</a></span>\[\begin{align}
+\psi(x,t) = \psi_0\sin(k_nx)\sin(\omega_nt+\phi_0) \nonumber \\
+\psi(x,t) = \psi_0\cos(k_nx)\sin(\omega_nt+\phi_0) \nonumber \\
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_n=2\pi/\lambda_n\)</span> is called the <em>wavenumber</em> of the wave and is effectively the number of wavelengths per metre expressed in radians.<a class="footnote-reference brackets" href="#conc" id="id1">1</a> In this lecture, we will go beyond just thinking about stationary (i.e., standing) waves, to consider the more general case of travelling waves.</p>
+</div>
+<div class="section" id="id2">
+<h2>Travelling waves<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>You will remember the picture from Lecture 1 of a roll of paper passing by a mass oscillating up and down on a spring, and how the curve on the paper traces out the sinusoidal motion of the oscillator. Imagining this happening dynamically in front of your eyes, the sine wave passing from right to left is actually in motion in the horizontal direction as the mass bobs up and down. Now, we know of many examples in nature of sinusoidal disturbances in motion. Waves on strings, for example, or waves on the surface of a still pond or canal. We can imagine that the same <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> functions that we use to represent oscillators could also be used to represent these waves in motion. By the end of this lecture, you will know how to do this. But, first, let us try and work out what a moving wave actually is. For a start, the physics underlying waves can be quite different depending on the type of wave motion we are discussing. The actual motion of the water in a wave on a pond or canal, for example, is rather complex.</p>
+<p>To understand what a wave is, we consider a specific example of a set of masses connected together by springs. We have neglected gravity, so we assume that there is no gravitational acceleration downwards, but I will still use the words up and down, and I hope you won’t get confused by this. The whole arrangement could also be on a table with no friction, and we are looking downwards on it from above.</p>
+<p>In <a class="reference internal" href="#masses-and-springs-at-rest"><span class="std std-numref">Fig. 9</span></a> I have sketched the configuration of masses in in equilibrium. The left hand mass is connected to a drive that can make it go up and down, and the other masses stretch off infinitely to the right of the driven mass.</p>
+<div class="figure align-default" id="masses-and-springs-at-rest">
+<a class="reference internal image-reference" href="_images/masses_and_springs_at_rest.png"><img alt="masses and springs at rest" src="_images/masses_and_springs_at_rest.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Some masses connected to their nearest neighbours by springs. One end of the chain is connected to a driver that can cause its mass to oscillate up and down. The rest of the masses stretch off to infinity in a chain to the right of the driven mass. In this picture, the driver is off, and all masses are in their equilibrium positions.</span><a class="headerlink" href="#masses-and-springs-at-rest" title="Permalink to this image">#</a></p>
+</div>
+<p>In <a class="reference internal" href="#masses-and-springs-in-motion"><span class="std std-numref">Fig. 10</span></a>, the drive has been turned on. As the motor turns, it causes the crank to drive the leftmost mass up and down, so that it is making simple harmonic oscillations. This motion causes waves to travel down the chain of masses from the left to the right, with an amplitude equal to the amplitude of the motion of the driven mass. You can achieve approximately the same effect by waving the end of a long rope up and down with your hand.</p>
+<div class="figure align-default" id="masses-and-springs-in-motion">
+<a class="reference internal image-reference" href="_images/masses_and_springs_in_motion.png"><img alt="masses and springs in motion" src="_images/masses_and_springs_in_motion.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Once the drive is turned on, the motion of the end mass causes travelling waves to move down the chain of masses from the left to the right. The travelling waves resulting from this have the same character as the trace drawn on the chart recorder by the oscillation recorder discussed in Lecture 1. Here the travelling sinusoidal wave moves in the direction of the blue arrow, to the right.</span><a class="headerlink" href="#masses-and-springs-in-motion" title="Permalink to this image">#</a></p>
+</div>
+<p>Now, although the overall motion of the travelling wave is to the right, the individual masses move neither to the right or the left very much, particularly if the amplitude of the wave is much smaller than the wavelength. If you are wondering why this ‘small amplitude’ assumption is necessary, we will return to this later in this course and also in the maths lectures. So, each individual mass moves up and down, but since the masses are connected to each other, the motion of one mass effects that of its neighbours, and hence all the masses oscillate up and down at the same frequency, all move harmonically, but the phase of their motions is connected. This is an example of a type of physical phenomenon called a collective excitation. Collective excitations are very important in many areas of physics. For example, sound waves travel through crystals by exactly this mechanism, where neighbouring ions in a crystal exert forces on each other and these forces can be modelled as springs. Again, more about that later. For now, let’s go on to discuss how to describe a travelling wave mathematically.</p>
+<div class="section" id="a-wave-at-an-instant-in-time">
+<h3>A wave at an instant in time<a class="headerlink" href="#a-wave-at-an-instant-in-time" title="Permalink to this headline">#</a></h3>
+<p>Suppose we take a photograph of the chain of masses at some instant. When we look at the photo, the masses are in the shape of a sine wave in space. Successive photos show that as time evolves, the peaks and troughs of this wave move to the right, but concentrating on just one photo for a minute, you can with your eye measure the distance between successive peaks. This distance is called the wavelength of the wave and it is usually given the symbol <span class="math notranslate nohighlight">\(\lambda\)</span>. We have discussed how oscillations are cyclic, with the time between repeats of the cycle called the period of the oscillation and given the symbol <span class="math notranslate nohighlight">\(T\)</span>. Now we have waves which, when frozen in time, are periodic in space, with the spatial translation between neighbouring cycles called the wavelength of the wave and given the symbol <span class="math notranslate nohighlight">\(\lambda\)</span>. Consider for a minute the special case where the left hand end of the chain is at <span class="math notranslate nohighlight">\(x=0\)</span>, and we have frozen the wave at a time when the left hand mass is at its equilibrium position. By the same argument as we made for the oscillation, we can write a formula using <span class="math notranslate nohighlight">\(\sin\)</span> to model the time-frozen instant of the travelling wave as</p>
+<div class="math notranslate nohighlight" id="equation-timefreeze1">
+<span class="eqno">(54)<a class="headerlink" href="#equation-timefreeze1" title="Permalink to this equation">#</a></span>\[\begin{align}
+\psi(x)&amp;=\psi_0\sin\left(\frac{2\pi x}{\lambda}\right).
+\label{eq:timefreeze1}
+\end{align}\]</div>
+<p>The insertion of the <span class="math notranslate nohighlight">\(2\pi/\lambda\)</span> is there for the same kinds of reasons why we inserted <span class="math notranslate nohighlight">\(2\pi/T\)</span> into the mathematical model for an oscillation in time. We know that the wave has wavelength <span class="math notranslate nohighlight">\(\lambda\)</span>, so the sine function that models it should repeat, which means the phase should increase by <span class="math notranslate nohighlight">\(2\pi\)</span> for a change in <span class="math notranslate nohighlight">\(x\)</span> of one wavelength. Here we see that the argument of the <span class="math notranslate nohighlight">\(\sin\)</span> function is <span class="math notranslate nohighlight">\(0\)</span> at <span class="math notranslate nohighlight">\(x=0\)</span>, and it has passed through one complete cycle at <span class="math notranslate nohighlight">\(x=\lambda\)</span>, because substituting <span class="math notranslate nohighlight">\(x=\lambda\)</span> we get <span class="math notranslate nohighlight">\(\sin(2\pi)=0\)</span>. Now, it is awkward to keep writing <span class="math notranslate nohighlight">\(2\pi/\lambda\)</span> everywhere, so we define a quantity called the <em>wavenumber</em> of the wave. This is the number of radians of phase that the phase passes through in 1 metre, just as the angular frequency was the number of radians of phase that an oscillation passes through in 1 second. So the wavenumber, mathematically, is</p>
+<div class="math notranslate nohighlight" id="equation-wavenumber">
+<span class="eqno">(55)<a class="headerlink" href="#equation-wavenumber" title="Permalink to this equation">#</a></span>\[\begin{align}
+k=\frac{2\pi}{\lambda},
+\label{eq:wavenumber}
+\end{align}\]</div>
+<p>in analogy with our previous definition of the angular frequency <span class="math notranslate nohighlight">\(\omega\)</span> in terms of the oscillation period <span class="math notranslate nohighlight">\(T\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-period">
+<span class="eqno">(56)<a class="headerlink" href="#equation-period" title="Permalink to this equation">#</a></span>\[\begin{align}
+\omega=\frac{2\pi}{T}.
+\label{eq:period}
+\end{align}\]</div>
+<p>In terms of the wavenumber, the time-frozen travelling wave can be written</p>
+<div class="math notranslate nohighlight" id="equation-timefreeze2">
+<span class="eqno">(57)<a class="headerlink" href="#equation-timefreeze2" title="Permalink to this equation">#</a></span>\[\begin{align}
+\psi(x)&amp;=\psi_0\sin(kx).
+\label{eq:timefreeze2}
+\end{align}\]</div>
+<p>The wavenumber is a key quantity in physics. Again, it is the number of radians of phase per metre. For waves, it is the spatial analog of the angular frequency for oscillations of the individual masses. In more than one dimension, the wavenumber becomes a vector quantity called the wavevector, but more about that in a later lecture.</p>
+</div>
+<div class="section" id="starting-time-again">
+<h3>Starting time again<a class="headerlink" href="#starting-time-again" title="Permalink to this headline">#</a></h3>
+<p>Now it’s time to start time back up again and learn how to model a travelling wave. To do this, let us take a step back again and think about something easier which is a particle travelling to the right. If we have a particle moving at velocity <span class="math notranslate nohighlight">\(v\)</span> directed to the right, then its displacement is the product of the elapsed time <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(v\)</span>. Call this displacement <span class="math notranslate nohighlight">\(x(t)\)</span>. If we assume that the particle was at the origin at time <span class="math notranslate nohighlight">\(t=0\)</span>, then the equation for <span class="math notranslate nohighlight">\(x(t)\)</span> is</p>
+<div class="math notranslate nohighlight" id="equation-particleposition">
+<span class="eqno">(58)<a class="headerlink" href="#equation-particleposition" title="Permalink to this equation">#</a></span>\[\begin{align}
+x(t)&amp;=vt.
+\label{eq:particleposition}
+\end{align}\]</div>
+<p>We can re-write this equation as <span class="math notranslate nohighlight">\(x-vt=0\)</span>. Now, the sine of <span class="math notranslate nohighlight">\(0\)</span> is <span class="math notranslate nohighlight">\(0\)</span>, so if we have a point in space satisfying <span class="math notranslate nohighlight">\(x-vt=0\)</span>, then that point could be interpreted as the position of a particle. However, we might use the same equation and interpret it as a point in a travelling wave where the local disturbance is zero. Let us then substitute for the <span class="math notranslate nohighlight">\(x\)</span> in Equation <a class="reference internal" href="#equation-timefreeze2">(57)</a> with <span class="math notranslate nohighlight">\(x-vt\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-traveller1">
+<span class="eqno">(59)<a class="headerlink" href="#equation-traveller1" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+\psi(x)&amp;=\psi_0\sin(k(x-vt)) \nonumber \\
+&amp;=\psi_0\sin(kx-kvt).
+\label{eq:traveller1}
+\end{align}\end{split}\]</div>
+<p>To make the connection, imagine a particle that starts at <span class="math notranslate nohighlight">\(x=0\)</span> at time <span class="math notranslate nohighlight">\(t=0\)</span> and is coincident with a zero of the wave as it travels along. As the point where the wave amplitude is zero travels to the right, the particle moves at the same speed, and ‘keeps up’ with the travelling waves. If it helps, think of a surfer half way up a wave as it moves towards the beach. As the wave moves along, the surfer might maintain the same height and be pushed along with the wave as it moves. Of course, in a travelling sine wave things are a bit simpler than the case of a crashing ocean wave on the shoreline with all its intricacy. Staying with the simpler case of a travelling sine wave, all the crests, troughs, and zero points of the wave move to the right at the same speed. Because the point where <span class="math notranslate nohighlight">\(x-vt=0\)</span> moves to the right at speed <span class="math notranslate nohighlight">\(v\)</span>, and we have just argued that the whole wave moves at the same speed, then the speed of the wave represented by Equation <a class="reference internal" href="#equation-traveller1">(59)</a> must be <span class="math notranslate nohighlight">\(v\)</span> as well. Note also that both parts of the argument of the sine wave <span class="math notranslate nohighlight">\(kx\)</span> and <span class="math notranslate nohighlight">\(kvt\)</span> have the dimensions, or units, of phase, since both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(vt\)</span> have units of length.</p>
+<p>One more thing. If we set <span class="math notranslate nohighlight">\(x=0\)</span>, we are positioned at the origin, where the leftmost oscillator is being driven up and down by the mechanism. This oscillator moves at angular frequency <span class="math notranslate nohighlight">\(\omega\)</span>, so its motion can be modelled as <span class="math notranslate nohighlight">\(\psi_0\sin(\omega t)\)</span>. To make this consistent with eEquation <a class="reference internal" href="#equation-traveller1">(59)</a>, we must have <span class="math notranslate nohighlight">\(vk=\omega\)</span>, or as is usually written</p>
+<p>Again, <span class="math notranslate nohighlight">\(\omega\)</span> is the angular frequency of the oscillations of any individual mass on the chain, since they are all involved in a collective excitation, a travelling wave, at the same frequency. The angular frequency is the number of radians of phase of any oscillator accumulated per second as the wave travels. <span class="math notranslate nohighlight">\(k\)</span> is the wavenumber of the wave, which is the number of radians per unit length of the wave frozen in time at any given instant, and <span class="math notranslate nohighlight">\(v\)</span> is the velocity of the travelling wave to the right. This leads us to the slightly modified expression for the travelling wave, which is</p>
+<div class="math notranslate nohighlight" id="equation-traveller2">
+<span class="eqno">(60)<a class="headerlink" href="#equation-traveller2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\psi(x,t)=\psi_0\sin\left(kx-\omega t\right).
+\label{eq:traveller2}
+\end{equation}\]</div>
+<p>This is an expression for a travelling wave propagating to the right at speed <span class="math notranslate nohighlight">\(v\)</span> in the direction of increasing <span class="math notranslate nohighlight">\(x\)</span>. It is not however the most general expression for such a wave. As for oscillations, there is an arbitrary phase to put in, allowing for the fact that at time <span class="math notranslate nohighlight">\(t=0\)</span> the crests of the wave can be either at <span class="math notranslate nohighlight">\(x=0\)</span>, or anywhere else. So the most general expression can be written like this:</p>
+<div class="math notranslate nohighlight" id="equation-traveller3">
+<span class="eqno">(61)<a class="headerlink" href="#equation-traveller3" title="Permalink to this equation">#</a></span>\[\begin{align}
+\psi(x,t)&amp;=\psi_0\sin(kx-\omega t+\phi_0)
+\label{eq:traveller3}
+\end{align}\]</div>
+<p>This is not the only way of representing a sinusoidal wave travelling to the right. We can also use cosine with a phase shift, or we can use a linear combination of sine and cosine.</p>
+<div class="math notranslate nohighlight" id="equation-traveller4">
+<span class="eqno">(62)<a class="headerlink" href="#equation-traveller4" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+\psi(x,t)&amp;=\psi_0\sin(kx-\omega t + \phi_0) \nonumber \\
+&amp;=\psi_0\cos(kx-\omega t + \phi_1).
+\label{eq:traveller4}
+\end{align}\end{split}\]</div>
+<p>In each of these expressions for a travelling wave to the right there are two quantities <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> that express the properties of the medium the wave is travelling through and the source generating the wave. There are two other quantities, which in the top two expressions are a peak amplitude <span class="math notranslate nohighlight">\(\psi_0\)</span> and a phase offset <span class="math notranslate nohighlight">\(\phi_0\)</span> or <span class="math notranslate nohighlight">\(\phi_1\)</span>, and in the bottom expression are the amplitudes <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> of the <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> terms. These other two quantities are properties of the travelling wave, connected to its amplitude and the position of the peaks and troughs at time <span class="math notranslate nohighlight">\(t=0\)</span>. In the formative questions you can figure out the connections between <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(\psi_0\)</span>, <span class="math notranslate nohighlight">\(\phi_0\)</span> and <span class="math notranslate nohighlight">\(\phi_1\)</span>. These expressions are similar to those connecting the different representations of oscillations.</p>
+</div>
+</div>
+<div class="section" id="waves-travelling-to-the-left">
+<h2>Waves travelling to the left<a class="headerlink" href="#waves-travelling-to-the-left" title="Permalink to this headline">#</a></h2>
+<p>So far our travelling waves have been moving to the right. Now we would like them to move to the left. There are in fact several ways to represent waves travelling to the left. Some are conventionally used more than others, and I would like to steer you towards using those which are more conventional, for reasons that I shall give presently. But, let us start by making a simple argument that will get us to a working formula for a wave travelling to the left. Consider a wave travelling to the right represented by</p>
+<div class="math notranslate nohighlight" id="equation-wavetoright">
+<span class="eqno">(63)<a class="headerlink" href="#equation-wavetoright" title="Permalink to this equation">#</a></span>\[\begin{align}
+\psi=\psi_0\cos(kx-\omega t),
+\label{eq:wavetoright}
+\end{align}\]</div>
+<p>where we have chosen <span class="math notranslate nohighlight">\(\phi_0=0\)</span> so this is not the most general travelling wave. Run a movie of this wave backwards, then you will see a wave travelling to the left. Running the movie backwards is the same as re-writing <span class="math notranslate nohighlight">\(t\)</span> as <span class="math notranslate nohighlight">\(-t\)</span>. This operation is known as time reversal. If we substitute for <span class="math notranslate nohighlight">\(t\)</span> with <span class="math notranslate nohighlight">\(-t\)</span> in Equation <a class="reference internal" href="#equation-wavetoright">(63)</a> we obtain</p>
+<div class="math notranslate nohighlight" id="equation-left1">
+<span class="eqno">(64)<a class="headerlink" href="#equation-left1" title="Permalink to this equation">#</a></span>\[\begin{align}
+\psi^L(x,t)=\psi_0\cos(kx-\omega(-t))=\psi_0\cos(kx+\omega t)
+\label{sec:left1}
+\end{align}\]</div>
+<p>Another argument that gives the same result is to remember that the position of a particle moving to the right with velocity <span class="math notranslate nohighlight">\(v\)</span> is <span class="math notranslate nohighlight">\(x-vt=0\)</span>. So, if it were moving to the left with velocity <span class="math notranslate nohighlight">\(v\)</span> then its position would be given by <span class="math notranslate nohighlight">\(x-(-v)t=x+vt=0\)</span>, therefore changing the
+sign of <span class="math notranslate nohighlight">\(t\)</span> is equivalent to reversing the direction of motion, since the ‘velocity’ becomes negative.</p>
+<p>It turns out, however, that this way of representing a wave travelling to the left is not optimal in the larger context of waves that you will soon encounter in quantum mechanics. This won’t be discussed until next term, but representations of waves not dissimilar to those being used here for classical waves are also used to represent wave <em>functions</em>, which are important objects in quantum mechanics. Additionally, this representation of a wave travelling to the left is not so easy to generalise to waves propagating in two and three dimensions, which we shall study next lecture. So, let us massage this expression a little to make it more suitable for our purposes. We know that the cosine function is even so that <span class="math notranslate nohighlight">\(\cos(-x)=+\cos(x)\)</span>. So, we can change the sign of the phase and make no difference to <span class="math notranslate nohighlight">\(\psi(x,t)\)</span>. When we do this, we obtain</p>
+<div class="amsmath math notranslate nohighlight" id="equation-20013a6b-041e-4af7-9870-b47715a88e1c">
+<span class="eqno">(65)<a class="headerlink" href="#equation-20013a6b-041e-4af7-9870-b47715a88e1c" title="Permalink to this equation">#</a></span>\[\begin{align}
+\psi^{L2}(x,t)=\psi_0\cos(kx+\omega t)=\psi_0\cos(-(kx+\omega t))=\psi_0\cos(-kx-\omega t).
+\end{align}\]</div>
+<p>This is also a perfectly good representation of a wave travelling to the left. It is more compatible with quantum mechanics for reasons which for now remain mysterious. How about waves travelling in an arbitrary direction in two or three dimensions? A hint as to how this work is to point out that <span class="math notranslate nohighlight">\(\psi^{L2}\)</span> can be obtained from <span class="math notranslate nohighlight">\(\psi_0\cos(kx-\omega t)\)</span> by making the transformation <span class="math notranslate nohighlight">\(k\rightarrow -k\)</span>. What does it mean for the wavenumber to have a sign? It turns out that the scalar wavenumber <span class="math notranslate nohighlight">\(k\)</span> has a generalisation called a wavevector, which is a kind of vector, but a kind that is a bit exotic and not quite the same conceptually as the ‘arrows in space’ that you are familiar with. More about this next time.</p>
+<p>Just like waves travelling to the right, the more general expression involves addition of a constant phase, and you can use <span class="math notranslate nohighlight">\(\sin\)</span> instead of <span class="math notranslate nohighlight">\(\cos\)</span>, or eliminate the phase offsets and use a sum of two terms, one <span class="math notranslate nohighlight">\(\sin\)</span> and one <span class="math notranslate nohighlight">\(\cos\)</span>. The three ways of representing a wave travelling to the left analogous to Equation <a class="reference internal" href="#equation-traveller4">(62)</a> are</p>
+<div class="math notranslate nohighlight" id="equation-traveller5">
+<span class="eqno">(66)<a class="headerlink" href="#equation-traveller5" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+\psi^L(x,t)&amp;=\psi_0\sin(-kx-\omega t + \phi_0) \nonumber \\
+&amp;=\psi_0\cos(-kx-\omega t + \phi_1).
+\label{eq:traveller5}
+\end{align}\end{split}\]</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In today’s lecture we have learned about one dimensional travelling harmonic waves, which are sinusoid-shaped waves that move either right or left in one dimension. We have learned that the wavenumber, which we first encountered when looking at standing waves last week, can be negative to represent waves travelling from right to left. In future lectures, we will think about how to represent wave trains propagating in two or three dimensions using the concept of a wave <em>vector</em>, but first we’ll consider what happens when we combine waves travelling in opposite directions.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="conc"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Conceptually, you can think of <span class="math notranslate nohighlight">\(k\)</span> as giving an indication of how closely packed the wavecrests are – the higher the wavenumber, the more tightly-packed the crests.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">3 - Standing waves</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">5 - Waves at a boundary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-recap">A quick recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Travelling waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-wave-at-an-instant-in-time">A wave at an instant in time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-time-again">Starting time again</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waves-travelling-to-the-left">Waves travelling to the left</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By James Mullaney
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

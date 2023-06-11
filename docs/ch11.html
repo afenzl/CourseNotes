@@ -1,0 +1,632 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11 - Diffraction and interference &#8212; PHY1001 Waves and Oscillations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch11';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="10 - Interference" href="ch10.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    PHY1001 Waves and Oscillations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1.html">Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2.html">Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3.html">Chapter 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4.html">Chapter 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5.html">Chapter 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6.html">Chapter 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">Chapter 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch8.html">Chapter 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch9.html">Chapter 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">Chapter 10</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 11</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch11.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch11.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>11 - Diffraction and interference</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffraction-by-a-single-slit">Diffraction by a single slit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-realistic-double-slit-setup">A more realistic double-slit setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="diffraction-and-interference">
+<h1>11 - Diffraction and interference<a class="headerlink" href="#diffraction-and-interference" title="Permalink to this headline">#</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>In the previous lecture, we looked at the phenomenon of wave interference; specifically the interference of light as it passes through a double slit. By describing the light as waves, and summing the two waves emanating from each slit, we saw that the resulting intensity of the light projected onto a screen is given by:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-80fe39b0-f66b-4cfd-8e1e-3ba669e78ae4">
+<span class="eqno">(156)<a class="headerlink" href="#equation-80fe39b0-f66b-4cfd-8e1e-3ba669e78ae4" title="Permalink to this equation">#</a></span>\[\begin{align}
+    I = I_0\cos^2\left(\frac{\pi d}{\lambda L}y\right)
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_0\)</span> is the amplitude of the intensity, <span class="math notranslate nohighlight">\(d\)</span> is the distance between the slits, and <span class="math notranslate nohighlight">\(y\)</span> is distance on the screen placed a distance <span class="math notranslate nohighlight">\(L\)</span> from the screen.</p>
+<p>One the major assumptions we made in the previous lectures was that the two slits were infinitesimally narrow. While that assumption made the derivation of the intensity profile easier, it’s clearly not practical; how could any light pass through infinitesimally narrow slits? Consequently, in this lecture, we’ll consider the more realistic case of two slits that have a finite width. Before getting to that, however, we’re first going to consider what happens to a wave as it passes through a single finite-width slit.</p>
+</div>
+<div class="section" id="diffraction-by-a-single-slit">
+<h2>Diffraction by a single slit<a class="headerlink" href="#diffraction-by-a-single-slit" title="Permalink to this headline">#</a></h2>
+<p>As light – or any other wave – passes through an aperture and hits a screen, it’s natural to think that it simply projects an image of that aperture onto the screen. However, that’s mostly because we’re used to seeing light pass through apertures that are very large in comparison to the wavelength of the light. If, of the other hand, the aperture is comparable to the wavelength of the light, then the waves are instead seen to “spread out” after passing through the aperture in a process called <em>diffraction</em>. In fact, diffraction takes place whenever a wave passes a sharp edge but, in the case of light, this is usually too subtle an effect to witness in everyday life.</p>
+<p>To understand why waves get diffracted as they pass through an aperture – or past a sharp edge – we need to look more closely at what actually happens <em>within</em> the aperture itself. Take the case of a slit of finite width. As the wave passes through this slit, it induces oscillations <em>at every point along the slit</em>. Furthermore, all those oscillations are <em>in phase</em> with each other. So, you can think of the slit as containing lots of little oscillators, all oscillating up and down together.</p>
+<p>In the case of light – or any other type of wave in two or more dimensions – each one of those little oscillators sends waves outwards radially, as shown in <a class="reference internal" href="#minioscillators"><span class="std std-numref">Fig. 18</span></a>. I like to think of these oscillators as a series of little buoys all in a line on the surface of a calm pond, all bobbing up and down together. Of course, most of those oscillators have neighbouring oscillators either side of them. However, the two at either end – those right at the edge of the aperture – do not. As such, when the waves from those two extreme oscillators spread out radially, they do so <em>beyond</em> the edge of the aperture. It is this radial propagation of waves from each of these “mini-oscillators” within the aperture that causes the “spreading out” effect seen when waves are diffracted as they pass through an aperture.</p>
+<div class="figure align-default" id="minioscillators">
+<a class="reference internal image-reference" href="_images/minioscillators.png"><img alt="An incident plane wave passing through a finite-width slit and diffracting as a number of mini oscillators" src="_images/minioscillators.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">When a wave passes through single, finite-width slit – in this case from the bottom of the figure upwards – the slit can be thought of as containing an almost infinite number of mini-oscillators (shown here as a limited number of grey circles; in reality, of course, there are almost an infinite number of these mini-oscillators), all moving up an down in phase with one another. Each of these mini-oscillators generates its own set of waves that moves outwards radially (red curves).  The net effect of this can be seen as the dotted black line. Directly above the middle of the slit, the net sum of the waves is a plane (straight) wave, but toward the sides the net effect is a curved wave that <em>diffracts</em> around the edge of the slit.</span><a class="headerlink" href="#minioscillators" title="Permalink to this image">#</a></p>
+</div>
+<p>There is, however, another important property of diffraction – one that is very similar to the phenomena of interference that we saw in the last lecture. Since each of those mini-oscillators produces its own set of waves, then those waves interact – or, interfere – with each other. As such, when waves pass through an aperture, not only do they spread out due to diffraction, they also produce an interference pattern. To distinguish this from traditional interference, such patterns are normally called <em>diffraction</em> patterns. And as with interference from a double slit, we can use what we know about waves and borrow some of the concepts from the last lecture to derive an expression the intensity distribution of a diffraction pattern.</p>
+<div class="figure align-default" id="diffraction">
+<a class="reference internal image-reference" href="_images/diffraction.png"><img alt="Diagram of light waves passing through a finite-width slit at an angle, given by the path difference" src="_images/diffraction.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Diagram showing light waves travelling from left to right through a finite-width slit. As in the previous diagram, the dots show the position of a finite number of mini-oscillators, each separated by a distance, <span class="math notranslate nohighlight">\(\Delta y\)</span>. The path difference from the slit to the screen between two neighbouring waves is given by <span class="math notranslate nohighlight">\(\Delta y\sin\theta\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle subtended by the light waves to the line normal to the slit.</span><a class="headerlink" href="#diffraction" title="Permalink to this image">#</a></p>
+</div>
+<p>First, consider the setup shown in <a class="reference internal" href="#diffraction"><span class="std std-numref">Fig. 19</span></a>, which shows light waves entering a single slit of finite-width, <span class="math notranslate nohighlight">\(a\)</span>, from left to right. From there, the diffracted light waves then travel to a screen that is placed a large distance, <span class="math notranslate nohighlight">\(L\)</span>, from the slit in comparison to the width of the slit (i.e., <span class="math notranslate nohighlight">\(L&gt;&gt;a\)</span>). As described above, this slit can be thought of as a series of wave-generating mini-oscillators which are transmitting waves radially into the region to the right of the slit. Because they are being transmitted radially, they cover all possible angles but, for the sake of the derivation, let’s just consider a single angle, <span class="math notranslate nohighlight">\(\theta\)</span>.<a class="footnote-reference brackets" href="#theta" id="id1">1</a>  If each mini-oscillator is separated by a distance <span class="math notranslate nohighlight">\(\Delta y\)</span> from its neighbour then, by referring to Eq. <a class="reference internal" href="ch10.html#equation-lecture10">(147)</a> in the Lecture 10 notes, we can see that the <em>wave</em> from each mini-oscillator – not the oscillator itself – is out of phase from that of its neighbour by an amount:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9d7e531b-17e3-4107-8ae6-e412fc89de34">
+<span class="eqno">(157)<a class="headerlink" href="#equation-9d7e531b-17e3-4107-8ae6-e412fc89de34" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \phi_0 = \frac{2\pi}{\lambda}\Delta y\sin\theta = \beta\Delta y, 
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta=2\pi\sin(\theta)/\lambda\)</span>. As such, if we define <span class="math notranslate nohighlight">\(y=0\)</span> as the middle of the slit, and we also define that the wave from the mini-oscillator at <span class="math notranslate nohighlight">\(y=0\)</span> has a phase shift of zero, then the next few mini-oscillators at <span class="math notranslate nohighlight">\(y=\Delta y, 2\Delta y, 3\Delta y, j\Delta y\)</span> (where <span class="math notranslate nohighlight">\(j\)</span> is an integer) will produce waves with phase shifts of:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9f314b92-ec4c-4119-90c1-3f2a833bb47c">
+<span class="eqno">(158)<a class="headerlink" href="#equation-9f314b92-ec4c-4119-90c1-3f2a833bb47c" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \phi_1 &amp;= \frac{2\pi}{\lambda}\Delta y\sin\theta = \beta\Delta y\nonumber\\
+    \phi_2 &amp;= \frac{2\pi}{\lambda}2\Delta y\sin\theta = 2\beta\Delta y\nonumber\\
+    \phi_3 &amp;= \frac{2\pi}{\lambda}3\Delta y\sin\theta = 3\beta\Delta y\nonumber\\
+    \phi_j &amp;= \frac{2\pi}{\lambda}j\Delta y\sin\theta = j\beta\Delta y,
+\end{align}\]</div>
+<p>all the way up to:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-83f77f2e-7697-4ac8-b8db-e4319c3bd482">
+<span class="eqno">(159)<a class="headerlink" href="#equation-83f77f2e-7697-4ac8-b8db-e4319c3bd482" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \phi_{N/2} = \frac{2\pi}{\lambda}\frac{N}{2}\Delta y\sin\theta = \frac{N}{2}\beta\Delta y,
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the total number of mini-oscillators across the whole slit – hence the divide by 2 since we set <span class="math notranslate nohighlight">\(y=0\)</span> as the middle of the slit. Since we’ve only considered half the slit so far, we also need to also consider the waves coming from the middle of the slit downwards. In that case, the <span class="math notranslate nohighlight">\(j\)</span> starts at <span class="math notranslate nohighlight">\(-1\)</span>, and progresses through the negative numbers, to <span class="math notranslate nohighlight">\(-N/2\)</span>.</p>
+<p>To calculate the total displacement at the screen (which, as in Lecture 11, we’ll define as being at <span class="math notranslate nohighlight">\(x=0\)</span>), we need to sum up the displacements from all these waves produced by all these mini-oscillators. Despite having different phase shifts, all have the same angular frequency, wavelength, and amplitude, <span class="math notranslate nohighlight">\(A\)</span>, since the whole slit is being illuminated by the same coherent source of light:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dd6a02c0-ca41-4de7-9823-44255930ffcd">
+<span class="eqno">(160)<a class="headerlink" href="#equation-dd6a02c0-ca41-4de7-9823-44255930ffcd" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \psi_{\rm Tot} &amp;= \psi_{-N/2}+\dots+\psi_{-1}+\psi_0+\psi_1+\dots+\psi_{N/2}\nonumber\\
+    &amp;= Ae^{-i\omega t}(e^{i\phi_{N/2}}+\dots+e^{i\phi_{-1}}+e^{i\phi_0}+e^{i\phi_1}+\dots+e^{i\phi_{N/2}})\nonumber\\
+    &amp;= Ae^{-i\omega t}\sum_{j=-N/2}^{N/2}e^{i\phi_j}\nonumber\\
+    &amp;= Ae^{-i\omega t}\sum_{j=-N/2}^{N/2}e^{i
+    \beta j\Delta y}.
+\end{align}\]</div>
+<p>How do we calculate that sum of exponentials? The answer is: we don’t – well, not exactly. Instead, we move away from thinking about the slit as containing lots of discrete oscillators separated from its neighbour by a distance <span class="math notranslate nohighlight">\(\Delta y\)</span>, and instead think of it as a continuum, with each infinitesimally small mini-oscillator separated from its neighbour by an infinitesimally small distance, <span class="math notranslate nohighlight">\(dy\)</span>. In that case, what is <span class="math notranslate nohighlight">\(N\)</span>? Infinity? Actually, no: it’s important to remember that <span class="math notranslate nohighlight">\(dy\)</span> is infinitesimally small, but <em>not</em> zero. So the number of oscillators is just the width of the slit, <span class="math notranslate nohighlight">\(a\)</span>, divided by <span class="math notranslate nohighlight">\(dy\)</span>. With that in mind, the sum of the waves from all the oscillators – each separated by a distance <span class="math notranslate nohighlight">\(dy\)</span> – becomes an integral over <span class="math notranslate nohighlight">\(dy\)</span> from the bottom to the top of the slit:</p>
+<div class="math notranslate nohighlight" id="equation-integral">
+<span class="eqno">(161)<a class="headerlink" href="#equation-integral" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \psi_{\rm Tot} &amp;= Ae^{-i\omega t}\int_{-a/2}^{a/2}e^{i\beta y}dy.
+    \label{eq:integral}
+\end{align}\]</div>
+<p>You may ask why <span class="math notranslate nohighlight">\(j\Delta y\)</span> has turned into <span class="math notranslate nohighlight">\(y\)</span> when we move from discrete oscillators to continuous ones? If you think about it, <span class="math notranslate nohighlight">\(j\Delta y\)</span> represents the position of each discrete mini-oscillator along the slit. <span class="math notranslate nohighlight">\(y\)</span> simply does the same job, but in the continuous sense – it just designates the position along the slit.</p>
+<p>With the sum now in integral form, it is straightforward to evaluate:</p>
+<div class="math notranslate nohighlight" id="equation-sinc">
+<span class="eqno">(162)<a class="headerlink" href="#equation-sinc" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+    \psi_{\rm Tot} &amp;= Ae^{-i\omega t}\int_{-a/2}^{a/2}e^{i\beta y}dy\nonumber\\
+    &amp;=Ae^{-i\omega t}\frac{1}{i\beta}\left[e^{i\beta y}\right]_{-a/2}^{a/2}\nonumber\\
+    &amp;=Ae^{-i\omega t}\frac{1}{i\beta}\left(e^{i\beta a/2} - e^{-i\beta a/2}\right)\nonumber\\
+    &amp;=Ae^{-i\omega t}\frac{1}{i\beta}\left(2i\sin\left(\frac{\beta a}{2}\right)\right)\nonumber\\
+    &amp;=Ae^{-i\omega t}\frac{\sin(\beta a/2)}{\beta a/2}.
+    \label{eq:sinc}
+\end{align}\end{split}\]</div>
+<p>where in the last step I’ve cancelled the <span class="math notranslate nohighlight">\(i\)</span>’s, and pulled-out a factor of <span class="math notranslate nohighlight">\(1/a\)</span> from the <span class="math notranslate nohighlight">\(A\)</span>. I’m allowed to this because both <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(a\)</span> are constants for a given system. This form of <span class="math notranslate nohighlight">\(\sin(x)/x\)</span> in Eqn. <a class="reference internal" href="#equation-sinc">(162)</a> is also known as <span class="math notranslate nohighlight">\({\rm sinc(x)}\)</span> which evaluates to 1 in the limit of <span class="math notranslate nohighlight">\(x \rightarrow 0\)</span>, since <span class="math notranslate nohighlight">\(\sin(x)\)</span> also approaches zero when <span class="math notranslate nohighlight">\(x \rightarrow 0\)</span>.</p>
+<p>Of course, as with the double slit setup we looked at in Lecture 11, we don’t actually measure the displacement of the wave. Instead, we measure the time-averaged intensity, which is given by:</p>
+<div class="math notranslate nohighlight" id="equation-finsingle">
+<span class="eqno">(163)<a class="headerlink" href="#equation-finsingle" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+    I &amp;\propto \langle\psi_{\rm Tot}^2\rangle\nonumber\\
+    &amp;= I_0\frac{\sin^2(\beta a/2)}{(\beta a/2)^2},
+    \label{eq:finsingle}    
+\end{align}\end{split}\]</div>
+<p>where the time-average of <span class="math notranslate nohighlight">\((e^{-i\omega t})^2\)</span> is simply <span class="math notranslate nohighlight">\(1/2\)</span> which, together with some other constants, has been absorbed into <span class="math notranslate nohighlight">\(I_0\)</span>.<a class="footnote-reference brackets" href="#absorbed" id="id2">2</a> This intensity distribution – together with that from an infinitesimally-thin and a finite-width double slit setup – is shown in <a class="reference internal" href="#modulated"><span class="std std-numref">Fig. 21</span></a>, toward the end of these notes.</p>
+</div>
+<div class="section" id="a-more-realistic-double-slit-setup">
+<h2>A more realistic double-slit setup<a class="headerlink" href="#a-more-realistic-double-slit-setup" title="Permalink to this headline">#</a></h2>
+<p>Now that we have encountered the phenomenon of diffraction by a slit of finite width, we can finally tackle the problem of interference by two finite-width slits. Clearly, this is a far more practical setup than the infinitesimally thin slits considered in Lecture 11. As we’ll see, however, it’s no more difficult than applying what we’ve learned from the single-slit example – <em>twice</em>!</p>
+<p>Let’s start with a diagram showing two finite-width slits. <a class="reference internal" href="#double"><span class="std std-numref">Fig. 20</span></a> shows such a setup. For convenience, we’ll define the point <span class="math notranslate nohighlight">\(y=0\)</span> as being exactly half way between the slits and, as ever, we’ll define <span class="math notranslate nohighlight">\(x=0\)</span> as being the position of the screen. Again, we’ll use <span class="math notranslate nohighlight">\(a\)</span> as the width of each slit (i.e., both slits have the same width), and the centre of the first slit is a distance, <span class="math notranslate nohighlight">\(d\)</span>, from the centre of the other. We’ll also assume that <span class="math notranslate nohighlight">\(D&gt;a\)</span>. Finally, we’ll define <span class="math notranslate nohighlight">\(L\)</span> as the distance between the slits and the screen and assume <span class="math notranslate nohighlight">\(L&gt;&gt;D\)</span>, as we have done so throughout.</p>
+<div class="figure align-default" id="double">
+<a class="reference internal image-reference" href="_images/double.png"><img alt="Diagram of double finite-width slit setup, labelled with distance between slits, width of slits, and angle of diffraction after passing through the slits" src="_images/double.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Diagram showing the double finite-width slit setup. The each slit has a total width of <span class="math notranslate nohighlight">\(a\)</span>, and the centre of the top slit is a distance <span class="math notranslate nohighlight">\(d\)</span> from the middle of the bottom slit. Again, I’ve shown the light rays emanating from the slit at an angle <span class="math notranslate nohighlight">\(\theta\)</span> to the line normal to the slits. The screen (not shown) is at a distance, <span class="math notranslate nohighlight">\(L\)</span>, which is far to the right of the slits, such that <span class="math notranslate nohighlight">\(L&gt;&gt;d\)</span>.</span><a class="headerlink" href="#double" title="Permalink to this image">#</a></p>
+</div>
+<p>As suggested above, to determine the intensity distribution resulting from light passing through two finite-width slits, we simply need to integrate over all the mini-oscillators within those two openings. Indeed, the only thing that we need to be careful with are the limits of the integration. Based on the geometry of the setup, we can work out that the lower slit extends from <span class="math notranslate nohighlight">\(y=-d-a/2\)</span> to <span class="math notranslate nohighlight">\(y=-d+a/2\)</span> and that the upper slit extends from <span class="math notranslate nohighlight">\(y=d-a/2\)</span> to <span class="math notranslate nohighlight">\(y=d+a/2\)</span>. Since no light can be coming from anywhere else, those are the only regions that we need to worry about. So, all we need to do is integrate over each finite-width slit, then add the results together, i.e.,:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-97cfb939-671c-4726-b2fd-5340c0915ff3">
+<span class="eqno">(164)<a class="headerlink" href="#equation-97cfb939-671c-4726-b2fd-5340c0915ff3" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \phi_{\rm Tot} &amp;= \psi_{\rm Tot1} + \psi_{\rm Tot2}\nonumber\\
+    &amp;=Ae^{-i\omega t}\left[\int_{-d/2-a/2}^{-d/2+a/2}e^{i\beta y}dy + \int_{d/2-a/2}^{d/2+a/2}e^{i\beta y}dy\right] 
+\end{align}\]</div>
+<p>where, again, I’ve assumed that both slits are illuminated by the same, coherent beam of light – hence I can take <span class="math notranslate nohighlight">\(Ae^{-i\omega t}\)</span> out as a common factor.</p>
+<p>Performing the above integrals gives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7382f0f7-84fc-4802-a892-058f0cd5e0ee">
+<span class="eqno">(165)<a class="headerlink" href="#equation-7382f0f7-84fc-4802-a892-058f0cd5e0ee" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \psi_{\rm Tot} &amp;= Ae^{-i\omega t}\frac{1}{i\beta}\left(\left[e^{i\beta y}\right]_{-d/2-a/2}^{-d/2+a/2} + \left[e^{i\beta y}\right]_{d/2-a/2}^{d/2+a/2}\right)\nonumber\\
+    &amp;=Ae^{-i\omega t}\frac{1}{i\beta}\left(e^{i\beta (-d/2-a/2)}-e^{i\beta (-d/2+a/2)}+ e^{i\beta (d/2+a/2)}-e^{i\beta(d/2-a/2)}\right)\nonumber\\
+    &amp;=Ae^{-i\omega t}\frac{1}{i\beta}\left(e^{-i\beta d/2}\left(e^{i\beta a/2}-e^{-i\beta a/2}\right)+e^{i\beta d/2}\left(e^{i\beta a/2}-e^{-i\beta a/2}\right)\right)\nonumber\\
+    &amp;=Ae^{-i\omega t}\frac{1}{i\beta}\left(e^{i\beta d/2}+e^{-i\beta d/2}\right)\left(e^{i\beta a/2}-e^{-i\beta a/2}\right)\nonumber\\
+    &amp;=Ae^{-i\omega t}\frac{1}{i\beta}\times2\cos(\beta d/2)\times2i\sin\left(\beta a/2\right)\nonumber\\
+    &amp;=Ae^{-i\omega t}\cos(\beta d/2)\frac{\sin\left(\beta a/2\right)}{\beta a/2}\nonumber\\
+    &amp;=Ae^{-i\omega t}\cos(\beta d/2){\rm sinc}(\beta a/2),
+\end{align}\]</div>
+<p>where, again, I’ve manipulated the constant, <span class="math notranslate nohighlight">\(A\)</span>, to absorb other constants, and release a factor of <span class="math notranslate nohighlight">\(1/a\)</span>.</p>
+<p>Again, to obtain an expression for the intensity distribution we need to calculate:</p>
+<div class="math notranslate nohighlight" id="equation-findouble">
+<span class="eqno">(166)<a class="headerlink" href="#equation-findouble" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+    I &amp;\propto \langle\psi_{\rm Tot}^2\rangle\nonumber\\
+    &amp; = I_0\cos^2(\beta d/2){\rm sinc^2}(\beta a/2).
+    \label{eq:findouble}
+\end{align}\end{split}\]</div>
+<p>On comparing Eqn. <a class="reference internal" href="#equation-findouble">(166)</a> with Eqn. <a class="reference internal" href="#equation-finsingle">(163)</a> above and Eqn. <a class="reference internal" href="ch10.html#equation-equiv">(154)</a> from Lecture 10 notes, it should be clear to you that the intensity distribution resulting from light passing through two finite-width slits is equal to the product of the intensity distribution from a single finite-width slit and the intensity distribution from two infinitesimally-thin slits. This is also known as <em>modulation</em> - i.e., the intensity distribution from two finite-width slits is the same as that from two infinitesimally-thin slits <em>modulated</em> by that from a single finite width slit. This modulated intensity distribution is shown in <a class="reference internal" href="#modulated"><span class="std std-numref">Fig. 21</span></a>.</p>
+<div class="figure align-default" id="modulated">
+<a class="reference internal image-reference" href="_images/modulated.png"><img alt="Normalised intensity distribution from infinitesimally narrow double slits, finite-width single slit, and finite-width double slits" src="_images/modulated.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Plot showing the normalised intensity distribution resulting from the three setups described this and the previous lecture: infinitesimally narrow double slits (orange line), finite-width single slit (blue line), and finite-width double slits (black line). Where applicable, the separation of the two slits is four times the width of the slits (i.e., <span class="math notranslate nohighlight">\(d/a = 4\)</span>). The intensity distribution from the finite-width double slits is that of the narrow double slits <em>modulated</em> by that of the single finite-width slit.</span><a class="headerlink" href="#modulated" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In this lecture, we’ve expanded our understanding of wave-wave interactions to include diffraction by a single finite-width slit. I think this is a nicer example than the infinitesimally-thin slits encountered in the last lecture, not just because it is more physically meaningful, but because it is also a really good example of how we can use calculus to split up a problem into little pieces then “sum them up” to get the answer. We then went on to use essentially the same approach to determine the intensity distribution resulting from light passing through two finite-width slits.</p>
+<p>We have now come to the end of the lecture course – I hope you have enjoyed your first look at oscillations and waves at degree-level. To start with, we looked at oscillators, then expanded this to waves - first in just one dimension, and then in multiple dimensions. Next, we looked at damped oscillators and damped waves, before finally looking at two of the most important features of waves – interference and diffraction – which you will certainly encounter many more times over the next three or four years. But as I’ve said before, just as important as learning about oscillations and waves are the tools that we’ve developed to study them. You’ve learned how to use expansions to approximate, and how that leads to the small-angle approximation, which is one of the most useful approximations in all of physics (I still use it regularly in my own research). You’ve also witnessed the remarkable relation that exists between trigonometry and complex numbers – i.e., Euler’s formula – and, crucially, seen how we can use it to make our lives easier when working out problems related to waves and oscillations.</p>
+<p>I’ll now pass you on to Profs. Dan Tovey, Mark Fox, and Pieter Kok who are going to teach you all about Electricity, Magnetism, and Quantum next semester in PHY1002. I’m not due to teach any other first or second year modules, but I look forward to seeing some of your in your third year when you’ll attend the best lecture course in the Universe – Cosmology!</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="theta"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Obviously, <span class="math notranslate nohighlight">\(\theta\)</span> can represent any angle you like, so we <em>are</em>, in effect, doing this for <em>all</em> angles – that’s the the whole concept of algebra!</p>
+</dd>
+<dt class="label" id="absorbed"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>See Q&amp;A Session 11 for proof that the time-average of <span class="math notranslate nohighlight">\((e^{-i\omega t})^2\)</span> is <span class="math notranslate nohighlight">\(1/2\)</span>.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch10.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">10 - Interference</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffraction-by-a-single-slit">Diffraction by a single slit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-realistic-double-slit-setup">A more realistic double-slit setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By James Mullaney
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

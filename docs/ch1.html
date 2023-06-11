@@ -1,0 +1,708 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1 - Oscillations, sinusoids, and angles &#8212; PHY1001 Waves and Oscillations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2 - Simple Harmonic Motion and the Small Angle Approximation" href="ch2.html" />
+    <link rel="prev" title="PHY1001 Waves and Oscillations" href="welcome.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    PHY1001 Waves and Oscillations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2.html">Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3.html">Chapter 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4.html">Chapter 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5.html">Chapter 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6.html">Chapter 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">Chapter 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch8.html">Chapter 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch9.html">Chapter 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">Chapter 10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11.html">Chapter 11</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1 - Oscillations, sinusoids, and angles <a name="chapter1"></a></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-oscillations">What are Oscillations?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relating-oscillations-to-circular-motion">Relating oscillations to circular motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-measuring-angles">A note on measuring angles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-modelling-of-oscillations">Mathematical modelling of oscillations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitude">Amplitude</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency">Frequency</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions-sine-or-cosine">Initial conditions: Sine or cosine?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrary-phase-offsets">Arbitrary phase offsets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formative-questions">Formative Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="oscillations-sinusoids-and-angles-a-name-chapter1-a">
+<h1>1 - Oscillations, sinusoids, and angles <a name="chapter1"></a><a class="headerlink" href="#oscillations-sinusoids-and-angles-a-name-chapter1-a" title="Permalink to this headline">#</a></h1>
+<p>Waves are fundamental to many areas of physics. For example, they underpin the whole of quantum mechanics and are crucial to our understanding of electromagnetic radiation. Closely related to waves are oscillations, not only because an oscillator can be a source of waves, but also because a wave can be described as a series of interacting oscillators. So, in the first two lectures of the course, we’ll take a detailed look at oscillators before moving onto waves in Lecture 3.</p>
+<div class="section" id="what-are-oscillations">
+<h2>What are Oscillations?<a class="headerlink" href="#what-are-oscillations" title="Permalink to this headline">#</a></h2>
+<p>An oscillator is something that engages in motion that repeats, and this repeating motion is called an oscillation. A simple example is the motion of a mass on the end of a spring held vertically to tension the spring. Given an initial kick downwards, the mass goes down, then it slows down, stops and returns back up again, overshoots, reaches some maximum height, then goes back to where it started. Then it does the same thing again, and again. Don’t think however that oscillators have to bob up and down in front of your eyes. Many physical quantities can oscillate, not just in position, but in other measurable quantities. For example, the mains voltage in wall sockets oscillates even though it can’t be seen at all. Oscillating electric and magnetic fields are the building blocks of the waves that carry light or mobile phone signals. Gravitational waves cause spacetime itself to oscillate. Electrons in atoms oscillate, though these oscillations are not directly observable and have some unusual features that need entirely new physics - quantum physics - to describe. The one recurring theme is that an oscillation is something varying cyclically.</p>
+<p>A mass on a spring is an example of a harmonic, or sinusoidal oscillator. In physics we often use mathematics to model behaviour that we measure in experiments. We could do an experiment to record the motion of a mass on a spring. This is an experiment that is easier to think about than to do in practice (Einstein called this kind of experiment a gedanken (thought) experiment). Think of a mass on a spring having a pen attached to it that is drawing on a parchment on rollers as it passes by. The parchment moves from right to left, so that the pen makes a trace as the mass moves up and down. The figure shows what this looks like after a few cycles of the oscillator.</p>
+<div class="figure align-default" id="oscillations">
+<a class="reference internal image-reference" href="_images/oscillation_recorder-1.png"><img alt="thought experiment plotting oscillitory motion" src="_images/oscillation_recorder-1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">A gedanken (thought) experiment for plotting the motion of an oscillator on a graph.</span><a class="headerlink" href="#oscillations" title="Permalink to this image">#</a></p>
+</div>
+<p>Notice that the trace records the motion of the mass as a function of time. Later motion appears further to the right on the paper; earlier motion is further to the left. The shape of the curve on the parchment is something you have seen before in mathematics, where a similar shape can be obtained by writing something like</p>
+<div class="math notranslate nohighlight" id="equation-sine">
+<span class="eqno">(1)<a class="headerlink" href="#equation-sine" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+y&amp;=\sin(x) \\
+y&amp;=\cos(x)
+\end{align}\end{split}\]</div>
+<p>The plots of <span class="math notranslate nohighlight">\(y\)</span> as a function of <span class="math notranslate nohighlight">\(x\)</span> corresponding to Equations <a class="reference internal" href="#equation-sine">(1)</a> are shown in <a class="reference internal" href="#sincos"><span class="std std-numref">Fig. 2</span></a>.</p>
+<div class="figure align-default" id="sincos">
+<a class="reference internal image-reference" href="_images/sin_and_cos-1.png"><img alt="plot of sine and cosine" src="_images/sin_and_cos-1.png" style="width: 500px; height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Plots of <span class="math notranslate nohighlight">\(y=\sin(x)\)</span> and <span class="math notranslate nohighlight">\(y=\cos(x)\)</span>.</span><a class="headerlink" href="#sincos" title="Permalink to this image">#</a></p>
+</div>
+<p>These curves both look like the plot showing the motion of our mass-on-spring oscillator. The only difference between them is where the origin is placed. This is why this kind of oscillation is called a sinusoidal oscillation, because the trajectory is well modelled by the functions <span class="math notranslate nohighlight">\(y=\sin(x)\)</span> and <span class="math notranslate nohighlight">\(y=\cos(x)\)</span>.</p>
+<p>Other words for sinusoidal oscillation are simple harmonic motion, or just harmonic motion, or harmonic oscillations. In this course, all the oscillations we will study are harmonic. Next year you will study other oscillators where the motion is still cyclic, but the motion is not modelled by a single sine wave. Another word for cyclic is periodic.</p>
+</div>
+<div class="section" id="relating-oscillations-to-circular-motion">
+<h2>Relating oscillations to circular motion<a class="headerlink" href="#relating-oscillations-to-circular-motion" title="Permalink to this headline">#</a></h2>
+<p>Why does the sine function represent physical oscillators so well? For one answer, recall the original purpose of <span class="math notranslate nohighlight">\(\sin\)</span>, which is to relate angles to the ratios of the lengths of sides of triangles. To help visualise this, consider Fig. <a class="reference internal" href="#phasor"><span class="std std-numref">Fig. 3</span></a>. Here we have a point that is travelling around some circle at a constant speed – think of a matchstick stuck vertically to a vinyl record player. If you look at the motion of this point side-on, it appears to be making a harmonic oscillation. This works whether you look from the direction of the <span class="math notranslate nohighlight">\(x\)</span>-axis, or the <span class="math notranslate nohighlight">\(y\)</span>-axis, or from any other point in the plane of the circular motion. This leads to a very important feature of harmonic motion:</p>
+<p><em>A sinusoidal oscillation can be thought of as a projection of circular motion in the plane of the circle</em></p>
+<p>You can see that this works geometrically by considering a triangle that has its corners (or vertices) at the origin, the point in question, and the position on the <span class="math notranslate nohighlight">\(x\)</span>-axis directly below the point in question. If the radius of the circle is <span class="math notranslate nohighlight">\(R\)</span>, then the equation for the <span class="math notranslate nohighlight">\(x\)</span>-coordinate of this point is <span class="math notranslate nohighlight">\(x=R\cos(\phi)\)</span>, where <span class="math notranslate nohighlight">\(\phi\)</span> is the angle between the <span class="math notranslate nohighlight">\(x\)</span>-axis and the hypotenuse of the triangle, and the hypotenuse is of length <span class="math notranslate nohighlight">\(R\)</span>. Provided that the angle <span class="math notranslate nohighlight">\(\phi\)</span> increases at a constant rate (i.e., <span class="math notranslate nohighlight">\(\phi(t)=\omega t\)</span>, where <span class="math notranslate nohighlight">\(\omega\)</span> is a constant), then the position along the <span class="math notranslate nohighlight">\(x\)</span>-axis will vary according to <span class="math notranslate nohighlight">\(x(t)=R\cos(\omega t)\)</span>.</p>
+<div class="figure align-default" id="phasor">
+<a class="reference internal image-reference" href="_images/annotated_phasor_rep-1.png"><img alt="trigonometry showing triangles in a circle projected to horizontal and vertical parts of sine and cosine waves" src="_images/annotated_phasor_rep-1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Trigonometry with triangles constructed inside a circle to different points on the circle, together with the projections of those points horizontally and vertically.</span><a class="headerlink" href="#phasor" title="Permalink to this image">#</a></p>
+</div>
+<div class="admonition-key-jargon admonition">
+<p class="admonition-title">Key Jargon</p>
+<p><strong>Phase:</strong> In the case of an oscillator, the value inside the <span class="math notranslate nohighlight">\(\cos\)</span> or <span class="math notranslate nohighlight">\(\sin\)</span> (e.g., <span class="math notranslate nohighlight">\(\phi\)</span> in <span class="math notranslate nohighlight">\(\cos(\phi)\)</span>) is known as the <em>phase</em> of the oscillation.</p>
+</div>
+<div class="section" id="a-note-on-measuring-angles">
+<h3>A note on measuring angles<a class="headerlink" href="#a-note-on-measuring-angles" title="Permalink to this headline">#</a></h3>
+<p>In the previous section, we saw how harmonic oscillations are fundamentally related to circular motion, and that the time-dependent position of an oscillator (e.g., <span class="math notranslate nohighlight">\(x(t)\)</span> can be described in terms of <em>angles</em> (e.g., <span class="math notranslate nohighlight">\(\phi(t)\)</span>). As such, angles are crucial to our understanding of harmonic motion, so the system we use to measure angles is of great importance.</p>
+<p>You will be familiar with using degrees to measure angles. Degrees is the measures of angle on a protractor, as reproduced in <a class="reference internal" href="#protractor"><span class="std std-numref">Fig. 4</span></a>. To measure an angle, you place the crosshairs at the centre of the straight side of the protractor on the point about which the angle will be measured, and around the rim of the protractor the angle measurements are marked off by closely spaced rulings representing degrees. There are <span class="math notranslate nohighlight">\(360^\circ\)</span> in a full circular arc about the cross hairs, or <span class="math notranslate nohighlight">\(90^\circ\)</span> in a right angle. The number of degrees in a full circle is a matter of convention – it is rather arbitrary.</p>
+<div class="figure align-default" id="protractor">
+<a class="reference internal image-reference" href="_images/protractor-1.png"><img alt="protractor labelling origin, angle, radius, and arc length" src="_images/protractor-1.png" style="width: 300px; height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">A <span class="math notranslate nohighlight">\(180^\circ\)</span> protractor for measuring angles in degrees.</span><a class="headerlink" href="#protractor" title="Permalink to this image">#</a></p>
+</div>
+<p>A less arbitrary way of measuring angle is as follows. Take the radius of your protractor as <span class="math notranslate nohighlight">\(r\)</span>. One can imagine drawing an arc along the curved part of the protractor whose length is exactly equal to <span class="math notranslate nohighlight">\(r\)</span>. Next, draw two straight lines – one from each end of your arc to the protractor’s centre – labelled origin in <a class="reference internal" href="#protractor"><span class="std std-numref">Fig. 4</span></a>. The angle subtended by those two lines is <em>exactly</em> one radian.</p>
+<p>Now that we’ve defined a radian, we can use it to measure <em>any</em> angle. An angle of half a radian would correspond to when the length of the arc is half that of the radius, while 1.764 radians (to be completely arbitrary) radians would correspond to when the length of the arc is 1.764 times the radius. Of course, if you then take your eraser and rub-out the arc, the angle <em>it still exists</em>, meaning one can use radians to measure any angle, just as one can with degrees.</p>
+<p>A full circle corresponds to an arc length that is equal to the circumference of the circle, which is <span class="math notranslate nohighlight">\(2\pi r\)</span>. Therefore, the angle in radians that corresponds to <span class="math notranslate nohighlight">\(360^\circ\)</span> is <span class="math notranslate nohighlight">\(2\pi\)</span>. Notice that if the protractor gets bigger both the circumference and the radius grow in the same proportion so – just like degrees – angles measured in radians do not depend on the size of the measuring protractor. A <span class="math notranslate nohighlight">\(90^\circ\)</span> right-angle is a quarter of the circumference, which is a distance of <span class="math notranslate nohighlight">\(2\pi r/4=\pi r/2\)</span>, meaning that <span class="math notranslate nohighlight">\(90^\circ\)</span> is <span class="math notranslate nohighlight">\(\pi/2\)</span> radians. Similarly, <span class="math notranslate nohighlight">\(180^\circ\)</span> is <span class="math notranslate nohighlight">\(\pi\)</span> radians, and so on. In this course, angles will be in radians unless I explicitly state otherwise.</p>
+<p>To convert an angle from degrees to radians, multiply it by <span class="math notranslate nohighlight">\(\pi/180\)</span>. Your calculator can calculate <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> of an angle in radians <em>but only if you switch the mode of your calculator to RAD rather than DEG</em>. Try doing this, then check that the cosine of <span class="math notranslate nohighlight">\(\pi/2\)</span> is zero to make sure you have done it right.</p>
+<p>There’s one more useful fact about angles in radians that is under-utilised by students: if you are given an angle of <span class="math notranslate nohighlight">\(\theta\)</span> radians and a distance <span class="math notranslate nohighlight">\(l\)</span>, then you can very easily work out the length of arc, <span class="math notranslate nohighlight">\(s\)</span>, that <span class="math notranslate nohighlight">\(\theta\)</span> corresponds to:</p>
+<div class="math notranslate nohighlight" id="equation-arclength">
+<span class="eqno">(2)<a class="headerlink" href="#equation-arclength" title="Permalink to this equation">#</a></span>\[\begin{align}
+s&amp;=l\theta.
+\end{align}\]</div>
+<p>This simple relationship is used over and over again in physics analysis. It is particularly useful when <span class="math notranslate nohighlight">\(\theta\)</span> is a very small angle, when it can be used as a short cut to avoid trigonometry where triangles are very thin slivers. As you’ll see throughout your degree, this trick helps us to make all kinds of approximations that save time and even make otherwise very difficult problems tractable.</p>
+<p>Finally, it is also easy to see that when the angle <span class="math notranslate nohighlight">\(\phi\)</span> gets to <span class="math notranslate nohighlight">\(2\pi\)</span> radians, or <span class="math notranslate nohighlight">\(360^\circ\)</span>, it can be regarded as going back to zero and starting to rise again, or continuing to increase above <span class="math notranslate nohighlight">\(2\pi\)</span> radians. Therefore, both <span class="math notranslate nohighlight">\(\sin(\phi)\)</span> and <span class="math notranslate nohighlight">\(\cos(\phi)\)</span> are periodic, with period <span class="math notranslate nohighlight">\(2\pi\)</span>. In mathematical terms, we write</p>
+<div class="math notranslate nohighlight" id="equation-trigident1">
+<span class="eqno">(3)<a class="headerlink" href="#equation-trigident1" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+\sin(\phi+2n\pi)&amp;=\sin(\phi) \nonumber \\
+\cos(\phi+2n\pi)&amp;=\cos(\phi),
+\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is any whole number, positive or negative.</p>
+</div>
+</div>
+<div class="section" id="mathematical-modelling-of-oscillations">
+<h2>Mathematical modelling of oscillations<a class="headerlink" href="#mathematical-modelling-of-oscillations" title="Permalink to this headline">#</a></h2>
+<p>So far we have mostly been doing maths. Now we must use the maths we have learned to do physics. We’ve seen how the shapes of the functions <span class="math notranslate nohighlight">\(\sin(\phi)\)</span> and <span class="math notranslate nohighlight">\(\cos(\phi)\)</span> are – for reasons we’ll see in the next lecture – good representations of harmonic oscillations we see in nature. But is that enough? If you type <span class="math notranslate nohighlight">\(\sin(0.32)\)</span> into your calculator you’ll get the answer 0.315… But 0.315… whats? The trigonometric functions return unitless numbers. This is because they represent the ratio of two lengths (e.g., <span class="math notranslate nohighlight">\(\sin(\theta) = {\rm opposite}/{\rm hypotenuse}\)</span>) which is unitless since the length units cancel out.</p>
+<div class="section" id="amplitude">
+<h3>Amplitude<a class="headerlink" href="#amplitude" title="Permalink to this headline">#</a></h3>
+<p>In physics, oscillations have a physical <em>meaning</em>; for example, a mass-on-spring moves through a distance measurable in metres, whereas the potential different of an alternating current is measurable in Volts. The size of those oscillations can be big or small, meaning the amplitude of an oscillation is important, and the units of that amplitude must match the units in which the oscillating quantity is measured. For the mass-on-spring, the units of the amplitude could be metres, in which case the ‘dimensions’ of the amplitude are length. Whatever is oscillating, the ‘peak amplitude’ of the oscillation, in units appropriate to what is oscillating, multiplies the  <span class="math notranslate nohighlight">\(\sin\)</span> or <span class="math notranslate nohighlight">\(\cos\)</span> function modelling the oscillation. In general, we will use <span class="math notranslate nohighlight">\(\Psi(t)\)</span> to represent the displacement of the oscillator from its equilibrium value at time <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(\Psi_0\)</span> will represent the peak amplitude of the oscillator.</p>
+</div>
+<div class="section" id="frequency">
+<h3>Frequency<a class="headerlink" href="#frequency" title="Permalink to this headline">#</a></h3>
+<p>Furthermore, oscillations may be rapid or slow. The period of an oscillation is the time taken for one cycle of the oscillation. Somehow, we need to arrange things so that as the time variable <span class="math notranslate nohighlight">\(t\)</span> increases through one period, <span class="math notranslate nohighlight">\(T\)</span>, the phase, <span class="math notranslate nohighlight">\(\phi\)</span>, of the <span class="math notranslate nohighlight">\(\sin\)</span> or <span class="math notranslate nohighlight">\(\cos\)</span> function increases by <span class="math notranslate nohighlight">\(2\pi\)</span>. This requirement is satisfied by writing <span class="math notranslate nohighlight">\(\phi=2\pi t/T\)</span>, so that the mathematical model of our oscillation becomes</p>
+<div class="math notranslate nohighlight" id="equation-cosinewave">
+<span class="eqno">(4)<a class="headerlink" href="#equation-cosinewave" title="Permalink to this equation">#</a></span>\[\begin{align}
+\Psi(t)&amp;=\Psi_0\cos\left(\frac{2\pi t}{T}\right)
+\label{eq:cosinewave}
+\end{align}\]</div>
+<p>or perhaps</p>
+<div class="math notranslate nohighlight" id="equation-sinewave">
+<span class="eqno">(5)<a class="headerlink" href="#equation-sinewave" title="Permalink to this equation">#</a></span>\[\begin{align}
+\Psi(t)&amp;=\Psi_0\sin\left(\frac{2\pi t}{T}\right).
+\label{eq:sinewave}
+\end{align}\]</div>
+<p>The sharp-eyed among you will have noticed that there are two symbols representing ‘time’ in Eqns. <a class="reference internal" href="#equation-cosinewave">(4)</a> and <a class="reference internal" href="#equation-sinewave">(5)</a>: <span class="math notranslate nohighlight">\(t\)</span> on the top row and <span class="math notranslate nohighlight">\(T\)</span> on the bottom row. Again, this means that the <em>units</em> (e.g., seconds) cancel each other out, meaning what is inside the <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> brackets is <em>unitless</em>. This is very important: only unitless quantities can go inside the trigonometric functions. ‘But what about radians and degrees - aren’t they units?!’ you cry. Well, look at the mathematical definition of radians expressed in Eq. <a class="reference internal" href="#equation-arclength">(2)</a>. On the right-hand-side of that equation is a length divided by a length, so the units cancel. So while we may attribute the name ‘radian’ to an angle, it is, in fact, unitless. The same applies to degrees, since degrees is just radians multiplied by a unitless number: <span class="math notranslate nohighlight">\(180/\pi\)</span>. <a class="footnote-reference brackets" href="#angles" id="id1">1</a></p>
+<hr class="docutils" />
+<blockquote>
+<div><p><strong>Reminder</strong>: Only unitless values can go inside the brackets of the trigonometric functions.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p>Now, back to oscillations… the frequency of an oscillation is the number of cycles of the oscillation in one second. Frequecy is normally expression in units of Hertz, or Hz, which is the inverse unit of the second (i.e., <span class="math notranslate nohighlight">\(1~{\rm Hz}=1~{\rm s^{-1}}\)</span>). Since the time taken for one cycle is the period <span class="math notranslate nohighlight">\(T\)</span>, the frequency <span class="math notranslate nohighlight">\(\nu\)</span> is given by</p>
+<div class="math notranslate nohighlight" id="equation-frequency">
+<span class="eqno">(6)<a class="headerlink" href="#equation-frequency" title="Permalink to this equation">#</a></span>\[\begin{align}
+\nu = \frac{1}{T}.
+\label{eq:frequency}
+\end{align}\]</div>
+<p>Substituting this into one of the equations for the oscillation - say Equation <a class="reference internal" href="#equation-cosinewave">(4)</a> we can also write the oscillation model as</p>
+<div class="math notranslate nohighlight" id="equation-cosinewave2">
+<span class="eqno">(7)<a class="headerlink" href="#equation-cosinewave2" title="Permalink to this equation">#</a></span>\[\begin{align}
+\Psi(t)&amp;=\Psi_0\cos\left(2\pi \nu t\right).
+\label{eq:cosinewave2}
+\end{align}\]</div>
+<p>Similarly for the other expression using <span class="math notranslate nohighlight">\(\sin\)</span> instead of <span class="math notranslate nohighlight">\(\cos\)</span>. Another way of expressing frequency is to use the <em>angular frequency</em>, whose symbol is <span class="math notranslate nohighlight">\(\omega\)</span>. The angular frequency is the rate of change in the phase of an oscillator, expressed in units of radians per second. To calculate this, substitute <span class="math notranslate nohighlight">\(t=1\)</span>~s into the expression for the phase, <span class="math notranslate nohighlight">\(2\pi\nu t\)</span>, and we learn that the angular frequency is</p>
+<div class="math notranslate nohighlight" id="equation-angularfrequency">
+<span class="eqno">(8)<a class="headerlink" href="#equation-angularfrequency" title="Permalink to this equation">#</a></span>\[\begin{align}
+\omega = 2\pi\nu = \frac{2\pi}{T}
+\label{eq:angularfrequency}
+\end{align}\]</div>
+<p>so that the period of the oscillation can be written</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a86d3db1-f830-4207-81e4-56821813eb31">
+<span class="eqno">(9)<a class="headerlink" href="#equation-a86d3db1-f830-4207-81e4-56821813eb31" title="Permalink to this equation">#</a></span>\[\begin{align}
+T=\frac{2\pi}{\omega}
+\end{align}\]</div>
+<p>Using the angular frequency, we can write particularly compact expressions for our oscillations</p>
+<div class="math notranslate nohighlight" id="equation-cosinewave3">
+<span class="eqno">(10)<a class="headerlink" href="#equation-cosinewave3" title="Permalink to this equation">#</a></span>\[\begin{align}
+\Psi(t)&amp;=\Psi_0\cos\left(\omega t\right)
+\label{eq:cosinewave3}
+\end{align}\]</div>
+<p>or alternatively</p>
+<div class="math notranslate nohighlight" id="equation-sinewave2">
+<span class="eqno">(11)<a class="headerlink" href="#equation-sinewave2" title="Permalink to this equation">#</a></span>\[\begin{align}
+\Psi(t)&amp;=\Psi_0\sin\left(\omega t\right).
+\label{eq:sinewave2}
+\end{align}\]</div>
+</div>
+</div>
+<div class="section" id="initial-conditions-sine-or-cosine">
+<h2>Initial conditions: Sine or cosine?<a class="headerlink" href="#initial-conditions-sine-or-cosine" title="Permalink to this headline">#</a></h2>
+<p>Expressions <a class="reference internal" href="#equation-cosinewave3">(10)</a> and <a class="reference internal" href="#equation-sinewave2">(11)</a> are different, and represent different functions. The sine function is zero when the phase is zero. By contrast, the cosine function is at its maximum positive when the phase is zero. You would use these two oscillation models to cope with two common classes of <em>initial conditions</em> for the oscillator. To see how this works, consider again the mass on a spring. If the mass is pulled downwards or pushed upwards away from its equilibrium position, then released from rest at this displaced position at time <span class="math notranslate nohighlight">\(t=0\)</span>, then its initial displacement will be its peak amplitude in the ensuing oscillations. You would then use <span class="math notranslate nohighlight">\(\Psi=\Psi_0\cos(\omega t)\)</span> to model the motion of the mass, because this model has its maximum displacement at time <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+<p>In another class of oscillations, the initial displacement of the mass at time <span class="math notranslate nohighlight">\(t=0\)</span> is zero but at time <span class="math notranslate nohighlight">\(t=0\)</span> it is given some initial velocity. So, at time <span class="math notranslate nohighlight">\(t=0\)</span>, it is moving, but its displacement from the equilibrium position is zero. In this case you would use <span class="math notranslate nohighlight">\(\Psi=\Psi_0\sin(\omega t)\)</span> to model its subsequent motion, because the <span class="math notranslate nohighlight">\(\sin\)</span> function has zero displacement at zero phase.</p>
+</div>
+<div class="section" id="arbitrary-phase-offsets">
+<h2>Arbitrary phase offsets<a class="headerlink" href="#arbitrary-phase-offsets" title="Permalink to this headline">#</a></h2>
+<p>It may have occurred to you from looking at <a class="reference internal" href="#sincos"><span class="std std-numref">Fig. 2</span></a> that any displacement of either <span class="math notranslate nohighlight">\(\sin\)</span> or <span class="math notranslate nohighlight">\(\cos\)</span> along the horizontal axis yields another perfectly valid oscillation. These displacements are achieved by adding a <em>phase offset</em> or <em>phase shift</em> to the argument of the sine or cosine function. So, for example we can write a more general oscillation with an arbitrary phase at time <span class="math notranslate nohighlight">\(t=0\)</span> like this:</p>
+<div class="math notranslate nohighlight" id="equation-arbitraryphase">
+<span class="eqno">(12)<a class="headerlink" href="#equation-arbitraryphase" title="Permalink to this equation">#</a></span>\[\begin{align}
+\Psi=\Psi_0\sin(\omega t + \phi_0).
+\label{eq:arbitraryphase}
+\end{align}\]</div>
+<p>You could also use <span class="math notranslate nohighlight">\(\cos\)</span>, but it turns out that a particular choice of <span class="math notranslate nohighlight">\(\phi_0\)</span> applied to <span class="math notranslate nohighlight">\(\sin(\omega t + \phi_0)\)</span> is the same as <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span>: when <span class="math notranslate nohighlight">\(\phi_0 = \pi/2\)</span>.</p>
+<div class="admonition-key-jargon admonition">
+<p class="admonition-title">Key Jargon</p>
+<p><strong>Phase shift/offset</strong>: A constant value that’s added to or subtracted from the varying phase of an oscillator is known as a <em>phase shift</em> or a <em>phase offset</em> (they’re interchangeable). In the case of <span class="math notranslate nohighlight">\(\cos(\omega t + \phi_0)\)</span>, <span class="math notranslate nohighlight">\(\phi_0\)</span> is the <em>phase shift</em>.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>At the start of this lecture, we considered what we mean by an oscillation and that in this course we’ll specifically by focussing on harmonic oscillators: those that are well-described by either a sine or cosine.</p>
+<p>We then looked at why this may be the case by noticing the similarities between oscillating and circular motion. This led us down the path to describing oscillations in terms of angles, or <em>phase</em>.</p>
+<p>At this stage, some of you may feel that the connection between harmonic and circular motion is somewhat arbitrary; in the next lecture, we will broach this by exploring at a deeper level <em>why</em> sinusoids describe the motion of these particular types of oscillator.</p>
+</div>
+<div class="section" id="formative-questions">
+<h2>Formative Questions<a class="headerlink" href="#formative-questions" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>A body in one dimensional harmonic motion along the <span class="math notranslate nohighlight">\(z\)</span>-axis has a displacement given by <span class="math notranslate nohighlight">\(z(t)=A\cos{(\omega t)}\)</span>. Using the chain rule to differentiate <span class="math notranslate nohighlight">\(z(t)\)</span> with respect to time <span class="math notranslate nohighlight">\(t\)</span>, determine the peak velocity and peak acceleration of the body.</p></li>
+<li><p>An electrical oscillator produces an output voltage given by <span class="math notranslate nohighlight">\(V=V_0\sin{(\omega_0 t)}\)</span>. After <span class="math notranslate nohighlight">\(t=0\)</span>, at what time <span class="math notranslate nohighlight">\(t\)</span> does the oscillator first give an output of <span class="math notranslate nohighlight">\(V_0/\sqrt{2}\)</span>? Your expression will be in terms of <span class="math notranslate nohighlight">\(\omega_0\)</span>.</p></li>
+<li><p>A body is attached to a spring such that the natural frequency of its oscillations is <span class="math notranslate nohighlight">\(f\)</span> Hz. If this body is kicked at time <span class="math notranslate nohighlight">\(t=0\)</span> with an initial velocity of <span class="math notranslate nohighlight">\(v_0\)</span> metres per second, find an expression for its maximum displacement from its equilibrium position.</p></li>
+</ol>
+<p>Solutions will be handed out with next weeks lecture notes.</p>
+<p>Two final observations - the curve <span class="math notranslate nohighlight">\(y=\cos(x)\)</span> is symmetric with respect to reflection about the vertical axis. Therefore we can write</p>
+<div class="amsmath math notranslate nohighlight" id="equation-87c540fe-a5ac-4d7c-ad8c-9896e11fef4a">
+<span class="eqno">(13)<a class="headerlink" href="#equation-87c540fe-a5ac-4d7c-ad8c-9896e11fef4a" title="Permalink to this equation">#</a></span>\[\begin{align}
+\cos(-x)=+\cos(+x).
+\label{eq:coseven}
+\end{align}\]</div>
+<p>We say that <span class="math notranslate nohighlight">\(\cos(x)\)</span> is an <em>even</em> function of <span class="math notranslate nohighlight">\(x\)</span>. For <span class="math notranslate nohighlight">\(\sin(x)\)</span>, note from inspecting Figure <a class="reference internal" href="#sincos"><span class="std std-numref">Fig. 2</span></a> once again that <span class="math notranslate nohighlight">\(\sin(x)\)</span> is anti-symmetric with respect to reflection about the vertical axis. Therefore</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8ee69d9a-16f7-43b6-a2de-dd53393a7e5d">
+<span class="eqno">(14)<a class="headerlink" href="#equation-8ee69d9a-16f7-43b6-a2de-dd53393a7e5d" title="Permalink to this equation">#</a></span>\[\begin{align}
+\sin(-x)=-\sin(+x).
+\label{eq:sinodd}
+\end{align}\]</div>
+<p>We say that <span class="math notranslate nohighlight">\(\sin(x)\)</span> is an <em>odd</em> function of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="angles"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Despite this, when giving solutions to problems involving angles, you should state ‘radians’ or ‘degrees’ where appropriate, even though they are technically unitless values. This is important given the fact that there are more than one type of measurement of angles.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="welcome.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PHY1001 Waves and Oscillations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2 - Simple Harmonic Motion and the Small Angle Approximation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-oscillations">What are Oscillations?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relating-oscillations-to-circular-motion">Relating oscillations to circular motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-measuring-angles">A note on measuring angles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-modelling-of-oscillations">Mathematical modelling of oscillations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitude">Amplitude</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency">Frequency</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions-sine-or-cosine">Initial conditions: Sine or cosine?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrary-phase-offsets">Arbitrary phase offsets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formative-questions">Formative Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By James Mullaney
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

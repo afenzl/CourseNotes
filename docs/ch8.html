@@ -1,0 +1,692 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8 - Lossy oscillators &#8212; PHY1001 Waves and Oscillations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch8';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="9 - Damped Waves" href="ch9.html" />
+    <link rel="prev" title="7 - Power of a wave" href="ch7.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    PHY1001 Waves and Oscillations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1.html">Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2.html">Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3.html">Chapter 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4.html">Chapter 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5.html">Chapter 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6.html">Chapter 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">Chapter 7</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch9.html">Chapter 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">Chapter 10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11.html">Chapter 11</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch8.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch8.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>8 - Lossy oscillators</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-euler-s-formula">Review of Euler’s formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-analysis-of-a-lossy-oscillator">Complex analysis of a lossy oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underdamped-or-slightly-damped-oscillations">Underdamped or slightly damped oscillations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overdamped-solutions">Overdamped solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#critically-damped-solution">Critically damped solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="lossy-oscillators">
+<h1>8 - Lossy oscillators<a class="headerlink" href="#lossy-oscillators" title="Permalink to this headline">#</a></h1>
+<div class="section" id="review-of-euler-s-formula">
+<h2>Review of Euler’s formula<a class="headerlink" href="#review-of-euler-s-formula" title="Permalink to this headline">#</a></h2>
+<p>By now, you should have covered Euler’s formula in PHY120. This states that:</p>
+<div class="math notranslate nohighlight" id="equation-euler">
+<span class="eqno">(98)<a class="headerlink" href="#equation-euler" title="Permalink to this equation">#</a></span>\[\begin{align}
+    e^{i\theta} = \cos(\theta) + i\sin(\theta).
+    \label{eq:euler}
+\end{align}\]</div>
+<p>As such, we can represent the motion of an oscillating body as the real part of</p>
+<div class="math notranslate nohighlight" id="equation-oscbehaviour">
+<span class="eqno">(99)<a class="headerlink" href="#equation-oscbehaviour" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(t)=Ae^{i\omega t},
+\label{eq:oscbehaviour}
+\end{align}\]</div>
+<p>and the motion of a travelling wave in one dimension can be represented as the real part of</p>
+<div class="math notranslate nohighlight" id="equation-wavebehaviour">
+<span class="eqno">(100)<a class="headerlink" href="#equation-wavebehaviour" title="Permalink to this equation">#</a></span>\[\begin{align}
+\Psi(x,t)=Ae^{i(kx-\omega t)},
+\label{eq:wavebehaviour}
+\end{align}\]</div>
+<p>where the wave is travelling in the direction of increasing <span class="math notranslate nohighlight">\(x\)</span>. In this lecture, we will see how expressing waves in this way can make it far easier to tackle some problems, and specifically that of a Lossy Oscillator.</p>
+</div>
+<div class="section" id="complex-analysis-of-a-lossy-oscillator">
+<h2>Complex analysis of a lossy oscillator<a class="headerlink" href="#complex-analysis-of-a-lossy-oscillator" title="Permalink to this headline">#</a></h2>
+<p>Let us start by first considering the approach we took when we started thinking about waves without loss and consider what our intuition tells us about how lossy oscillators behave. In the case of a lossless oscillator, the motion is an undamped periodic sinusoidal wave, something like <span class="math notranslate nohighlight">\(y(t)=A\cos(\omega t)\)</span> if, for example, the oscillator was released from rest at time <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+<p>Now, what will happen if the oscillator is losing a small amount of energy? Perhaps there is air resistance, or energy is lost in the spring or suspension wire through heating as the metal deforms slightly. We might expect that if the oscillator was initially released from rest at an amplitude <span class="math notranslate nohighlight">\(A\)</span>, then it would subsequently travel through <span class="math notranslate nohighlight">\(x=0\)</span>, reach a maximum negative displacement, then  return to positive <span class="math notranslate nohighlight">\(x\)</span> and reach a positive displacement where it was again instantaneously at rest. However, this time the displacement at instantaneous rest might be <span class="math notranslate nohighlight">\(rA\)</span>, where <span class="math notranslate nohighlight">\(r\)</span> is a positive number slightly less than 1. Now, at this instant, the configuration of the oscillator is exactly as it was at <span class="math notranslate nohighlight">\(t=0\)</span>, only the amplitude at rest is <span class="math notranslate nohighlight">\(rA\)</span> instead of <span class="math notranslate nohighlight">\(A\)</span>. The argument can then be repeated, so that the next time the mass comes to rest at positive <span class="math notranslate nohighlight">\(x\)</span>, its amplitude will be <span class="math notranslate nohighlight">\(r^2A\)</span>, the time after it will be <span class="math notranslate nohighlight">\(r^3A\)</span>, and so on. The science is very similar to that with the bouncing ball, only there is one important difference. With the bouncing ball, the time of flight between bounces decreased as the bounces got smaller, because the initial velocity determines the time of flight. With the simple harmonic oscillator without loss, we learned that the period of the oscillator does not depend on the amplitude. So, we might suspect that a damped oscillator would maintain the same frequency even as it lost energy, whereas the bouncing ball bounces with an ever decreasing period as it loses energy each bounce. If the damped oscillator does behave this way, then the amplitude of each oscillation is smaller than the last by the same ratio, but the amplitude never reaches zero, and the period remains the same; hence the oscillations carry on for ever, in theory, whereas the bouncing ball stops bouncing in a finite time, even though it has an infinite number of bounces.</p>
+<p>Let us formulate the problem of a lossy oscillator using the laws of mechanics. We consider a body of mass <span class="math notranslate nohighlight">\(m\)</span> on a frictionless table connected to a spring, as shown in <a class="reference internal" href="#dampedoscillator"><span class="std std-numref">Fig. 13</span></a>. The equilibrium position of the body is at <span class="math notranslate nohighlight">\(x=0\)</span>, so that when the body is actually at position <span class="math notranslate nohighlight">\(x\)</span>, there is a force <span class="math notranslate nohighlight">\(kx\)</span> directed back towards <span class="math notranslate nohighlight">\(x=0\)</span>. There is also a damping force, which we will assume is a so-called Stokes damping, where the damping force is opposite in direction to the motion of the mass, and has magnitude <span class="math notranslate nohighlight">\(\eta v\)</span>, where <span class="math notranslate nohighlight">\(v\)</span> is the velocity of the body, and <span class="math notranslate nohighlight">\(\eta\)</span> is the coefficient of Stokes’ friction.</p>
+<div class="figure align-default" id="dampedoscillator">
+<a class="reference internal image-reference" href="_images/dampedoscillator.png"><img alt="A diagram showing the decomposition of forces on a damped oscillator" src="_images/dampedoscillator.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">A damped oscillator with Stokes’ friction - a damping force in the opposite direction to the motion of the body.</span><a class="headerlink" href="#dampedoscillator" title="Permalink to this image">#</a></p>
+</div>
+<p>Using Newton’s second law, the sum of the forces equals the rate of change of momentum, or <span class="math notranslate nohighlight">\(ma\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is the acceleration of the body. We have</p>
+<div class="math notranslate nohighlight" id="equation-dampedmotion1">
+<span class="eqno">(101)<a class="headerlink" href="#equation-dampedmotion1" title="Permalink to this equation">#</a></span>\[\begin{align}
+ma=-kx-\eta v
+\label{eq:dampedmotion1}
+\end{align}\]</div>
+<p>Using <span class="math notranslate nohighlight">\(v=\frac{dx}{dt}\)</span> and <span class="math notranslate nohighlight">\(a=\frac{d^2x}{dt^2}\)</span>, we get</p>
+<div class="amsmath math notranslate nohighlight" id="equation-326b788c-fa37-44f1-88b9-e43fedb5fde8">
+<span class="eqno">(102)<a class="headerlink" href="#equation-326b788c-fa37-44f1-88b9-e43fedb5fde8" title="Permalink to this equation">#</a></span>\[\begin{align}
+m\frac{d^2x}{dt^2}=-kx-\eta\frac{dx}{dt}.
+\end{align}\]</div>
+<p>Gather all the terms on one side of the equals sign, so that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-10c82c14-fd5f-437f-af22-0232f6c5320f">
+<span class="eqno">(103)<a class="headerlink" href="#equation-10c82c14-fd5f-437f-af22-0232f6c5320f" title="Permalink to this equation">#</a></span>\[\begin{align}
+m\frac{d^2x}{dt^2}+\eta\frac{dx}{dt}+kx=0.
+\end{align}\]</div>
+<p>Next, notice that there are constants multiplying all three terms in <span class="math notranslate nohighlight">\(x\)</span>. We can get rid of one of these constants by dividing through by it, leading to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ffdbce9d-4e8d-4af3-9a5c-0288044cce22">
+<span class="eqno">(104)<a class="headerlink" href="#equation-ffdbce9d-4e8d-4af3-9a5c-0288044cce22" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{d^2x}{dt^2}+\frac{\eta}{m}\frac{dx}{dt}+\frac{k}{m}x=0.
+\end{align}\]</div>
+<p>Finally, we define <span class="math notranslate nohighlight">\(\Gamma=\eta/m\)</span> and <span class="math notranslate nohighlight">\(\omega_0^2=k/m\)</span>. The latter definition may seem curious unless you recall that we showed before that in an <em>undamped</em> oscillator made of a mass on a spring, the natural frequency was <span class="math notranslate nohighlight">\(\sqrt{k/m}\)</span>, so that this definition of <span class="math notranslate nohighlight">\(\omega_0\)</span> will allow us to compare the frequency of the undamped oscillator with the frequency of the damped one. With these definitions we obtain</p>
+<div class="math notranslate nohighlight" id="equation-dampedoscillator">
+<span class="eqno">(105)<a class="headerlink" href="#equation-dampedoscillator" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{d^2x}{dt^2}+\Gamma\frac{dx}{dt}+\omega_0^2x=0.
+\label{eq:dampedoscillator}
+\end{align}\]</div>
+<p>This is a second order, linear, homogeneous, ordinary differential equation with constant coefficients. What do all these words mean? Second order means that the highest derivative is a second derivative. Linear means that each term contains either the dependent variable (<span class="math notranslate nohighlight">\(x\)</span> here), or a derivative of <span class="math notranslate nohighlight">\(x\)</span> with respect to the independent variable (which is <span class="math notranslate nohighlight">\(t\)</span>); there are no terms containing <span class="math notranslate nohighlight">\(x^2\)</span> or <span class="math notranslate nohighlight">\(x\frac{dx}{dt}\)</span> or <span class="math notranslate nohighlight">\(xt\)</span> or anything complicated like that. Homogeneous means that there is only one dependent variable - which is <span class="math notranslate nohighlight">\(x\)</span> here, and <span class="math notranslate nohighlight">\(x\)</span> depends on <span class="math notranslate nohighlight">\(t\)</span>. Constant coefficients means that the coefficients of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(dx/dt\)</span> and <span class="math notranslate nohighlight">\(d^2x/dt^2\)</span> are constants (<span class="math notranslate nohighlight">\(\omega_0^2\)</span>, <span class="math notranslate nohighlight">\(\Gamma\)</span> and <span class="math notranslate nohighlight">\(1\)</span>); they have no dependence on <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Solving differential equations is something you will do a lot more of during the course. It turns out that a very large number of physics problems are most easily formulated in terms of differential equations, so that solving them is an important skill. Fortunately, there are actually not so very many differential equations you have to learn how to solve. The damped harmonic oscillator is one of those. You just have to learn about how to solve it and how its solutions behave. So, let’s get stuck in. The easiest way to solve this equation is to assume that the solution takes the form <span class="math notranslate nohighlight">\(x=e^{st}\)</span>, where <span class="math notranslate nohighlight">\(s\)</span> is a constant. We use this form because we know that <span class="math notranslate nohighlight">\(e^st\)</span> is an eigenfunction of the operator <span class="math notranslate nohighlight">\(d/dt\)</span>, so that every time derivative is going to bring down a factor of <span class="math notranslate nohighlight">\(s\)</span>. Let’s substitute in and do it slowly. Let <span class="math notranslate nohighlight">\(x(t)=e^{st}\)</span>. Equation <a class="reference internal" href="#equation-dampedoscillator">(105)</a> becomes</p>
+<div class="amsmath math notranslate nohighlight" id="equation-576d512b-b6a6-40f9-875e-d477f84e8ea6">
+<span class="eqno">(106)<a class="headerlink" href="#equation-576d512b-b6a6-40f9-875e-d477f84e8ea6" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{d^2}{dt^2} e^{st} + \Gamma \frac{d}{dt} e^{st} + \omega_0^2 e^{st}=0.
+\end{align}\]</div>
+<p>Since each time derivative brings down a factor of <span class="math notranslate nohighlight">\(s\)</span>, because <span class="math notranslate nohighlight">\(e^{st}\)</span> is an eigenfunction of the operator <span class="math notranslate nohighlight">\(d^n/dt^n\)</span> with eigenvalue <span class="math notranslate nohighlight">\(s^n\)</span>, we obtain</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3bedf94c-1d25-4b67-b8c0-2ce6e8c96344">
+<span class="eqno">(107)<a class="headerlink" href="#equation-3bedf94c-1d25-4b67-b8c0-2ce6e8c96344" title="Permalink to this equation">#</a></span>\[\begin{align}
+s^2e^{st}+\Gamma s e^{st}+\omega_0^2 e^{st} = 0.
+\end{align}\]</div>
+<p>Dividing through by <span class="math notranslate nohighlight">\(e^{st}\)</span>, which is OK because it is never zero for any <span class="math notranslate nohighlight">\(t\)</span>, we obtain</p>
+<div class="math notranslate nohighlight" id="equation-complimentaryfunction">
+<span class="eqno">(108)<a class="headerlink" href="#equation-complimentaryfunction" title="Permalink to this equation">#</a></span>\[\begin{align}
+s^2+\Gamma s + \omega_0^2=0.
+\label{eq:complimentaryfunction}
+\end{align}\]</div>
+<p>This is an ordinary quadratic equation in <span class="math notranslate nohighlight">\(s\)</span>, which we can solve by any of the usual methods. I like to complete the square. To do this write</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ceddaf44-8d83-43bf-b6ef-a1c04c5d3a48">
+<span class="eqno">(109)<a class="headerlink" href="#equation-ceddaf44-8d83-43bf-b6ef-a1c04c5d3a48" title="Permalink to this equation">#</a></span>\[\begin{align}
+s^2+\Gamma s = \left(s+\frac{\Gamma}{2}\right)^2 - \frac{\Gamma^2}{4},
+\end{align}\]</div>
+<p>so that Equation <a class="reference internal" href="#equation-complimentaryfunction">(108)</a> becomes</p>
+<div class="amsmath math notranslate nohighlight" id="equation-12a247cb-a739-4ffb-9dc4-583e2f4005f7">
+<span class="eqno">(110)<a class="headerlink" href="#equation-12a247cb-a739-4ffb-9dc4-583e2f4005f7" title="Permalink to this equation">#</a></span>\[\begin{align}
+\left(s+\frac{\Gamma}{2}\right)^2 + \omega_0^2-\frac{\Gamma^2}{4}=0.
+\end{align}\]</div>
+<p>Taking to the constants to the right of the equals sign, we obtain</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bcb489cb-3320-4dfe-b606-fd14d6d9dbe2">
+<span class="eqno">(111)<a class="headerlink" href="#equation-bcb489cb-3320-4dfe-b606-fd14d6d9dbe2" title="Permalink to this equation">#</a></span>\[\begin{align}
+\left(s+\frac{\Gamma}{2}\right)^2 = -\left(\omega_0^2-\frac{\Gamma^2}{4}\right)
+\end{align}\]</div>
+<p>Note that in the interesting case where the damping is small, the coefficient <span class="math notranslate nohighlight">\(\Gamma\)</span> is very much smaller than <span class="math notranslate nohighlight">\(\omega_0\)</span>, so that the right hand side will be negative. However, this should not scare us any more, because we know how to take the square root of a negative number. We obtain</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8466c869-b2b8-4ba2-9378-6d83a158a2e7">
+<span class="eqno">(112)<a class="headerlink" href="#equation-8466c869-b2b8-4ba2-9378-6d83a158a2e7" title="Permalink to this equation">#</a></span>\[\begin{align}
+s+\frac{\Gamma}{2}=\pm i\sqrt{\omega_0^2-\frac{\Gamma^2}{4}}
+\end{align}\]</div>
+<p>or</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9a67721b-d22b-4d50-8026-06020555aec6">
+<span class="eqno">(113)<a class="headerlink" href="#equation-9a67721b-d22b-4d50-8026-06020555aec6" title="Permalink to this equation">#</a></span>\[\begin{align}
+s=-\frac{\Gamma}{2}\pm i\sqrt{\omega_0^2-\frac{\Gamma^2}{4}}.
+\end{align}\]</div>
+<p>These values of <span class="math notranslate nohighlight">\(s\)</span> are consistent with solutions to Equation <a class="reference internal" href="#equation-dampedoscillator">(105)</a> of the form <span class="math notranslate nohighlight">\(e^{st}\)</span>. Let us see where these solutions lead us. The solutions are</p>
+<div class="amsmath math notranslate nohighlight" id="equation-566b4eaa-feb9-4cc7-932d-f52f17a12cf8">
+<span class="eqno">(114)<a class="headerlink" href="#equation-566b4eaa-feb9-4cc7-932d-f52f17a12cf8" title="Permalink to this equation">#</a></span>\[\begin{align}
+x(t)&amp;=e^{-\frac{\Gamma}{2} t \pm i\sqrt{\omega_0^2-\frac{\Gamma^2}{4}}t}. \nonumber \\
+&amp;=e^{-\frac{\Gamma}{2}t}e^{\pm i\sqrt{\omega_0^2-\frac{\Gamma^2}{4}}t}.
+\end{align}\]</div>
+<div class="section" id="underdamped-or-slightly-damped-oscillations">
+<h3>Underdamped or slightly damped oscillations<a class="headerlink" href="#underdamped-or-slightly-damped-oscillations" title="Permalink to this headline">#</a></h3>
+<p>We continue for a while to consider the case where the damping is slight, so that <span class="math notranslate nohighlight">\(\omega_0 \gg \frac{\Gamma^2}{4}\)</span>. We can define the variable <span class="math notranslate nohighlight">\(\omega_d = \sqrt{\omega_0^2-\frac{\Gamma^2}{4}}\)</span>, which will be positive, and these solutions take the form</p>
+<div class="math notranslate nohighlight" id="equation-underdamped1">
+<span class="eqno">(115)<a class="headerlink" href="#equation-underdamped1" title="Permalink to this equation">#</a></span>\[\begin{align}
+x(t)=e^{-\frac{\Gamma}{2}t}e^{\pm i\omega_d t}.
+\label{eq:underdamped1}
+\end{align}\]</div>
+<p>You can see here that the amplitude of the oscillation decays exponentially, because of the real exponential that appears to the left, but that the oscillations themselves continue at a fixed frequency <span class="math notranslate nohighlight">\(\omega_d\)</span>, which is slightly less than the frequency of the undamped oscillator <span class="math notranslate nohighlight">\(\omega_0\)</span>. However, we are only interested in real solutions. We could just take the real part of this expression, but this would actually only give us one real solution, whereas we know there is a family of real solutions. The whole family is found by taking superpositions of the two solutions for <span class="math notranslate nohighlight">\(s\)</span>. The easiest such superposition is to add them with equal coefficients.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0e3aaa17-7f26-4718-9b1e-208f40ad0712">
+<span class="eqno">(116)<a class="headerlink" href="#equation-0e3aaa17-7f26-4718-9b1e-208f40ad0712" title="Permalink to this equation">#</a></span>\[\begin{align}
+x_1(t)&amp;=Ae^{-\frac{\Gamma}{2}t}\left(\frac{e^{i\omega_d t}}{2}+\frac{e^{-i\omega_d t}}{2}\right) \nonumber \\
+&amp;=Ae^{-\frac{\Gamma}{2}t}\cos(\omega_d t).
+\end{align}\]</div>
+<p>A second real solution is found by subtracting the two possibilities, again with equal coefficients. This solution is a bit more obscure because of the factor of <span class="math notranslate nohighlight">\(i\)</span> that must appear in the denominator by the definition of the <span class="math notranslate nohighlight">\(\sin\)</span> function.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6e47cea1-6d44-494e-bb11-ee3c3b5d6c3a">
+<span class="eqno">(117)<a class="headerlink" href="#equation-6e47cea1-6d44-494e-bb11-ee3c3b5d6c3a" title="Permalink to this equation">#</a></span>\[\begin{align}
+x_2(t)&amp;=Be^{-\frac{\Gamma}{2}t}\left(\frac{e^{i\omega_d t}}{2i}-\frac{e^{-i\omega_d t}}{2i}\right) \nonumber \\
+&amp;=Be^{-\frac{\Gamma}{2}t}\sin(\omega_d t).
+\end{align}\]</div>
+<p>The most general real solution is a superposition of these two possibilities</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6ca8127c-b3c9-4f37-be7b-d38fe379590d">
+<span class="eqno">(118)<a class="headerlink" href="#equation-6ca8127c-b3c9-4f37-be7b-d38fe379590d" title="Permalink to this equation">#</a></span>\[\begin{align}
+x(t)=e^{-\frac{\Gamma}{2}t}\left(A\cos(\omega_d t) + B\sin(\omega_d t)\right).
+\end{align}\]</div>
+<p>As for undamped oscillations, the sum of the <span class="math notranslate nohighlight">\(\cos\)</span> and <span class="math notranslate nohighlight">\(\sin\)</span> solutions can also be written as a <span class="math notranslate nohighlight">\(\cos\)</span> solution with a phase shift <span class="math notranslate nohighlight">\(\phi_0\)</span> at time <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-31276548-0d36-416b-a35b-3278a90e225e">
+<span class="eqno">(119)<a class="headerlink" href="#equation-31276548-0d36-416b-a35b-3278a90e225e" title="Permalink to this equation">#</a></span>\[\begin{align}
+x(t)=Ae^{-\frac{\Gamma}{2}t}\cos(\omega_d t + \phi_0).
+\end{align}\]</div>
+<p>You can see that these solutions behave as our intuition suggested they might. The frequency of the oscillation, though not quite equal to that of the undamped oscillator, is a constant. You can think of the damping as slowing down the motion of the oscillator, which will increase the period, or decrease the frequency of the oscillation compared to its undamped value. The period of the oscillator is <span class="math notranslate nohighlight">\(T=2\pi/\omega_d\)</span>, so that for each period of the oscillator its amplitude will increase to a factor of</p>
+<div class="amsmath math notranslate nohighlight" id="equation-40a86f17-e293-4521-a26c-51690e97081a">
+<span class="eqno">(120)<a class="headerlink" href="#equation-40a86f17-e293-4521-a26c-51690e97081a" title="Permalink to this equation">#</a></span>\[\begin{align}
+e^{-\frac{\pi\Gamma}{\omega_d}}
+\end{align}\]</div>
+<p>relative to that in the previous cycle.</p>
+</div>
+<div class="section" id="overdamped-solutions">
+<h3>Overdamped solutions<a class="headerlink" href="#overdamped-solutions" title="Permalink to this headline">#</a></h3>
+<p>There are of course more highly damped possibilities. The first is the overdamped case, where <span class="math notranslate nohighlight">\(\frac{\Gamma^2}{4}&gt;\omega_0^2\)</span>. In this case the roots (solutions) of Equation <a class="reference internal" href="#equation-complimentaryfunction">(108)</a> are real, and you get two different real values for <span class="math notranslate nohighlight">\(s\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-b3f9fd05-81aa-4967-9e19-ee3d75188ee2">
+<span class="eqno">(121)<a class="headerlink" href="#equation-b3f9fd05-81aa-4967-9e19-ee3d75188ee2" title="Permalink to this equation">#</a></span>\[\begin{align}
+s=-\frac{\Gamma}{2}\pm\sqrt{\frac{\Gamma^2}{4}-\omega_0^2}
+\end{align}\]</div>
+<p>The motion of the mass is a superposition of these two solutions,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-770adeda-c91b-4fd7-9af3-8fe19e405cdb">
+<span class="eqno">(122)<a class="headerlink" href="#equation-770adeda-c91b-4fd7-9af3-8fe19e405cdb" title="Permalink to this equation">#</a></span>\[\begin{align}
+x(t)=Ce^{-\left(\frac{\Gamma}{2}+\sqrt{\frac{\Gamma^2}{4}-\omega_0^2}\right)t}+De^{-\left(\frac{\Gamma}{2}-\sqrt{\frac{\Gamma^2}{4}-\omega_0^2}\right)t}
+\end{align}\]</div>
+<p>In this case the damping is so severe that the body fails to oscillate at all. In fact, though it is possible given a very large initial negative velocity that you might force the body to return once to the origin, the subsequent motion of the body after that single return would not bring it back to the origin a second time.</p>
+</div>
+<div class="section" id="critically-damped-solution">
+<h3>Critically damped solution<a class="headerlink" href="#critically-damped-solution" title="Permalink to this headline">#</a></h3>
+<p>One final solution remains to be considered - critical damping. This is the case where <span class="math notranslate nohighlight">\(\frac{\Gamma^2}{4}=\omega_0^2\)</span>. In this case the two values of <span class="math notranslate nohighlight">\(s\)</span> solving Equation <a class="reference internal" href="#equation-complimentaryfunction">(108)</a> coincide at</p>
+<div class="amsmath math notranslate nohighlight" id="equation-262856b2-6f4f-4026-83d7-401dd6bd41a0">
+<span class="eqno">(123)<a class="headerlink" href="#equation-262856b2-6f4f-4026-83d7-401dd6bd41a0" title="Permalink to this equation">#</a></span>\[\begin{align}
+s=-\frac{\Gamma}{2}.
+\end{align}\]</div>
+<p>In this case, the general solution takes a special form that still has two unknown constants but only allows for a single value of <span class="math notranslate nohighlight">\(s\)</span> in the exponential. That solution is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6c6fabae-82c1-4f6c-88a4-5e165b7d298c">
+<span class="eqno">(124)<a class="headerlink" href="#equation-6c6fabae-82c1-4f6c-88a4-5e165b7d298c" title="Permalink to this equation">#</a></span>\[\begin{align}
+x(t)=Ae^{-\frac{\Gamma}{2}t}.
+\end{align}\]</div>
+<p>This solution is such that, when released from rest, the body approaches its equilibrium as quickly as physically possible, but without oscillating. This is why the motion is called critically damped. Critical damping is ideal for sensitive instrumentation where the response of the instrument to a signal is to move a mirror or a needle. You don’t want the mechanism to overshoot the final value and oscillate about it for a long time, neither do you want the needle to take forever to to “settle”. You frequently design damping controls on these kinds of apparatus so that you are in the critical damping regime.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In this lecture, we’ve seen how to solve the equation of motion for a damped oscillator. This is made far easier now that we know that trigonometric functions can be expressed as complex exponentials via Euler’s formula. We first solved the equation of motion in a general sense, then looked at the specific cases of under, over, and critical damping. In each case, the solution made physical sense: in the underdamped case, the damping was insufficient to stop the oscillations, whereas in the overdamped case, the system took a very long time (and in some cases never) to return to equilibrium. When critically damped, a system approaches the equilibrium position as quickly as possible without oscillating.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch7.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">7 - Power of a wave</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch9.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">9 - Damped Waves</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-euler-s-formula">Review of Euler’s formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-analysis-of-a-lossy-oscillator">Complex analysis of a lossy oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underdamped-or-slightly-damped-oscillations">Underdamped or slightly damped oscillations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overdamped-solutions">Overdamped solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#critically-damped-solution">Critically damped solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By James Mullaney
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

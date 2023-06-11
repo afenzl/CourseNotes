@@ -1,0 +1,621 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9 - Damped Waves &#8212; PHY1001 Waves and Oscillations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch9';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="10 - Interference" href="ch10.html" />
+    <link rel="prev" title="8 - Lossy oscillators" href="ch8.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    PHY1001 Waves and Oscillations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1.html">Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2.html">Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3.html">Chapter 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4.html">Chapter 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5.html">Chapter 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6.html">Chapter 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">Chapter 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch8.html">Chapter 8</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">Chapter 10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11.html">Chapter 11</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch9.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch9.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>9 - Damped Waves</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-lecture-8">Review of lecture 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#damping-in-wave-terminations">Damping in wave terminations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="damped-waves">
+<h1>9 - Damped Waves<a class="headerlink" href="#damped-waves" title="Permalink to this headline">#</a></h1>
+<div class="section" id="review-of-lecture-8">
+<h2>Review of lecture 8<a class="headerlink" href="#review-of-lecture-8" title="Permalink to this headline">#</a></h2>
+<p>Last time we worked out how to use complex exponentials to solve the differential equation for a lossy oscillator. We discovered that the general solution for the motion <span class="math notranslate nohighlight">\(y(x,t)\)</span> of an oscillator in the case of a weak damping force always in the opposite direction to the oscillator motion, and of magnitude proportional to the magnitude of the velocity of the oscillator, is</p>
+<div class="math notranslate nohighlight" id="equation-lossyoscillator">
+<span class="eqno">(125)<a class="headerlink" href="#equation-lossyoscillator" title="Permalink to this equation">#</a></span>\[\begin{align}
+x(t)&amp;=Ae^{-\frac{\Gamma}{2}t}\left(A\cos\omega_d t + B\sin\omega_d t\right),
+\label{eq:lossyoscillator}
+\end{align}\]</div>
+<p>where the magnitude of the frictional force is given in terms of the velocity <span class="math notranslate nohighlight">\(v\)</span> of the oscillator as <span class="math notranslate nohighlight">\(F_d=-\eta v\)</span>, and the coefficient <span class="math notranslate nohighlight">\(\Gamma\)</span> in the solution is <span class="math notranslate nohighlight">\(\Gamma=\eta/m\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is the oscillator mass.
+Where <span class="math notranslate nohighlight">\(\omega_d\)</span> is the angular frequency of the oscillator, related to the angular frequency <span class="math notranslate nohighlight">\(\omega_0=\sqrt{k/m}\)</span> of the same oscillator in the case of zero damping by</p>
+<div class="math notranslate nohighlight" id="equation-omegadamped">
+<span class="eqno">(126)<a class="headerlink" href="#equation-omegadamped" title="Permalink to this equation">#</a></span>\[\begin{align}
+\omega_d=\sqrt{\omega_0^2 - \frac{\Gamma^2}{4}}.
+\label{eq:omegadamped}
+\end{align}\]</div>
+<p>The damping free angular frequency <span class="math notranslate nohighlight">\(\omega_0\)</span> is related to the spring constant <span class="math notranslate nohighlight">\(k\)</span> and the oscillator mass <span class="math notranslate nohighlight">\(m\)</span> by <span class="math notranslate nohighlight">\(\omega_0^2=k/m\)</span>, just as for the simple harmonic oscillator we studied earlier. The constants <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> in the solutions can be determined by two <em>initial conditions</em>, giving (for example) the velocity and displacement of the oscillating body at time <span class="math notranslate nohighlight">\(t=0\)</span>. We also derived the forms of <span class="math notranslate nohighlight">\(x(t)\)</span> for two other cases, one called <em>critically damped</em>, where <span class="math notranslate nohighlight">\(\Gamma=2\omega_0\)</span>, when</p>
+<div class="math notranslate nohighlight" id="equation-criticallydamped">
+<span class="eqno">(127)<a class="headerlink" href="#equation-criticallydamped" title="Permalink to this equation">#</a></span>\[\begin{align}
+x(t)=Ae^{-\frac{\Gamma}{2}t},
+\label{eq:criticallydamped}
+\end{align}\]</div>
+<p>with <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> constant, and the other called <em>overdamped</em>, when <span class="math notranslate nohighlight">\(\Gamma&gt;2\omega_0\)</span>, when</p>
+<div class="amsmath math notranslate nohighlight" id="equation-413c5b84-127b-4948-9d93-5a117a76d86a">
+<span class="eqno">(128)<a class="headerlink" href="#equation-413c5b84-127b-4948-9d93-5a117a76d86a" title="Permalink to this equation">#</a></span>\[\begin{align}
+x(t)=Ce^{-\left(\frac{\Gamma}{2}+\sqrt{\frac{\Gamma^2}{4}-\omega_0^2}\right)t}+De^{-\left(\frac{\Gamma}{2}-\sqrt{\frac{\Gamma^2}{4}-\omega_0^2}\right)t},
+\end{align}\]</div>
+<p>where again <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(D\)</span> are constants determined using two initial conditions. We remarked also that in general a second order differential equation requires you to follow a procedure equivalent to integrating twice to arrive at a family of possible solutions, and these two indefinite integrals (integrals without limits) result in the two constants</p>
+</div>
+<div class="section" id="damping-in-wave-terminations">
+<h2>Damping in wave terminations<a class="headerlink" href="#damping-in-wave-terminations" title="Permalink to this headline">#</a></h2>
+<p>Hopefully by now you have built a wave generator in the lab and shown that you can use it to create standing waves a certain specific frequencies. Maybe some of you have been able to do this, maybe some of you have done it at A-Level; if you haven’t, or if you’d like to just see some footage of standing waves, you can watch examples on YouTube.<a class="footnote-reference brackets" href="#see" id="id1">1</a></p>
+<p>As we have studied, standing waves can be thought of as a superposition of two travelling waves having equal amplitudes moving in opposite directions. Often, however, we are more interested in studying travelling waves. In the past, we’ve done this by considering a wave on an very long string; so long, in fact, that the waves never reach the end and get reflected back. In theory, that’s fine. In practice, however, that’s clearly impractical. To study a travelling wave in practice, we must instead eliminate the reflected wave so we can see the incident travelling wave on its own.</p>
+<p>To get rid of the reflected wave, we need to absorb the energy of the incident wave so that it is not reflected back along the string. One way of doing this is to dampen the end of the string by attaching it to a dashpot – a device which introduces a frictional force that is proportional to velocity. To picture this, think of the end of the string being attached to a piston that itself has one end sunk into a viscous substance - such as oil or water (see <a class="reference internal" href="#dashpot"><span class="std std-numref">Fig. 14</span></a>). Let us solve this system by analysing a travelling wave terminated, at <span class="math notranslate nohighlight">\(x=0\)</span>, in such a dashpot. What we’re effectively going to do is work out how viscous the substance in the dashpot needs to be to prevent any waves from being reflected.</p>
+<div class="figure align-default" id="dashpot">
+<a class="reference internal image-reference" href="_images/wire_and_piston.png"><img alt="Wire under tension with forces broken down into components" src="_images/wire_and_piston.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">A wire under tension magnitude <span class="math notranslate nohighlight">\(F\)</span> connected to the end of a piston which causes Stokes’ damping proportional to the velocity of the end of the rope, in a direction opposing the direction of motion.</span><a class="headerlink" href="#dashpot" title="Permalink to this image">#</a></p>
+</div>
+<p>First, let’s consider the boundary conditions of such a system. The boundary condition is obtained by balancing the forces at the end, i.e., at <span class="math notranslate nohighlight">\(x=0\)</span>, of the string in the vertical direction. The two forces acting are the vertical component of the string tension and the damping force opposing the direction of motion. These two forces must balance, since there is no point mass at the end of the string, and a non-zero resultant force on a zero mass would result in an infinite acceleration, which is unphysical. As usual, we write the incident wave propagating down the string to the right, using the complex representation, as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0b7b846c-d8e6-4564-921a-31b690c2f493">
+<span class="eqno">(129)<a class="headerlink" href="#equation-0b7b846c-d8e6-4564-921a-31b690c2f493" title="Permalink to this equation">#</a></span>\[\begin{align}
+\Psi_I(x,t)&amp;=Ae^{i(kx-\omega t)},
+\end{align}\]</div>
+<p>and the wave reflected off the boundary at <span class="math notranslate nohighlight">\(x=0\)</span> propagating down the string to the left as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-186631c9-4ecb-4395-98cc-09dd1f41c8d6">
+<span class="eqno">(130)<a class="headerlink" href="#equation-186631c9-4ecb-4395-98cc-09dd1f41c8d6" title="Permalink to this equation">#</a></span>\[\begin{align}
+\Psi_R(x,t)&amp;=Re^{i(-kx-\omega t)}.
+\end{align}\]</div>
+<p>The vertical component of the force on the string is <span class="math notranslate nohighlight">\(F\sin\alpha\)</span> directed upwards. This force must balance the damping force, which when the mass is moving upwards is directed downwards and is of magnitude <span class="math notranslate nohighlight">\(\eta v\)</span>, where <span class="math notranslate nohighlight">\(v\)</span> is the magnitude of the velocity of the end of the string and <span class="math notranslate nohighlight">\(\eta\)</span> is the dynamic viscosity, i.e., what we’re trying to calculate. Writing <span class="math notranslate nohighlight">\(\Psi(x,t)\)</span> for the total motion of the string at its end point, we have</p>
+<div class="math notranslate nohighlight" id="equation-boundary">
+<span class="eqno">(131)<a class="headerlink" href="#equation-boundary" title="Permalink to this equation">#</a></span>\[\begin{align}
+F\sin\alpha=\eta v.
+\label{eq:boundary}
+\end{align}\]</div>
+<p>Now, let us as usual analyse the problem assuming the small angle approximation. This means that the angle made by the string with the horizontal is everywhere less than about <span class="math notranslate nohighlight">\(10^\circ\)</span>. For these relatively small displacements, we can write</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f8888760-44e5-49b2-85a2-545c7f9317b0">
+<span class="eqno">(132)<a class="headerlink" href="#equation-f8888760-44e5-49b2-85a2-545c7f9317b0" title="Permalink to this equation">#</a></span>\[\begin{align}
+\sin\alpha\simeq\tan\alpha\simeq-\frac{\partial \Psi}{\partial x}
+\end{align}\]</div>
+<p>The negative sign on the right is because a negative slope on the string at <span class="math notranslate nohighlight">\(x&lt;0\)</span> results in a positive force upwards. The partial derivative is because <span class="math notranslate nohighlight">\(\Psi\)</span> is a function of both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>. Also, the velocity at the end of the string is given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a80d3c77-8c41-421b-9928-502c18bcb344">
+<span class="eqno">(133)<a class="headerlink" href="#equation-a80d3c77-8c41-421b-9928-502c18bcb344" title="Permalink to this equation">#</a></span>\[\begin{align}
+v=\frac{\partial\Psi}{\partial t}.
+\end{align}\]</div>
+<p>Now, there is an additional boundary condition at <span class="math notranslate nohighlight">\(x=0\)</span>, which is that the total displacement at <span class="math notranslate nohighlight">\(x=0\)</span> must equal the sum of the contributions from the incident wave <span class="math notranslate nohighlight">\(\Psi_I(x,t)\)</span> and the reflected wave <span class="math notranslate nohighlight">\(\Psi_R(x,t)\)</span>. Putting all these things in to Equation <a class="reference internal" href="#equation-boundary">(131)</a>, we obtain</p>
+<div class="math notranslate nohighlight" id="equation-boundary2">
+<span class="eqno">(134)<a class="headerlink" href="#equation-boundary2" title="Permalink to this equation">#</a></span>\[\begin{align}
+-F\left.\frac{\partial}{\partial x}\left(\Psi_I(x,t)+\Psi_R(x,t)\right)\right|_{x=0}&amp;=\eta\left.\frac{\partial}{\partial t}\left(\Psi_I(x,t)+\Psi_R(x,t)\right)\right|_{x=0}
+\label{eq:boundary2}
+\end{align}\]</div>
+<p>or</p>
+<div class="amsmath math notranslate nohighlight" id="equation-864ba4c3-ce55-4de5-987c-7f04138969b6">
+<span class="eqno">(135)<a class="headerlink" href="#equation-864ba4c3-ce55-4de5-987c-7f04138969b6" title="Permalink to this equation">#</a></span>\[\begin{align}
+-F\left.\frac{\partial}{\partial x}\left(Ae^{i(kx-\omega t)}+Re^{i(-kx-\omega t)}\right)\right|_{x=0}&amp;=
+\eta\left.\frac{\partial}{\partial t}\left(Ae^{i(kx-\omega t)}+Re^{i(-kx-\omega t)}\right)\right|_{x=0}.
+\end{align}\]</div>
+<p>Doing the derivatives, then setting <span class="math notranslate nohighlight">\(x=0\)</span> and cancelling the common factor of <span class="math notranslate nohighlight">\(e^{i\omega t}\)</span> leads to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-827e2518-22e0-4bb4-8bb8-fccc16ace1d2">
+<span class="eqno">(136)<a class="headerlink" href="#equation-827e2518-22e0-4bb4-8bb8-fccc16ace1d2" title="Permalink to this equation">#</a></span>\[\begin{align}
+-F\left(ikA-ikR\right)=-i\omega\eta\left(A+R\right).
+\end{align}\]</div>
+<p>Once again the factors of <span class="math notranslate nohighlight">\(i\)</span> all cancel, so that in this problem there is no parameter-dependent phase shift between the incident and the reflected wave. There could however be a relative minus sign indicating that the incident and reflected signals have opposite phase. The equation becomes</p>
+<div class="amsmath math notranslate nohighlight" id="equation-43c0bf98-7aef-4012-8ede-ab45bda094fc">
+<span class="eqno">(137)<a class="headerlink" href="#equation-43c0bf98-7aef-4012-8ede-ab45bda094fc" title="Permalink to this equation">#</a></span>\[\begin{align}
+-FkA+FkR&amp;=-\eta\omega A-\eta\omega R. \nonumber \\
+A(Fk-\eta\omega)&amp;=R(Fk+\eta\omega).
+\end{align}\]</div>
+<p>Rearranging we obtain the following expression for the ratio of the reflected to the incident amplitude.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b7b72215-0fab-4537-8385-1395922edadb">
+<span class="eqno">(138)<a class="headerlink" href="#equation-b7b72215-0fab-4537-8385-1395922edadb" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{R}{A}=\frac{Fk-\eta\omega}{Fk+\eta\omega}.
+\end{align}\]</div>
+<p>Let us consider some limiting behaviour of this result to see if it makes sense. You may have found out in the lab that varying the viscosity of the fluid in your wave generator/reflector experiment resulted in different amounts of reflected wave. This result tells us that at a particular value of the reflection coefficient, <span class="math notranslate nohighlight">\(R/A\)</span> goes to zero. This happens when</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dcd32839-2fd9-494f-b669-7040b9cb2868">
+<span class="eqno">(139)<a class="headerlink" href="#equation-dcd32839-2fd9-494f-b669-7040b9cb2868" title="Permalink to this equation">#</a></span>\[\begin{align}
+Fk=\eta\omega,
+\end{align}\]</div>
+<p>or</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c32cf69b-8e05-42cd-ab24-8e0a023cf462">
+<span class="eqno">(140)<a class="headerlink" href="#equation-c32cf69b-8e05-42cd-ab24-8e0a023cf462" title="Permalink to this equation">#</a></span>\[\begin{align}
+\eta=\frac{F}{v}
+\end{align}\]</div>
+<p>Note that the zero reflection point is not at the maximum amount of friction; if we increase <span class="math notranslate nohighlight">\(\eta\)</span> to infinity, corresponding to a really sticky fluid, we obtain <span class="math notranslate nohighlight">\(R/A=-1\)</span>, so that all of the incident signal is reflected with the opposite phase. This also happens if you have an infinitely heavy mass on the end of the string, or an infinitely stiff spring. So, there is a particular choice of stickiness of the damping mechanism that leads to perfect attenuation of the reflected wave. Note also that it is not true in general that all the energy in the incoming wave is reflected. This is because the damping mechanism converts some or all of the energy in the incident wave into other forms, such as heat in the viscous medium that makes up the damper.</p>
+<p>The physics of this problem is analogous to that of high frequency signals travelling down cables. When you work with oscilloscopes and reasonably high frequency signals, say between <span class="math notranslate nohighlight">\(1\,{\rm MHz}\)</span> and <span class="math notranslate nohighlight">\(1\,{\rm GHz}\)</span>, you will have noticed that the cables used are black circular cross section cables, and if you are particularly observant you may have noticed the letters RG-58 written on the outer conductor. This type of cable is coaxial - it consists of an inner conductor that runs down the centre, a dielectric layer that can be made of several different materials, and an outer braided sheath that acts as a ground. This cable is good for carrying sine waves or pulses that have high frequency content, but if the terminations on the end of the cable have the wrong amount of resistance, then some of the incident signal is reflected back down the cable, leading to undesirable standing waves. The way to avoid standing waves is to terminate the cable with an electrical load that matches the characteristics of the cable. RG-58 cable has a so-called ‘characteristic impedance’ of <span class="math notranslate nohighlight">\(50\,{\rm \Omega}\)</span>, and it turns out that if you connect a <span class="math notranslate nohighlight">\(50\,{\rm \Omega}\)</span> resistor between the inner conductor and the outer sheath, this results in zero reflection, or a perfect match between the cable and its load. What we have been studying here is the analogous problem in mechanics and waves on strings in particular.</p>
+<p>It may occur to you that you might be able to invent a common theory for describing matching between signal transmission lines and loads on the ends of the lines. You will learn about this common theory next year; it is called the theory of impedances.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In this lecture, we’ve had a quick review of the previous lecture on damped oscillators, then took the next step to look at damped waves. In this latter case, we considered a setup in which a wave was travelling down a wire that was attached to a device that absorbed the energy of the wave. We calculated the conditions under which all the energy of the incident wave was absorbed so that there is no reflected wave. Under these circumstances, no standing wave is set up in the system. We saw that this critical level of damping was dictated by the other properties of the system - notably the tension in the wire and the velocity of the wave. Analogies of this can be drawn with other types of waves, including electrical signals in which you may wish to negate any reflected signals at a terminal.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="see"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>See, for example, <a class="reference external" href="https://www.youtube.com/watch?v=-gr7KmTOrx0">this</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch8.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">8 - Lossy oscillators</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch10.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">10 - Interference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-lecture-8">Review of lecture 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#damping-in-wave-terminations">Damping in wave terminations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By James Mullaney
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

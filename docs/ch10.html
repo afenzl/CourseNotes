@@ -1,0 +1,634 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10 - Interference &#8212; PHY1001 Waves and Oscillations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch10';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="11 - Diffraction and interference" href="ch11.html" />
+    <link rel="prev" title="9 - Damped Waves" href="ch9.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    PHY1001 Waves and Oscillations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1.html">Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2.html">Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3.html">Chapter 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4.html">Chapter 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5.html">Chapter 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6.html">Chapter 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">Chapter 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch8.html">Chapter 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch9.html">Chapter 9</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11.html">Chapter 11</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch10.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch10.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>10 - Interference</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interference-by-two-thin-slits">Interference by two thin slits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-correct-circumstances">The correct circumstances</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="interference">
+<h1>10 - Interference<a class="headerlink" href="#interference" title="Permalink to this headline">#</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>Earlier in the course, we spent some time looking at what happens when we sum together two waves travelling in opposite directions: left-to-right and right-to-left.<a class="footnote-reference brackets" href="#seen" id="id1">1</a> The result was a so-called <em>standing wave</em> – one in which all parts of the wave oscillate in phase with each other, and there is no net “movement” left or right. In the last two lectures of the course, we’re going to look at another example wave addition, one in which the waves are moving in (almost) the same direction. When this happens, the waves are referred to as interfering with one another. As such, this type of wave behaviour is known generally as <em>interference</em>.</p>
+<p>You likely came across the concept of wave interference during your A-levels. If you did, you may have seen how light waves travelling through two thin slits produced an interference pattern consisting of regions of bright and dark fringes, such as those shown in <a class="reference internal" href="#pattern"><span class="std std-numref">Fig. 15</span></a>. Your teacher may have also demonstrated how the bright fringes are produced at angles, <span class="math notranslate nohighlight">\(\theta\)</span>, given by:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-568d371b-0177-403f-afd6-dfe6551989ff">
+<span class="eqno">(141)<a class="headerlink" href="#equation-568d371b-0177-403f-afd6-dfe6551989ff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    d\sin\theta = m\lambda
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(m\)</span> is an integer, <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength of the wave, and <span class="math notranslate nohighlight">\(d\)</span> is the separation between the two slits.</p>
+<div class="figure align-default" id="pattern">
+<a class="reference internal image-reference" href="_images/pattern.png"><img alt="Geometric decomposition of a double slit experiment and the resulting interference pattern shown beside it" src="_images/pattern.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text"><em>Left:</em> A double slit experiment. Waves from the left – in this case lightwaves – encounter the double slits, interfere with each other to produce the interference patter shown in the right-hand image.</span><a class="headerlink" href="#pattern" title="Permalink to this image">#</a></p>
+</div>
+<p>While deriving the location of the bright fringes is a nice proof, and certainly useful, it’s only part of the story. To get the full picture, we really need to obtain an expression for the full intensity distribution of the interference pattern resulting from light passing through two infinitesimally thin slits. So that is what we’re going to do in this lecture. In the next lecture, we’ll look at the more realistic, but also slightly more difficult, case of interference through a single slit that is <em>not</em> infinitesimally thin. Finally, at the end of the next lecture, we’ll put it all together to consider the interference pattern produced by light waves travelling through two non-infinitesimally thin slits.</p>
+</div>
+<div class="section" id="interference-by-two-thin-slits">
+<h2>Interference by two thin slits<a class="headerlink" href="#interference-by-two-thin-slits" title="Permalink to this headline">#</a></h2>
+<p>As mentioned in the previous section, our goal is to obtain an expression for the intensity distribution resulting from light waves travelling through two thin slits. To do this, we’ll consider the setup shown in the left-hand diagram of <a class="reference internal" href="#pattern"><span class="std std-numref">Fig. 15</span></a>. It should be noted, however, that while we’ll be thinking about this in terms of light waves, <em>all</em> types of wave can undergo interference under the right circumstances, including sound waves, radio waves, water waves etc. As we’ll see later, though, those “circumstances” I refer to are important.</p>
+<p>Let us now consider the light waves travelling through the two slits shown in the left hand diagram of <a class="reference internal" href="#pattern"><span class="std std-numref">Fig. 15</span></a>. The slits are separated by a distance <span class="math notranslate nohighlight">\(d\)</span>, and both slits are located a distance <span class="math notranslate nohighlight">\(L\)</span> from a screen onto which the interference pattern is projected. What should be clear from that diagram is that the distance between the top slit, <span class="math notranslate nohighlight">\(S_1\)</span>, and the point <span class="math notranslate nohighlight">\(O\)</span> on the screen is the same as the distance between the bottom slit, <span class="math notranslate nohighlight">\(S_2\)</span>, and <span class="math notranslate nohighlight">\(O\)</span>. Clearly, this means that waves from both <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> travel the same distance before striking the screen at point <span class="math notranslate nohighlight">\(O\)</span>. Now lets consider points <em>upwards</em> of <span class="math notranslate nohighlight">\(O\)</span>; specifically, point <span class="math notranslate nohighlight">\(P\)</span>. Here, it’s clear that waves from <span class="math notranslate nohighlight">\(S_2\)</span> have to travel further than waves from slit <span class="math notranslate nohighlight">\(S_1\)</span>. We can use the cosine law to work out how far each wave travels:</p>
+<div class="math notranslate nohighlight" id="equation-r1">
+<span class="eqno">(142)<a class="headerlink" href="#equation-r1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    r_1^2 = r^2 + \left(\frac{d}{2}\right)^2 - dr\cos\left(\frac{\pi}{2} -\theta\right) = r^2 + \left(\frac{d}{2}\right)^2 - dr\sin\theta
+    \label{r1}
+\end{equation}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-r2">
+<span class="eqno">(143)<a class="headerlink" href="#equation-r2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    r_2^2 = r^2 + \left(\frac{d}{2}\right)^2 - dr\cos\left(\frac{\pi}{2} +\theta\right) = r^2 + \left(\frac{d}{2}\right)^2 + dr\sin\theta.
+    \label{r2}
+\end{equation}\]</div>
+<p>Subtracting Eqn. <a class="reference internal" href="#equation-r1">(142)</a> from Eqn. <a class="reference internal" href="#equation-r2">(143)</a> gives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8473c0e9-2921-4992-8a81-7c033d9fe418">
+<span class="eqno">(144)<a class="headerlink" href="#equation-8473c0e9-2921-4992-8a81-7c033d9fe418" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    r_2^2 - r_1^2 = (r_2 + r_1)(r_2 - r_1) = 2dr\sin\theta
+\end{equation}\]</div>
+<p>and provided that <span class="math notranslate nohighlight">\(L\)</span> is much greater than <span class="math notranslate nohighlight">\(d\)</span> – which it almost always is – then it’s reasonable to say that the sum of <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_2\)</span> is approximately equal to <span class="math notranslate nohighlight">\(2r\)</span>, meaning the path difference becomes:</p>
+<div class="math notranslate nohighlight" id="equation-delta">
+<span class="eqno">(145)<a class="headerlink" href="#equation-delta" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \delta = r_2 - r_1 = d\sin\theta,
+    \label{delta}
+\end{equation}\]</div>
+<p>which can perhaps be more clearly seen by considering <a class="reference internal" href="#zoom"><span class="std std-numref">Fig. 16</span></a> which implicitly assumes <span class="math notranslate nohighlight">\(d&lt;&lt;L\)</span> by displaying <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_2\)</span> as parallel lines.</p>
+<div class="figure align-default" id="zoom">
+<a class="reference internal image-reference" href="_images/zoom.png"><img alt="Zoom-in of a double slit experiment showing the path difference that causes interference" src="_images/zoom.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">A zoom-in of a double slit showing the cause of the path difference between two waves emanating from each slit. By showing the path of the waves as parallel lines, this makes the implicit assumption that the separation of the slits are much smaller than the distance between the slits and the screen (the latter of which is not shown here).</span><a class="headerlink" href="#zoom" title="Permalink to this image">#</a></p>
+</div>
+<p>The difference in the path lengths between the two slits and point <span class="math notranslate nohighlight">\(P\)</span> is simply a distance. Similarly, the wavelength of a wave is just a distance. As such the difference, <span class="math notranslate nohighlight">\(\delta\)</span>, can be written in terms of a number of wavelengths. And this number doesn’t need to be an integer - it could also be a fraction:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-892ba3fa-c747-409b-ba02-1c325a7a0061">
+<span class="eqno">(146)<a class="headerlink" href="#equation-892ba3fa-c747-409b-ba02-1c325a7a0061" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\Delta\lambda = \frac{\delta}{\lambda}.
+\end{equation}\]</div>
+<p>Now, thinking back to earlier in the course, one whole wavelength corresponds to a phase difference of <span class="math notranslate nohighlight">\(2\pi\)</span>. So, a fractional wavelength corresponds to a phase difference, <span class="math notranslate nohighlight">\(\phi\)</span>, of a fraction of <span class="math notranslate nohighlight">\(2\pi\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-lecture10">
+<span class="eqno">(147)<a class="headerlink" href="#equation-lecture10" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \phi = 2\pi\Delta\lambda = 2\pi\frac{\delta}{\lambda} = \frac{2\pi}{\lambda}d\sin\theta.
+\end{equation}\]</div>
+<p>where the last step uses <span class="math notranslate nohighlight">\(\delta = d\sin\theta\)</span> from Eqn. <a class="reference internal" href="#equation-delta">(145)</a>.</p>
+<p>Now that we have expressed the difference in the path lengths in terms of a phase shift, as opposed to simply a distance, we can write expressions for the waves emanating from each slit:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-25a46f06-1425-43fd-b33a-015c01a802b2">
+<span class="eqno">(148)<a class="headerlink" href="#equation-25a46f06-1425-43fd-b33a-015c01a802b2" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \psi_1(x,t) &amp;= Ae^{i(kx - \omega t)}\\\nonumber
+    \psi_2(x,t,\phi) &amp;= Ae^{i(kx - \omega t + \phi)}
+\end{align}\]</div>
+<p>which, if we conveniently place the screen at <span class="math notranslate nohighlight">\(x=0\)</span>, become:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1eb72cf5-7ec6-4c67-9ced-0e5d36a44e63">
+<span class="eqno">(149)<a class="headerlink" href="#equation-1eb72cf5-7ec6-4c67-9ced-0e5d36a44e63" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \psi_1(t) &amp;= Ae^{-i\omega t}\\\nonumber
+    \psi_2(t,\phi) &amp;= Ae^{i(- \omega t + \phi)}.
+\end{align}\]</div>
+<p>To calculate the total displacement, <span class="math notranslate nohighlight">\(\psi_T(t,\phi)\)</span>, at point <span class="math notranslate nohighlight">\(P\)</span> we simply need to sum these two waves, i.e., :</p>
+<div class="amsmath math notranslate nohighlight" id="equation-14d41070-dd5f-4515-be09-a7704145b21b">
+<span class="eqno">(150)<a class="headerlink" href="#equation-14d41070-dd5f-4515-be09-a7704145b21b" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \psi_{\rm T}(t, \phi) &amp;= \psi_1(t) + \psi_2(t,\phi)\nonumber\\
+    &amp;=A(e^{-i\omega t} + e^{i(-\omega t + \phi)})\nonumber\\
+    &amp;=Ae^{-i\omega t}(1 + e^{i\phi})\nonumber\\
+    &amp;=Ae^{-i\omega t}e^{i\phi/2}(e^{-i\phi/2}+e^{i\phi/2})\nonumber\\
+    &amp;=Ae^{i(-\omega t + \phi/2)}(e^{-i\phi/2}+e^{i\phi/2}).
+\end{align}\]</div>
+<p>Now, you may be wondering why I did all that stuff with the <span class="math notranslate nohighlight">\(\phi/2\)</span>’s in the above equations. It was basically so I got a nice trigonometric function out, since <span class="math notranslate nohighlight">\(e^{-i\alpha} + e^{i\alpha}\equiv2\cos\alpha\)</span>, i.e., :</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cc117064-68b3-4a5f-81e8-e9a056389067">
+<span class="eqno">(151)<a class="headerlink" href="#equation-cc117064-68b3-4a5f-81e8-e9a056389067" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \psi_{\rm T}(t, \phi) &amp;=Ae^{i(-\omega t + \phi/2})(e^{-i\phi/2}+e^{i\phi/2})\nonumber\\
+    &amp;=2A\cos\left(\frac{\phi}{2}\right)e^{i(-\omega t + \phi/2)}.
+\end{align}\]</div>
+<p>If I hadn’t done that, I’d have had to mess about with double angle formulas. In the above expression, we’ve got a part that depends entirely on <span class="math notranslate nohighlight">\(\phi\)</span> – the cos part – and a part that depends on both <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>. That last part looks a bit tricky; until, that is, we consider what we actually <em>see</em> when we look at the diffraction pattern. What our eyes (or any other type of detector) actually sees is the <em>time-averaged intensity</em>. Averaged, that is, over a <em>very</em> large number of oscillations. Since intensity is proportional to the square of the displacement, we write the time-averaged intensity as:</p>
+<div class="math notranslate nohighlight" id="equation-intensity">
+<span class="eqno">(152)<a class="headerlink" href="#equation-intensity" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+    I &amp;\propto \langle \psi_T^2\rangle\nonumber\\
+    &amp;\propto4A^2\cos^2\left(\frac{\phi}{2}\right)\langle e^{2i(-\omega t + \phi/2)}\rangle\nonumber\\
+    &amp;\propto2A^2\cos^2\left(\frac{\phi}{2}\right)
+    \label{intensity}
+\end{align}\end{split}\]</div>
+<p>where the last step comes from the fact that the average value of both <span class="math notranslate nohighlight">\(\cos^2 \alpha\)</span> and <span class="math notranslate nohighlight">\(\sin^2 \alpha\)</span> is 1/2. Clearly, we can replace that proportional sign in Eqn. <a class="reference internal" href="#equation-intensity">(152)</a> with a constant of proportionality, <span class="math notranslate nohighlight">\(C\)</span>. And since both 2 and A are also constants, we can replace <span class="math notranslate nohighlight">\(2CA\)</span> with a single constant, which we’ll call <span class="math notranslate nohighlight">\(I_0\)</span>, meaning:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-16125ba3-732b-4fdf-bb09-ed4b468239b5">
+<span class="eqno">(153)<a class="headerlink" href="#equation-16125ba3-732b-4fdf-bb09-ed4b468239b5" title="Permalink to this equation">#</a></span>\[\begin{align}
+    I = I_0 \cos^2\left(\frac{\phi}{2}\right)
+\end{align}\]</div>
+<p>As such, the intensity of light projected onto the screen varies as <span class="math notranslate nohighlight">\(\cos^2\phi\)</span> or, equivalently,</p>
+<div class="math notranslate nohighlight" id="equation-equiv">
+<span class="eqno">(154)<a class="headerlink" href="#equation-equiv" title="Permalink to this equation">#</a></span>\[\begin{align}
+    I = I_0 \cos^2\left(\frac{\pi d}{\lambda}\sin\theta\right).
+\end{align}\]</div>
+<p>And if <span class="math notranslate nohighlight">\(\theta\)</span> is small (i.e., less than about ten degrees), then <span class="math notranslate nohighlight">\(\sin\theta\approx y/L\)</span>, where <span class="math notranslate nohighlight">\(y\)</span> is the distance up the screen, meaning:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-07834b03-d75f-4b13-b916-d17fcf312c6e">
+<span class="eqno">(155)<a class="headerlink" href="#equation-07834b03-d75f-4b13-b916-d17fcf312c6e" title="Permalink to this equation">#</a></span>\[\begin{align}
+    I = I_0 \cos^2\left(\frac{\pi d}{\lambda L}y\right).
+\end{align}\]</div>
+<p>This intensity profile is shown in <a class="reference internal" href="#intensity"><span class="std std-numref">Fig. 17</span></a>.</p>
+<div class="figure align-default" id="intensity">
+<a class="reference internal image-reference" href="_images/intensity.png"><img alt="Intensity profile of light passing through two slits as a function of distance away" src="_images/intensity.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Plot showing the intensity profile of light passing through two infinitesimally narrow slits of separation, <span class="math notranslate nohighlight">\(d\)</span>,  projected onto a screen a distance <span class="math notranslate nohighlight">\(L\)</span> away from the slits.</span><a class="headerlink" href="#intensity" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<div class="section" id="the-correct-circumstances">
+<h2>The correct circumstances<a class="headerlink" href="#the-correct-circumstances" title="Permalink to this headline">#</a></h2>
+<p>We made various assumptions in the above analysis of the intensity profile resulting from lightwaves travelling through a pair of slits. Some of these were mentioned explicitly – such as the requirement that the gaps between the  is much smaller than the distance between the slits and the screen – whereas others were more <em>implied</em>. The most important implied assumption is that the waves are <em>coherent</em>, meaning that they are either in-phase with one another, or have a constant phase offset. This is often visualised in terms of the crests of plane parallel waves from the same source hitting both slits at the same time. Or, similarly, the crests of concentric waves from the same source hitting both slits at the same time, as shown in the left-hand diagram of <a class="reference internal" href="#pattern"><span class="std std-numref">Fig. 15</span></a>. By contrast, interference patterns <em>are not</em> produced if the waves arriving at each slit <em>are not</em> coherent. All that happens in those circumstances is that light waves consisting of <em>random</em> phase offsets from each slit strike the same point on the screen at the same time. Granted, sometimes they will constructively interfere, but other times they will destructively interfere meaning – and everything in between – so, on average, no overall interference effect is seen.</p>
+<p>The other key implied assumption is that both slits are illuminated with lightwaves of the same wavelength, and thus frequency. If this condition isn’t met, then the angular frequencies of the two waves in the above equations will be different; you don’t get interference patterns for effectively the same reasons as why you don’t get interference if the waves are not in-phase.<a class="footnote-reference brackets" href="#fact" id="id2">2</a> In practice – and prior to the invention of lasers – the coherence requirement is normally achieved by placing a narrow single slit between the light source and the double slits. As light passes through the single slit, it is diffracted so that only coherent waves hit both double slits.</p>
+<p>In the next lecture, we’ll look at the case of light passing through a single slit. In doing so, we’ll address another key assumption used in today’s lecture – that of infinitesimally narrow slits which, clearly, are impossible to achieve in practice.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="seen"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>As we have seen, waves don’t have to travel from left to right or right to left, they can travel in any direction they like. I’m just using right-to-left here for ease of description.</p>
+</dd>
+<dt class="label" id="fact"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>In fact, matching wavelengths is part of the definition of coherent.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch9.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">9 - Damped Waves</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch11.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">11 - Diffraction and interference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interference-by-two-thin-slits">Interference by two thin slits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-correct-circumstances">The correct circumstances</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By James Mullaney
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
